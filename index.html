@@ -49,7 +49,8 @@
     /* ABOUT */
     .about-section{max-width:900px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
     @media(max-width:640px){.about-section{grid-template-columns:1fr;gap:2rem;}.nav-links{display:none;}}
-    .about-avatar{width:100%;aspect-ratio:1;border-radius:24px;background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(0,212,170,0.15));border:1px solid var(--dborder);display:flex;align-items:center;justify-content:center;font-size:5rem;}
+    .about-avatar{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:2px solid var(--dborder);}
+    .about-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
     .about-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);margin-bottom:0.6rem;}
     .about-title{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;}
     .about-text{margin-top:1rem;color:var(--dmuted);font-size:0.92rem;line-height:1.75;}
@@ -138,7 +139,7 @@
 
 <!-- ABOUT -->
 <div class="about-section" id="about">
-  <div class="about-avatar">🌌</div>
+  <div class="about-avatar"><img src="photo.jpg" alt="Pratik Mahadik"/></div>
   <div>
     <div class="about-label">About Me</div>
     <div class="about-title">Hi, I'm Pratik —<br/>the curious one.</div>
@@ -192,10 +193,10 @@
 
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">"Pratik has a rare ability to explain complex science topics in a way that's both accurate and genuinely engaging. His scripts are always well-researched."</p>
+      <p class="testi-text">"Knowledgable videos."</p>
       <div class="testi-author">
-        <div class="testi-avatar">R</div>
-        <div><div class="testi-name">Rohit D.</div><div class="testi-role">YouTube Creator, Pune</div></div>
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Syuog D.</div><div class="testi-role">YouTube Viewer</div></div>
       </div>
     </div>
 
