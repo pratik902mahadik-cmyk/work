@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hire Pratik Mahadik – Writer & Researcher</title>
+  <meta name="description" content="Hire Pratik Mahadik for content writing, research, and letter writing services in English and Marathi."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --gray: #6b7280;
+      --light: #f9fafb;
+      --border: #e5e7eb;
+      --accent: #111111;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+    }
+    .nav-logo {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    /* HERO */
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--gray);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      color: var(--black);
+    }
+    .hero h1 span {
+      color: var(--gray);
+      font-weight: 400;
+    }
+    .hero p {
+      margin-top: 1.25rem;
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--black);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.8; }
+    .btn-secondary {
+      background: var(--light);
+      color: var(--black);
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: #f0f0f0; }
+
+    /* TRUST BAR */
+    .trust {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      font-size: 0.82rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .trust-item strong { color: var(--black); }
+
+    /* SERVICES */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .section-sub {
+      margin-top: 0.5rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .service-card {
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+    .service-card:hover {
+      border-color: #aaa;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .service-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .service-price {
+      margin-top: 1.25rem;
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .service-items {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .service-items span {
+      font-size: 0.8rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .service-items span::before {
+      content: "→";
+      color: #aaa;
+      font-size: 0.75rem;
+    }
+
+    /* WHY ME */
+    .why {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .why-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .why-item p {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #888;
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--black);
+      color: #fff;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.15s;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover { opacity: 0.8; }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 0.85rem;
+    }
+
+    /* SUCCESS */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-msg .tick {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .success-msg h3 { font-size: 1.1rem; font-weight: 600; }
+    .success-msg p { font-size: 0.875rem; color: var(--gray); margin-top: 0.4rem; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    footer a { color: var(--gray); text-decoration: none; }
+    footer a:hover { color: var(--black); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Pratik Mahadik</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="https://pratikmahadik.blogspot.com" target="_blank">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">✦ Available for freelance work</div>
+    <h1>Words that work.<br/><span>Writing & research,</span> done right.</h1>
+    <p>I'm Pratik — a writer based in Maharashtra. I help individuals and businesses with content, research, and professional letters in English and Marathi.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Hire Me →</a>
+      <a href="https://pratikmahadik.blogspot.com" target="_blank" class="btn-secondary">Read My Work</a>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="trust-item">✦ <strong>English & Marathi</strong></div>
+    <div class="trust-item">✦ <strong>Fast Turnaround</strong></div>
+    <div class="trust-item">✦ <strong>17+ Published Stories</strong></div>
+    <div class="trust-item">✦ <strong>Honest Pricing</strong></div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <div class="section-label">What I offer</div>
+    <div class="section-title">Services</div>
+    <div class="section-sub">Simple, clear deliverables — no fluff.</div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <h3>Content & Blog Writing</h3>
+        <p>Well-researched, engaging articles and blog posts for your website or brand — in English or Marathi.</p>
+        <div class="service-items">
+          <span>Blog articles</span>
+          <span>Website copy</span>
+          <span>Social media captions</span>
+          <span>Marathi content</span>
+        </div>
+        <div class="service-price">Starting ₹300 / article</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>Research & Fact Finding</h3>
+        <p>Thorough background research for students, YouTubers, journalists, and businesses who need reliable information fast.</p>
+        <div class="service-items">
+          <span>Topic research</span>
+          <span>Competitor analysis</span>
+          <span>Fact verification</span>
+          <span>Summarised reports</span>
+        </div>
+        <div class="service-price">Starting ₹500 / task</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Letter & Document Writing</h3>
+        <p>Professional letters and documents for personal, government, or business use — drafted clearly and correctly.</p>
+        <div class="service-items">
+          <span>Application letters</span>
+          <span>Complaint letters</span>
+          <span>Government letters</span>
+          <span>Business proposals</span>
+        </div>
+        <div class="service-price">Starting ₹200 / letter</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHY ME -->
+  <div class="why">
+    <div class="section">
+      <div class="section-label">Why work with me</div>
+      <div class="section-title">What makes me different</div>
+      <div class="why-grid">
+        <div class="why-item">
+          <h4>🌐 Bilingual</h4>
+          <p>English and Marathi — very few writers can genuinely do both well.</p>
+        </div>
+        <div class="why-item">
+          <h4>🎯 Story-first</h4>
+          <p>Every piece I write has a clear purpose — to inform, persuade, or connect.</p>
+        </div>
+        <div class="why-item">
+          <h4>⚡ Quick delivery</h4>
+          <p>I respect deadlines. Most tasks are delivered within 24–48 hours.</p>
+        </div>
+        <div class="why-item">
+          <h4>💬 Easy to work with</h4>
+          <p>Clear communication, revisions welcome, no unnecessary back-and-forth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-label">Get in touch</div>
+    <div class="section-title">Let's work together</div>
+    <div class="section-sub">Tell me what you need — I'll get back to you within 24 hours.</div>
+
+    <div class="contact-box">
+      <div id="form-area">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Rahul Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="rahul@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Content & Blog Writing</option>
+            <option>Research & Fact Finding</option>
+            <option>Letter & Document Writing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell me about your project</label>
+          <textarea id="message" placeholder="Briefly describe what you need, your deadline, and any other details..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+        <p class="form-note">Or email directly: <a href="mailto:pratik@pratikmahadik.com" style="color:#111;font-weight:500;">pratik@pratikmahadik.com</a></p>
+      </div>
+
+      <div class="success-msg" id="success">
+        <div class="tick">✅</div>
+        <h3>Message received!</h3>
+        <p>Thanks for reaching out. I'll reply within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Pratik Mahadik · <a href="/">pratikmahadik.com</a> · Made with care in Maharashtra 🇮🇳</p>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !service || !message) {
+        alert('Please fill in all fields before sending.');
+        return;
+      }
+
+      // Build mailto link as fallback (works without a backend)
+      const subject = encodeURIComponent(`Hire Enquiry: ${service} – ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:pratik@pratikmahadik.com?subject=${subject}&body=${body}`;
+
+      // Show success
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
