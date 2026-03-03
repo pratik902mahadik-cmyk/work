@@ -487,7 +487,7 @@
         </div>
 
         <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
-        <p class="form-note">Or email directly: <a href="mailto:pratik@pratikmahadik.com" style="color:#111;font-weight:500;">pratik@pratikmahadik.com</a></p>
+        <p class="form-note">Or email directly: <a href="https://mail.google.com/mail/?view=cm&to=pratik902mahadik@gmail.com" target="_blank" style="color:#111;font-weight:500;">pratik902mahadik@gmail.com</a></p>
       </div>
 
       <div class="success-msg" id="success">
@@ -503,7 +503,7 @@
     <p>© 2026 Pratik Mahadik · <a href="/">pratikmahadik.com</a> · Made with care in Maharashtra 🇮🇳</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function handleSubmit() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -518,13 +518,4 @@
       // Build mailto link as fallback (works without a backend)
       const subject = encodeURIComponent(`Hire Enquiry: ${service} – ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:pratik@pratikmahadik.com?subject=${subject}&body=${body}`;
-
-      // Show success
-      document.getElementById('form-area').style.display = 'none';
-      document.getElementById('success').style.display = 'block';
-    }
-  </script>
-
-</body>
-</html>
+      window.location.href = `mail
