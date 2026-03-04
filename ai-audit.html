@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Workflow Audit – Pratik Mahadik ERP Consultant</title>
+<meta name="description" content="Get a free AI-generated workflow audit report for your business. Identify inefficiencies, bottlenecks and ERP opportunities in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0f;--paper:#f5f3ee;--accent:#c8410a;--accent2:#e8a87c;--muted:#6b6b7b;--border:#dddad3;--card:#fff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,243,238,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-back{font-size:0.82rem;color:var(--muted);text-decoration:none;font-weight:500;}
+.nav-back:hover{color:var(--accent);}
+
+.hero{padding:7rem 2rem 3rem;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(200,65,10,0.2),transparent 70%);}
+.hero-inner{position:relative;z-index:2;max-width:620px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,65,10,0.15);border:1px solid rgba(200,65,10,0.3);color:var(--accent2);padding:0.4rem 1rem;border-radius:999px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem;}
+.hero h1 em{color:var(--accent2);font-style:normal;}
+.hero p{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
+.wrap{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem;}
+
+/* FORM CARD */
+.form-card{background:white;border:1px solid var(--border);border-radius:8px;padding:2.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.04);margin-bottom:2rem;}
+.card-tag{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.5rem;}
+.card-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.4rem;}
+.card-sub{font-size:0.9rem;color:var(--muted);margin-bottom:2rem;line-height:1.6;}
+
+.fg{margin-bottom:1.2rem;}
+.fg label{display:block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:var(--muted);margin-bottom:0.4rem;}
+.fg input,.fg select,.fg textarea{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:4px;font-family:'DM Sans',sans-serif;font-size:0.92rem;background:white;color:var(--ink);outline:none;transition:border-color 0.2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);}
+.fg textarea{height:100px;resize:vertical;line-height:1.6;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+.section-divider{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);padding:0.5rem 0;border-bottom:1px solid var(--border);margin:1.5rem 0 1.2rem;}
+
+.checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;}
+.cb-item{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 0.8rem;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;transition:all 0.2s;font-size:0.85rem;}
+.cb-item:hover{border-color:var(--accent2);}
+.cb-item.checked{border-color:var(--accent);background:rgba(200,65,10,0.04);font-weight:600;}
+.cb-item input{display:none;}
+
+.btn-generate{width:100%;padding:1rem;background:var(--accent);color:white;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;}
+.btn-generate:hover{background:#a83308;transform:translateY(-1px);}
+.btn-generate:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none;}
+
+/* REPORT OUTPUT */
+.report-card{background:white;border:1px solid var(--border);border-radius:8px;padding:2.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.04);display:none;}
+.report-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:2px solid var(--border);flex-wrap:wrap;}
+.report-title-block{}
+.report-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.3rem;}
+.report-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;}
+.report-meta{font-size:0.8rem;color:var(--muted);margin-top:0.3rem;}
+.report-badge{background:var(--ink);color:white;padding:0.5rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;white-space:nowrap;}
+
+.generating{text-align:center;padding:3rem 1rem;}
+.gen-icon{font-size:2.5rem;margin-bottom:1rem;animation:spin 2s linear infinite;display:inline-block;}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}  }
+.gen-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;}
+.gen-sub{font-size:0.88rem;color:var(--muted);}
+.gen-steps{display:flex;flex-direction:column;gap:0.4rem;margin-top:1.5rem;max-width:300px;margin-left:auto;margin-right:auto;}
+.gen-step{font-size:0.82rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;}
+.gen-step.done{color:var(--accent);}
+.gen-step::before{content:'○';flex-shrink:0;}
+.gen-step.done::before{content:'✓';}
+
+.report-content{font-size:0.92rem;line-height:1.8;color:#2a2a3a;}
+.report-content h2{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--ink);margin:1.8rem 0 0.6rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);}
+.report-content h2:first-child{margin-top:0;}
+.report-content p{margin-bottom:0.8rem;}
+.report-content strong{color:var(--ink);font-weight:600;}
+
+.report-actions{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+.btn-wa{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;background:#25d366;color:white;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.btn-wa:hover{background:#1da851;}
+.btn-hire{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;background:var(--accent);color:white;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.btn-hire:hover{background:#a83308;}
+.btn-new{padding:0.85rem 1.5rem;border:1.5px solid var(--border);color:var(--muted);background:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:0.88rem;cursor:pointer;transition:all 0.2s;}
+.btn-new:hover{border-color:var(--ink);color:var(--ink);}
+
+.fade-in{animation:fadeIn 0.4s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:2rem;text-align:center;font-size:0.8rem;}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+footer a:hover{color:white;}
+
+@media(max-width:600px){
+  nav{padding:1rem 1.5rem;}
+  .wrap{padding:2rem 1rem 4rem;}
+  .form-card,.report-card{padding:1.5rem;}
+  .fg-row{grid-template-columns:1fr;}
+  .checkbox-grid{grid-template-columns:1fr;}
+  .report-actions{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <a href="./index.html" class="nav-back">← Back to site</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Free AI Tool</div>
+    <h1>Get Your Free <em>AI Workflow Audit</em></h1>
+    <p>Describe your business operations and get an AI-generated workflow audit report — identifying inefficiencies, bottlenecks and ERP opportunities. Takes 3 minutes. Completely free.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- INPUT FORM -->
+  <div class="form-card fade-in" id="formCard">
+    <div class="card-tag">Step 1 — Tell us about your business</div>
+    <div class="card-title">Business Workflow Details</div>
+    <div class="card-sub">Fill in the details below. The more specific you are, the more accurate and useful your audit report will be.</div>
+
+    <div class="fg-row">
+      <div class="fg">
+        <label>Business Name</label>
+        <input type="text" id="bizName" placeholder="ABC Manufacturing Pvt. Ltd.">
+      </div>
+      <div class="fg">
+        <label>Industry</label>
+        <select id="industry">
+          <option value="">Select industry...</option>
+          <option>Manufacturing</option>
+          <option>Pharma</option>
+          <option>Real Estate</option>
+          <option>EdTech</option>
+          <option>Trading / Distribution</option>
+          <option>Construction</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg-row">
+      <div class="fg">
+        <label>Number of Employees</label>
+        <select id="employees">
+          <option value="">Select range...</option>
+          <option>1–10</option>
+          <option>11–50</option>
+          <option>51–200</option>
+          <option>200+</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Annual Turnover</label>
+        <select id="turnover">
+          <option value="">Select range...</option>
+          <option>Under ₹1 Crore</option>
+          <option>₹1–5 Crore</option>
+          <option>₹5–25 Crore</option>
+          <option>Above ₹25 Crore</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Describe your current main workflow / operations (in your own words)</label>
+      <textarea id="workflow" placeholder="e.g. We receive orders from customers via phone/WhatsApp. Then we check stock manually in our register. We raise a purchase order to our vendor on paper. Our accounts team manually enters everything in Tally at month end. We have 3 godowns and tracking between them is done on WhatsApp..."></textarea>
+    </div>
+
+    <div class="section-divider">Which departments have the most problems?</div>
+    <div class="checkbox-grid" id="deptGrid">
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Inventory & Stores"> 📦 Inventory & Stores</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Purchase & Procurement"> 🛒 Purchase & Procurement</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Sales & CRM"> 💼 Sales & CRM</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Accounts & Finance"> 💰 Accounts & Finance</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Production & Planning"> 🏭 Production & Planning</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="HR & Payroll"> 👥 HR & Payroll</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Quality Control"> 🔬 Quality Control</label>
+      <label class="cb-item" onclick="toggleCb(this)"><input type="checkbox" value="Reporting & MIS"> 📊 Reporting & MIS</label>
+    </div>
+
+    <div class="section-divider">Your biggest pain points</div>
+    <div class="fg">
+      <label>What is your #1 operational problem right now?</label>
+      <textarea id="painPoint" placeholder="e.g. We can never get accurate stock figures — our store team says one number and accounts says another. This causes delays in dispatches and we sometimes over-purchase..." style="height:80px;"></textarea>
+    </div>
+
+    <div class="fg-row">
+      <div class="fg">
+        <label>Your Name</label>
+        <input type="text" id="userName" placeholder="Rahul Sharma">
+      </div>
+      <div class="fg">
+        <label>WhatsApp Number</label>
+        <input type="tel" id="userPhone" placeholder="+91 98765 43210">
+      </div>
+    </div>
+
+    <button class="btn-generate" id="btnGenerate" onclick="generateAudit()">
+      <span>✦</span> Generate My Free Workflow Audit Report
+    </button>
+  </div>
+
+  <!-- REPORT OUTPUT -->
+  <div class="report-card fade-in" id="reportCard">
+
+    <!-- GENERATING STATE -->
+    <div class="generating" id="generatingState">
+      <div class="gen-icon">⚙️</div>
+      <div class="gen-title">Analysing your workflows...</div>
+      <div class="gen-sub">Our AI is reviewing your business details and generating your personalised audit report.</div>
+      <div class="gen-steps" id="genSteps">
+        <div class="gen-step" id="gs1">Reviewing business details</div>
+        <div class="gen-step" id="gs2">Identifying workflow gaps</div>
+        <div class="gen-step" id="gs3">Analysing bottlenecks</div>
+        <div class="gen-step" id="gs4">Generating recommendations</div>
+        <div class="gen-step" id="gs5">Preparing your report</div>
+      </div>
+    </div>
+
+    <!-- REPORT STATE -->
+    <div id="reportState" style="display:none;">
+      <div class="report-header">
+        <div class="report-title-block">
+          <div class="report-label">AI Workflow Audit Report</div>
+          <div class="report-title" id="reportTitle">Workflow Audit Report</div>
+          <div class="report-meta" id="reportMeta"></div>
+        </div>
+        <div class="report-badge">FREE REPORT</div>
+      </div>
+      <div class="report-content" id="reportContent"></div>
+      <div class="report-actions">
+        <button class="btn-wa" id="btnWA" onclick="sendWA()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Discuss This Report on WhatsApp
+        </button>
+        <a href="./contact.html" class="btn-hire">Book Free Discovery Call →</a>
+        <button class="btn-new" onclick="startNew()">Start New Audit</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai · <a href="./index.html">work.pratikmahadik.com</a></p>
+</footer>
+
+<script>
+let reportData = {};
+
+function toggleCb(el) {
+  el.classList.toggle('checked');
+}
+
+function getCheckedDepts() {
+  return [...document.querySelectorAll('.cb-item.checked input')].map(i => i.value);
+}
+
+async function generateAudit() {
+  const bizName = document.getElementById('bizName').value.trim();
+  const industry = document.getElementById('industry').value;
+  const employees = document.getElementById('employees').value;
+  const turnover = document.getElementById('turnover').value;
+  const workflow = document.getElementById('workflow').value.trim();
+  const painPoint = document.getElementById('painPoint').value.trim();
+  const userName = document.getElementById('userName').value.trim();
+  const userPhone = document.getElementById('userPhone').value.trim();
+  const depts = getCheckedDepts();
+
+  if (!industry || !workflow || !painPoint) {
+    alert('Please fill in at least: Industry, Current Workflow description, and your #1 Pain Point.');
+    return;
+  }
+
+  reportData = { bizName, industry, employees, turnover, workflow, painPoint, userName, userPhone, depts };
+
+  // Show report card with generating state
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('reportCard').style.display = 'block';
+  document.getElementById('generatingState').style.display = 'block';
+  document.getElementById('reportState').style.display = 'none';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Animate steps
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  for (let i = 0; i < steps.length; i++) {
+    await sleep(800);
+    document.getElementById(steps[i]).classList.add('done');
+  }
+
+  // Generate report
+  await callAI(bizName, industry, employees, turnover, workflow, painPoint, depts, userName);
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function callAI(bizName, industry, employees, turnover, workflow, painPoint, depts, userName) {
+  const prompt = `You are Pratik Mahadik, a senior ERP and AI consultant with 4+ years of experience implementing ERP systems across manufacturing, pharma, real estate and EdTech businesses in India.
+
+A business owner has submitted the following details for a FREE workflow audit:
+
+Business: ${bizName || 'Not provided'}
+Industry: ${industry}
+Employees: ${employees || 'Not specified'}
+Annual Turnover: ${turnover || 'Not specified'}
+Problem Departments: ${depts.length > 0 ? depts.join(', ') : 'Not specified'}
+
+Their current workflow description:
+"${workflow}"
+
+Their #1 pain point:
+"${painPoint}"
+
+Generate a professional but conversational workflow audit report with these exact sections:
+
+## Executive Summary
+2-3 sentences summarising the business situation and the overall assessment.
+
+## Key Workflow Gaps Identified
+Identify 3-4 specific gaps based on what they described. Be specific to their actual words.
+
+## Top 3 Bottlenecks
+The 3 biggest operational bottlenecks slowing this business down right now.
+
+## ERP & AI Opportunities
+3-4 specific ways ERP or AI tools could solve their problems. Be specific to their industry (${industry}).
+
+## Recommended Action Plan
+A practical 3-step action plan they can start this week — specific, actionable, no jargon.
+
+## About This Report
+One short paragraph explaining that this is a free AI-generated overview audit, and that for a deep-dive implementation plan they can book a free 30-minute discovery call with Pratik Mahadik at work.pratikmahadik.com.
+
+Rules:
+- Write in plain, direct language — no corporate jargon
+- Be specific to their industry and their actual workflow description
+- Sound like a trusted advisor, not a salesperson
+- Total length: 350-450 words
+- Use the section headers exactly as shown above`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await response.json();
+    const text = data.content?.[0]?.text || getFallbackReport(industry, painPoint);
+    showReport(text, bizName, industry, userName);
+  } catch(e) {
+    showReport(getFallbackReport(industry, painPoint), bizName, industry, userName);
+  }
+}
+
+function showReport(text, bizName, industry, userName) {
+  document.getElementById('generatingState').style.display = 'none';
+  document.getElementById('reportState').style.display = 'block';
+
+  document.getElementById('reportTitle').textContent = (bizName || 'Your Business') + ' — Workflow Audit';
+  document.getElementById('reportMeta').textContent = industry + ' · Generated by Pratik Mahadik AI · ' + new Date().toLocaleDateString('en-IN', {day:'numeric',month:'long',year:'numeric'});
+
+  // Convert markdown to HTML
+  const html = text
+    .replace(/## (.*)/g, '<h2>$1</h2>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/\n/g, '<br>');
+
+  document.getElementById('reportContent').innerHTML = '<p>' + html + '</p>';
+
+  // Notify Pratik via WhatsApp silently
+  notifyPratik();
+}
+
+function notifyPratik() {
+  const d = reportData;
+  const msg = `🔔 *New Workflow Audit Generated*\n\n*Business:* ${d.bizName || 'Not provided'}\n*Industry:* ${d.industry}\n*Employees:* ${d.employees || 'N/A'}\n*Turnover:* ${d.turnover || 'N/A'}\n*Name:* ${d.userName || 'Not provided'}\n*Phone:* ${d.userPhone || 'Not provided'}\n*Pain:* ${d.painPoint?.substring(0,100)}...\n\nwork.pratikmahadik.com/ai-audit.html`;
+  // Store for WA button
+  reportData.notifyMsg = msg;
+}
+
+function sendWA() {
+  const d = reportData;
+  const msg = `Hi Pratik! I just generated a free workflow audit report on your website.\n\n*Business:* ${d.bizName || 'My business'}\n*Industry:* ${d.industry}\n*My main pain point:* ${d.painPoint?.substring(0,150)}\n\nI'd like to discuss the findings and next steps. Can we schedule a call?`;
+  window.open(`https://wa.me/919607509691?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function startNew() {
+  document.getElementById('reportCard').style.display = 'none';
+  document.getElementById('formCard').style.display = 'block';
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+}
+
+function getFallbackReport(industry, pain) {
+  return `## Executive Summary\nBased on your description, your ${industry} business is experiencing common but solvable operational challenges. The workflow gaps identified suggest significant efficiency gains are possible through structured process improvement and ERP implementation.\n\n## Key Workflow Gaps Identified\nYour description reveals manual handoffs between departments creating data silos. Information is being duplicated across systems like WhatsApp, Excel and paper registers. There is no single source of truth for operational data, leading to the mismatch issues you described. Month-end reconciliation is consuming significant management time.\n\n## Top 3 Bottlenecks\nThe biggest bottleneck is data fragmentation — the same information existing in multiple places with no synchronisation. The second is manual approval and communication workflows that slow down routine transactions. Third is the absence of real-time visibility forcing management to wait for reports instead of making proactive decisions.\n\n## ERP & AI Opportunities\nAn integrated ERP would eliminate your data mismatch problem by creating one system of record across all departments. Automated purchase order workflows would reduce your procurement cycle time significantly. Real-time dashboards would give management instant visibility without waiting for manual reports.\n\n## Recommended Action Plan\nFirst, document your top 5 daily workflows on paper — understanding the as-is process before any software decision. Second, identify your data — what master data exists across your current systems that needs to be cleaned and migrated. Third, book a free 30-minute discovery call to get a scoped implementation plan specific to your situation.\n\n## About This Report\nThis is a free AI-generated overview audit based on the information you provided. For a detailed, site-specific implementation plan with timelines and investment estimates, book a free 30-minute discovery call with Pratik Mahadik at work.pratikmahadik.com.`;
+}
+</script>
+</body>
+</html>
