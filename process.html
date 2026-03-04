@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Process – Pratik Mahadik ERP Consultant</title>
+<meta name="description" content="How Pratik Mahadik delivers ERP implementations — from discovery to go-live stabilization. A structured, low-friction consulting process.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0a0a0f;--ink2:#1a1a2e;--paper:#f5f3ee;--accent:#c8410a;--accent2:#e8a87c;--muted:#6b6b7b;--border:#dddad3; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(245,243,238,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{font-size:0.88rem;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+  .nav-cta{background:var(--accent);color:white;padding:0.6rem 1.4rem;border-radius:2px;font-size:0.85rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;}
+  .nav-cta:hover{background:#a83308;}
+
+  .page-hero{padding:10rem 4rem 5rem;background:var(--ink2);position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(200,65,10,0.03) 60px,rgba(200,65,10,0.03) 61px);}
+  .page-hero-inner{position:relative;z-index:2;max-width:700px;}
+  .page-tag{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+  .page-tag::before{content:'—';}
+  .page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:white;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.2rem;}
+  .page-hero h1 em{color:var(--accent2);font-style:normal;}
+  .page-hero p{font-size:1.1rem;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;max-width:580px;}
+
+  /* PROCESS STEPS */
+  .process-section{padding:6rem 4rem;background:white;}
+  .section-tag{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+  .section-tag::before{content:'—';}
+  h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:1rem;}
+  .section-sub{font-size:1.05rem;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:4rem;}
+
+  .steps{display:flex;flex-direction:column;gap:0;}
+  .step{display:grid;grid-template-columns:120px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border);position:relative;transition:background 0.2s;}
+  .step:last-child{border-bottom:none;}
+  .step:hover{background:var(--paper);margin:0 -4rem;padding:3rem 4rem;}
+  .step-left{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;}
+  .step-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--border);line-height:1;transition:color 0.2s;}
+  .step:hover .step-num{color:var(--accent);}
+  .step-duration{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;white-space:nowrap;}
+  .step-right{}
+  .step-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;letter-spacing:-0.02em;}
+  .step-desc{font-size:0.95rem;color:#3a3a4a;line-height:1.75;margin-bottom:1.5rem;font-weight:300;max-width:620px;}
+  .step-deliverables{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .deliverable{background:var(--paper);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:2px;font-size:0.78rem;color:var(--ink);font-weight:500;}
+
+  /* PRINCIPLES */
+  .principles-section{padding:6rem 4rem;background:var(--paper);}
+  .principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+  .principle-card{background:white;border:1px solid var(--border);border-radius:4px;padding:2rem;transition:border-color 0.2s,transform 0.2s;}
+  .principle-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .p-icon{font-size:1.8rem;margin-bottom:1rem;}
+  .p-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.6rem;}
+  .p-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;}
+
+  /* FAQ */
+  .faq-section{padding:6rem 4rem;background:white;}
+  .faq-list{margin-top:3rem;max-width:720px;}
+  .faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0;cursor:pointer;}
+  .faq-q{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+  .faq-q::after{content:'+';font-size:1.4rem;color:var(--accent);flex-shrink:0;transition:transform 0.2s;}
+  .faq-item.open .faq-q::after{transform:rotate(45deg);}
+  .faq-a{font-size:0.92rem;color:var(--muted);line-height:1.75;margin-top:0.8rem;display:none;font-weight:300;}
+  .faq-item.open .faq-a{display:block;}
+
+  .cta-section{background:var(--accent);text-align:center;padding:5rem 4rem;}
+  .cta-section h2{color:white;font-size:clamp(2rem,3.5vw,3rem);margin-bottom:1rem;font-family:'Syne',sans-serif;font-weight:800;}
+  .cta-section p{color:rgba(255,255,255,0.8);font-size:1.05rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;}
+  .btn-white{background:white;color:var(--accent);padding:1rem 2.5rem;border-radius:2px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.2);}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  footer a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+  footer a:hover{color:white;}
+  .footer-links{display:flex;gap:2rem;font-size:0.85rem;}
+
+  .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    .page-hero{padding:7rem 1.5rem 3rem;}
+    .process-section,.principles-section,.faq-section{padding:3rem 1.5rem;}
+    .step{grid-template-columns:1fr;gap:1rem;}
+    .step:hover{margin:0 -1.5rem;padding:2rem 1.5rem;}
+    .principles-grid{grid-template-columns:1fr;}
+    footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <ul class="nav-links">
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./case-studies.html">Implementation Portfolio</a></li>
+    <li><a href="./process.html" class="active">Process</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+  <a href="./contact.html" class="nav-cta">Hire Me →</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-tag">How I Work</div>
+    <h1>A Process Built for <em>Zero Surprises</em></h1>
+    <p>Every ERP project I take on follows a structured, transparent process — so you always know what's happening, what's next, and what to expect. No black boxes. No last-minute chaos.</p>
+  </div>
+</div>
+
+<section class="process-section fade-up">
+  <div class="section-tag">Step by Step</div>
+  <h2>From First Call to Go-Live</h2>
+  <p class="section-sub">A proven 6-step process refined across 4+ years and multiple industries — manufacturing, pharma, real estate and EdTech.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">01</div>
+        <div class="step-duration">30 mins · Free</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">We start with a free 30-minute call where I understand your business, your current systems, your pain points and what you're trying to achieve. No pitch, no pressure — just an honest conversation about whether I can help you and how.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">Problem Clarity</span>
+          <span class="deliverable">Scope Outline</span>
+          <span class="deliverable">Honest Fit Assessment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">02</div>
+        <div class="step-duration">3–7 Days</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">Requirement Analysis & Documentation</div>
+        <p class="step-desc">I deep-dive into your business processes — interviewing stakeholders, visiting the shop floor if needed, and mapping every workflow. This phase produces a Business Requirement Document (BRD) and Functional Requirement Document (FRD) that becomes the single source of truth for the entire project.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">BRD Document</span>
+          <span class="deliverable">FRD Document</span>
+          <span class="deliverable">GAP Analysis</span>
+          <span class="deliverable">Process Maps (Miro)</span>
+          <span class="deliverable">Project Timeline</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">03</div>
+        <div class="step-duration">1–4 Weeks</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">System Configuration & Master Data Setup</div>
+        <p class="step-desc">With requirements locked, I configure the ERP — setting up modules, approval matrices, workflows, email/WhatsApp triggers, cost centers, account groups and all master data. Every configuration decision is traced back to a business requirement. No guesswork.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">Module Configuration</span>
+          <span class="deliverable">Master Data Setup</span>
+          <span class="deliverable">Approval Matrix</span>
+          <span class="deliverable">Workflow Design</span>
+          <span class="deliverable">Email/WhatsApp Triggers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">04</div>
+        <div class="step-duration">1–2 Weeks</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">Data Migration & UAT</div>
+        <p class="step-desc">Clean data migration from your legacy system — item masters, vendor masters, opening balances, WIP. Then structured User Acceptance Testing (UAT) with your core team to validate every workflow before go-live. No surprises on day one.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">Data Migration</span>
+          <span class="deliverable">Opening Balances</span>
+          <span class="deliverable">UAT Cycles</span>
+          <span class="deliverable">Issue Resolution</span>
+          <span class="deliverable">Sign-off Documentation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">05</div>
+        <div class="step-duration">1–3 Days</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">User Training & Go-Live</div>
+        <p class="step-desc">I train every user group — store teams, accounts, production planners, QA, management — in English or Marathi. Training is hands-on, role-specific and practical. Then I'm present on go-live day to ensure smooth operations from the first transaction.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">Role-based Training</span>
+          <span class="deliverable">Training Materials</span>
+          <span class="deliverable">English / Marathi</span>
+          <span class="deliverable">Go-Live Support</span>
+          <span class="deliverable">SOPs & User Manuals</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">06</div>
+        <div class="step-duration">2–4 Weeks</div>
+      </div>
+      <div class="step-right">
+        <div class="step-title">Post-Implementation Stabilization</div>
+        <p class="step-desc">The first weeks after go-live are critical. I stay engaged during hypercare — resolving issues quickly, fine-tuning configurations based on real usage, and ensuring your team is fully confident. The project isn't done until your operations run smoothly without me.</p>
+        <div class="step-deliverables">
+          <span class="deliverable">Hypercare Support</span>
+          <span class="deliverable">Issue Resolution</span>
+          <span class="deliverable">Configuration Tuning</span>
+          <span class="deliverable">MIS Reports Setup</span>
+          <span class="deliverable">Final Handover</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="principles-section fade-up">
+  <div class="section-tag">How I Think</div>
+  <h2>My Working Principles</h2>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="p-icon">🎯</div>
+      <div class="p-title">Business First, Technology Second</div>
+      <p class="p-desc">I never configure an ERP module without understanding the business process behind it. Technology should serve the business — not the other way around.</p>
+    </div>
+    <div class="principle-card">
+      <div class="p-icon">📋</div>
+      <div class="p-title">Document Everything</div>
+      <p class="p-desc">Every decision, every configuration, every workflow is documented. When I leave, your team has everything they need to operate and grow independently.</p>
+    </div>
+    <div class="principle-card">
+      <div class="p-icon">👥</div>
+      <div class="p-title">Stakeholder-Led UAT</div>
+      <p class="p-desc">Your people know your business better than anyone. UAT isn't a checkbox — it's where real users validate that the system actually works for them.</p>
+    </div>
+    <div class="principle-card">
+      <div class="p-icon">⚡</div>
+      <div class="p-title">No Last-Minute Surprises</div>
+      <p class="p-desc">Weekly status updates, clear milestone tracking and honest communication mean you always know where the project stands — good news or bad.</p>
+    </div>
+    <div class="principle-card">
+      <div class="p-icon">🔄</div>
+      <div class="p-title">Clean Data In, Clean Data Out</div>
+      <p class="p-desc">Garbage in, garbage out. I insist on clean master data before go-live — because bad data is the #1 reason ERP implementations fail post-launch.</p>
+    </div>
+    <div class="principle-card">
+      <div class="p-icon">🤝</div>
+      <div class="p-title">Training Until Confident</div>
+      <p class="p-desc">I don't leave until your team is genuinely confident using the system — not just trained on paper. Real adoption is the only measure of success.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section fade-up">
+  <div class="section-tag">Common Questions</div>
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How long does a typical ERP implementation take?</div>
+      <p class="faq-a">It depends on the scope and number of modules. A focused single-module implementation can take 4–6 weeks. A full multi-module deployment covering purchase, inventory, production, finance and sales typically takes 8–16 weeks. I'll give you a realistic timeline after the discovery call.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you work on-site or remotely?</div>
+      <p class="faq-a">Both. I've delivered on-site implementations across Maharashtra, West Bengal, Himachal Pradesh, Chandigarh and internationally in Nepal. I've also delivered fully remote implementations including an international pharma client in Yemen. We'll decide the right approach based on your project needs.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which ERP systems do you work with?</div>
+      <p class="faq-a">I work with cloud-based and EXE-based ERP systems across multiple vendors. My expertise is functional — I understand the business processes deeply and can work across different ERP platforms. I also have specific experience with Progen ERP, Zoho CRM integrations, and Azure-based systems.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What industries have you worked in?</div>
+      <p class="faq-a">Manufacturing, pharmaceuticals (including GMP-compliant deployments), real estate, construction and EdTech. Each industry has unique requirements — pharma needs batch tracking and QA/QC, real estate needs project-wise cost accounting, manufacturing needs production planning and BOM management.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's your pricing structure?</div>
+      <p class="faq-a">Project-based pricing depending on scope, modules and duration. ERP audits start from ₹20,000. Full implementations range from ₹50,000 to ₹1,50,000 depending on complexity. Monthly retainers available from ₹30,000/month. I provide a detailed scope and quote after the free discovery call — no surprises.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can you train our team in Marathi?</div>
+      <p class="faq-a">Yes — I'm a native Marathi speaker and deliver training in both English and Marathi. For teams in Maharashtra, Marathi training significantly improves adoption rates, especially for shop-floor and store teams.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section fade-up">
+  <h2>Ready to Start?</h2>
+  <p>Book a free 30-minute discovery call. No pitch — just an honest conversation about your ERP challenges.</p>
+  <a href="./contact.html" class="btn-white">Book Free Discovery Call →</a>
+</div>
+
+<footer>
+  <span style="font-size:0.85rem;">© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai</span>
+  <div class="footer-links">
+    <a href="./services.html">Services</a>
+    <a href="./case-studies.html">Portfolio</a>
+    <a href="./process.html">Process</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
