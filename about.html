@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – Pratik Mahadik ERP Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #0a0a0f; --ink2: #1a1a2e; --paper: #f5f3ee; --accent: #c8410a; --accent2: #e8a87c; --muted: #6b6b7b; --border: #dddad3; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(245,243,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 2px; font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-cta:hover { background: #a83308; }
+
+  .about-hero { padding: 9rem 4rem 5rem; display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
+  .ah-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .ah-tag::before { content: '—'; }
+  .about-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem,4vw,3.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
+  .about-hero h1 em { color: var(--accent); font-style: normal; }
+  .about-hero p { font-size: 1.05rem; line-height: 1.8; color: #3a3a4a; margin-bottom: 1.2rem; font-weight: 300; }
+  .profile-card { background: var(--ink2); border-radius: 4px; padding: 2.5rem; }
+  .profile-name { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 0.3rem; }
+  .profile-title { font-size: 0.85rem; color: var(--accent2); margin-bottom: 2rem; }
+  .profile-stat { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .profile-stat:last-of-type { border-bottom: none; }
+  .ps-icon { width: 36px; height: 36px; background: rgba(200,65,10,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .ps-text { font-size: 0.87rem; color: rgba(255,255,255,0.7); }
+  .ps-text strong { display: block; color: white; font-size: 0.92rem; }
+  .profile-links { display: flex; gap: 1rem; margin-top: 2rem; }
+  .profile-link { flex: 1; text-align: center; padding: 0.7rem; border-radius: 2px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+  .pl-primary { background: var(--accent); color: white; }
+  .pl-primary:hover { background: #a83308; }
+  .pl-outline { border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+  .pl-outline:hover { border-color: white; color: white; }
+
+  .timeline-section { padding: 6rem 4rem; background: white; }
+  .section-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .section-tag::before { content: '—'; }
+  h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 3rem; }
+  .timeline { position: relative; padding-left: 3rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-dot { position: absolute; left: -3rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); transform: translateX(-4.5px); }
+  .tl-date { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; }
+  .tl-role { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .tl-company { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin-bottom: 0.7rem; }
+  .tl-desc { font-size: 0.92rem; color: #3a3a4a; line-height: 1.7; font-weight: 300; }
+
+  .skills-section { padding: 6rem 4rem; background: var(--paper); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+  .skill-group { }
+  .sg-title { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag { background: white; border: 1px solid var(--border); padding: 0.3rem 0.75rem; border-radius: 2px; font-size: 0.8rem; color: var(--ink); font-weight: 500; }
+
+  .certs-section { padding: 5rem 4rem; background: white; }
+  .certs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+  .cert-card { border: 1px solid var(--border); border-radius: 2px; padding: 1.2rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem; transition: border-color 0.2s; }
+  .cert-card:hover { border-color: var(--accent); }
+  .cert-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .cert-name { font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
+  .cert-source { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
+  .cta-section { background: var(--accent); text-align: center; padding: 5rem 4rem; }
+  .cta-section h2 { color: white; font-size: clamp(2rem,3.5vw,3rem); margin-bottom: 1rem; font-family: 'Syne', sans-serif; font-weight: 800; }
+  .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .btn-white { background: white; color: var(--accent); padding: 1rem 2.5rem; border-radius: 2px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: white; }
+  .footer-links { display: flex; gap: 2rem; font-size: 0.85rem; }
+
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .about-hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2.5rem; }
+    .timeline-section, .skills-section, .certs-section { padding: 3rem 1.5rem; }
+    .skills-grid, .certs-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./erp.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <ul class="nav-links">
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./case-studies.html">Case Studies</a></li>
+    <li><a href="./process.html">Process</a></li>
+    <li><a href="./about.html" class="active">About</a></li>
+  </ul>
+  <a href="./contact.html" class="nav-cta">Hire Me →</a>
+</nav>
+
+<section class="about-hero">
+  <div class="fade-up">
+    <div class="ah-tag">About Me</div>
+    <h1>The Consultant Who's Been <em>On the Shop Floor</em></h1>
+    <p>I'm Pratik Mahadik — an ERP Functional Consultant based in Goregaon East, Mumbai, with 4+ years of hands-on experience delivering ERP implementations that actually stick. I started my career in an automotive manufacturing plant (Mahindra CIE, Pune), operating CNC machines and understanding production workflows from the ground up.</p>
+    <p>That shop-floor foundation is what makes my consulting different. When I configure a batch manufacturing workflow or set up a QA/QC module, I know what that process looks like in reality — not just on paper. That's why my go-lives don't fail.</p>
+    <p>Today I work at the intersection of ERP implementation, AI business analysis, and workflow automation — helping manufacturing companies, pharma businesses, and real estate firms build systems that scale.</p>
+  </div>
+  <div class="profile-card fade-up">
+    <div class="profile-name">Pratik Mahadik</div>
+    <div class="profile-title">ERP Implementation Consultant · AI Business Analyst</div>
+    <div class="profile-stat">
+      <div class="ps-icon">📍</div>
+      <div class="ps-text"><strong>Goregaon East, Mumbai</strong>Available for remote & on-site</div>
+    </div>
+    <div class="profile-stat">
+      <div class="ps-icon">💼</div>
+      <div class="ps-text"><strong>4+ Years Experience</strong>Manufacturing · Pharma · Real Estate · EdTech</div>
+    </div>
+    <div class="profile-stat">
+      <div class="ps-icon">🌐</div>
+      <div class="ps-text"><strong>Bilingual</strong>English & Marathi</div>
+    </div>
+    <div class="profile-stat">
+      <div class="ps-icon">🏆</div>
+      <div class="ps-text"><strong>Client Recognition</strong>Appreciated by implementation clients</div>
+    </div>
+    <div class="profile-stat">
+      <div class="ps-icon">✈️</div>
+      <div class="ps-text"><strong>International Experience</strong>Nepal ERP Deployment</div>
+    </div>
+    <div class="profile-links">
+      <a href="./contact.html" class="profile-link pl-primary">Hire Me</a>
+      <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank" class="profile-link pl-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section fade-up">
+  <div class="section-tag">Career Journey</div>
+  <h2>Professional Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Aug 2025 – Jan 2026</div>
+      <div class="tl-role">Senior Engineer – ERP Implementations</div>
+      <div class="tl-company">Anukarati Homes Pvt. Ltd., Mumbai</div>
+      <p class="tl-desc">System Administrator for cloud-based ERP. Configured multi-module setup including Purchase, Inventory, Project Engineering, Finance and Contractor Management. Led API integrations with Zoho CRM and Strategic ERP. Designed real-time management dashboards and supported Schedule III financial compliance.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Apr 2024 – Aug 2025</div>
+      <div class="tl-role">ERP Implementation Engineer</div>
+      <div class="tl-company">Professional Consultancy Services, Mumbai</div>
+      <p class="tl-desc">Led end-to-end ERP deployments for manufacturing and pharmaceutical clients. Conducted shop-floor process studies, managed master data migration, coordinated UAT and go-live. Handled international ERP deployment in Nepal including localization and compliance adjustments.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Apr 2022 – Apr 2024</div>
+      <div class="tl-role">Associate Support Engineer</div>
+      <div class="tl-company">TeamLease EdTech Ltd., Mumbai</div>
+      <p class="tl-desc">Managed 8 ERP and CRM applications (Salesforce, Extraedge, Exotel, UMS). Built RCA frameworks for recurring issues, led user training programs, supported BRD/FRD documentation. Received client recognition for outstanding delivery.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Jun 2021 – Dec 2021</div>
+      <div class="tl-role">Engineer Trainee (Apprenticeship)</div>
+      <div class="tl-company">Mahindra CIE Automotive Ltd., Pune</div>
+      <p class="tl-desc">Operated CNC machines and automated gantry systems in an automotive manufacturing environment. Built foundational understanding of production scheduling, inventory movement, and quality control at shop-floor level.</p>
+    </div>
+  </div>
+</section>
+
+<section class="skills-section fade-up">
+  <div class="section-tag">Technical Skills</div>
+  <h2>Core Competencies</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="sg-title">ERP & Business Analysis</div>
+      <div class="skill-tags">
+        <span class="skill-tag">ERP Implementation</span>
+        <span class="skill-tag">BRD / FRD</span>
+        <span class="skill-tag">GAP Analysis</span>
+        <span class="skill-tag">Process Mapping</span>
+        <span class="skill-tag">UAT Management</span>
+        <span class="skill-tag">Go-Live Support</span>
+        <span class="skill-tag">SOP Writing</span>
+        <span class="skill-tag">Change Adoption</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-title">ERP Modules</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Finance & Accounting</span>
+        <span class="skill-tag">Manufacturing</span>
+        <span class="skill-tag">Production Planning</span>
+        <span class="skill-tag">Batch Processing</span>
+        <span class="skill-tag">Inventory</span>
+        <span class="skill-tag">Procurement</span>
+        <span class="skill-tag">QA/QC</span>
+        <span class="skill-tag">Project Engineering</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="sg-title">Tools & Technologies</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Progen ERP</span>
+        <span class="skill-tag">Zoho CRM</span>
+        <span class="skill-tag">Salesforce</span>
+        <span class="skill-tag">Azure Functions</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Miro</span>
+        <span class="skill-tag">Advanced Excel</span>
+        <span class="skill-tag">PowerBI basics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certs-section fade-up">
+  <div class="section-tag">Learning</div>
+  <h2>Certifications</h2>
+  <div class="certs-grid">
+    <div class="cert-card"><div class="cert-icon">☁️</div><div><div class="cert-name">Azure: REST API with NodeJS Serverless Functions</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🗄️</div><div><div class="cert-name">Azure Synapse SQL Pool — Implement Polybase</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📊</div><div><div class="cert-name">Business Analysis & Process Management</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">💰</div><div><div class="cert-name">Financial Statement Using Microsoft Excel</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🗂️</div><div><div class="cert-name">Agile Project: Touchpoint Analysis in Miro</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🐍</div><div><div class="cert-name">Create Your First Python Program</div><div class="cert-source">University of Technology Sydney</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📡</div><div><div class="cert-name">Introduction to IoT & Embedded Systems</div><div class="cert-source">UC Irvine · Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📈</div><div><div class="cert-name">Overview of Data Visualization</div><div class="cert-source">Coursera</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📡</div><div><div class="cert-name">Create a Project Management Tracker using Excel</div><div class="cert-source">Coursera</div></div></div>
+  </div>
+</section>
+
+<div class="cta-section fade-up">
+  <h2>Let's Work Together</h2>
+  <p>Ready to modernize your operations with an ERP that actually fits your business? Let's talk.</p>
+  <a href="./contact.html" class="btn-white">Book a Free Discovery Call →</a>
+</div>
+
+<footer>
+  <span style="font-size:0.85rem;">© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai</span>
+  <div class="footer-links">
+    <a href="./services.html">Services</a>
+    <a href="./case-studies.html">Case Studies</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
