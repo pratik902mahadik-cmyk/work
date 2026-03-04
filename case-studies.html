@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies – Pratik Mahadik ERP Consultant</title>
+<meta name="description" content="Real ERP implementation case studies across manufacturing, pharma, real estate and edtech sectors. See how Pratik Mahadik delivers measurable results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f; --ink2: #1a1a2e; --paper: #f5f3ee;
+    --accent: #c8410a; --accent2: #e8a87c; --muted: #6b6b7b;
+    --border: #dddad3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(245,243,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 2px; font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-cta:hover { background: #a83308; }
+
+  .page-hero { padding: 10rem 4rem 5rem; background: var(--ink2); position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(200,65,10,0.03) 60px, rgba(200,65,10,0.03) 61px); }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+  .page-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .page-tag::before { content: '—'; }
+  .page-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem,4vw,3.5rem); font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.2rem; }
+  .page-hero h1 em { color: var(--accent2); font-style: normal; }
+  .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 300; }
+
+  .cases-section { padding: 6rem 4rem; }
+  .section-tag { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .section-tag::before { content: '—'; }
+
+  /* CASE STUDY CARDS */
+  .case-card {
+    display: grid; grid-template-columns: 280px 1fr;
+    border: 1px solid var(--border); border-radius: 4px;
+    background: white; margin-bottom: 2rem; overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .case-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-3px); }
+  .case-sidebar {
+    background: var(--ink2); padding: 2.5rem 2rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .case-industry {
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent2); font-weight: 600; margin-bottom: 0.6rem;
+  }
+  .case-company { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: white; line-height: 1.3; }
+  .case-meta { margin-top: 2rem; }
+  .meta-item { margin-bottom: 1rem; }
+  .meta-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.2rem; }
+  .meta-value { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+  .case-body { padding: 2.5rem; }
+  .case-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .case-challenge-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; margin-top: 1.2rem; }
+  .case-text { font-size: 0.92rem; line-height: 1.7; color: #3a3a4a; font-weight: 300; }
+  .case-results { display: flex; gap: 1.5rem; margin-top: 1.8rem; flex-wrap: wrap; }
+  .result-item { text-align: center; }
+  .result-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .result-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .case-modules { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
+  .module-tag { background: var(--paper); border: 1px solid var(--border); padding: 0.25rem 0.65rem; border-radius: 2px; font-size: 0.75rem; color: var(--muted); }
+
+  /* ASSIGNMENT SHOWCASE */
+  .assignment-section { background: var(--ink2); padding: 6rem 4rem; }
+  .assignment-section h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 800; color: white; letter-spacing: -0.025em; margin-bottom: 1rem; }
+  .assignment-section .section-tag { color: var(--accent2); }
+  .assignment-section .section-tag::before { content: '—'; }
+  .assignment-sub { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 580px; margin-bottom: 3rem; font-weight: 300; }
+  .assignment-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+  .assign-item { background: var(--ink2); padding: 2rem; }
+  .assign-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .assign-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .assign-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  .cta-section { background: var(--accent); text-align: center; padding: 5rem 4rem; }
+  .cta-section h2 { color: white; font-size: clamp(2rem,3.5vw,3rem); margin-bottom: 1rem; font-family: 'Syne', sans-serif; font-weight: 800; }
+  .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .btn-white { background: white; color: var(--accent); padding: 1rem 2.5rem; border-radius: 2px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: white; }
+  .footer-links { display: flex; gap: 2rem; font-size: 0.85rem; }
+
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .page-hero { padding: 7rem 1.5rem 3rem; }
+    .cases-section { padding: 3rem 1.5rem; }
+    .case-card { grid-template-columns: 1fr; }
+    .assignment-section { padding: 4rem 1.5rem; }
+    .assignment-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./erp.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <ul class="nav-links">
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./case-studies.html" class="active">Case Studies</a></li>
+    <li><a href="./process.html">Process</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+  <a href="./contact.html" class="nav-cta">Hire Me →</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-tag">Proof of Work</div>
+    <h1>Real Implementations. <em>Real Results.</em></h1>
+    <p>Every project below represents a business that needed to modernize its operations, and a structured approach that got them there. Names anonymized where requested.</p>
+  </div>
+</div>
+
+<section class="cases-section">
+  <div class="section-tag">Case Studies</div>
+
+  <!-- CASE 1 -->
+  <div class="case-card fade-up">
+    <div class="case-sidebar">
+      <div>
+        <div class="case-industry">Real Estate · Mumbai</div>
+        <div class="case-company">Anukarati Homes Pvt. Ltd.</div>
+      </div>
+      <div class="case-meta">
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Senior Engineer – ERP Implementations</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Duration</div>
+          <div class="meta-value">Aug 2025 – Jan 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">ERP Type</div>
+          <div class="meta-value">Cloud-based ERP</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="case-title">Cloud ERP System Administration & Multi-System API Integration</div>
+      <div class="case-challenge-label">Challenge</div>
+      <p class="case-text">Anukarati Homes needed a fully configured cloud ERP acting as a single source of truth across procurement, project engineering, finance, and contractor management — with real-time visibility into project-wise costs and P&L.</p>
+      <div class="case-challenge-label">Solution</div>
+      <p class="case-text">Acted as System Administrator for the cloud ERP. Configured cost centers, account groups, and ledgers enabling accurate project-wise accounting. Designed management dashboards for real-time business visibility. Led API integrations between ERP and Zoho CRM and Strategic ERP using REST-based architecture.</p>
+      <div class="case-results">
+        <div class="result-item">
+          <div class="result-num">8+</div>
+          <div class="result-label">ERP Modules Live</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">2</div>
+          <div class="result-label">API Integrations</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">100%</div>
+          <div class="result-label">Schedule III Compliance</div>
+        </div>
+      </div>
+      <div class="case-modules">
+        <span class="module-tag">Purchase</span>
+        <span class="module-tag">Inventory</span>
+        <span class="module-tag">Project Engineering</span>
+        <span class="module-tag">Finance</span>
+        <span class="module-tag">Contractor Mgmt</span>
+        <span class="module-tag">Pre-Sales</span>
+        <span class="module-tag">Zoho CRM API</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="case-card fade-up">
+    <div class="case-sidebar">
+      <div>
+        <div class="case-industry">Manufacturing & Pharma · Pan India + Nepal</div>
+        <div class="case-company">Professional Consultancy Services</div>
+      </div>
+      <div class="case-meta">
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">ERP Implementation Engineer</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Duration</div>
+          <div class="meta-value">Apr 2024 – Aug 2025</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">Multi-client · International</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="case-title">End-to-End ERP Deployments for Manufacturing & Pharmaceutical Clients</div>
+      <div class="case-challenge-label">Challenge</div>
+      <p class="case-text">Multiple manufacturing and pharma clients with legacy systems, disconnected workflows, and compliance gaps. Batch manufacturing processes, GMP requirements, and complex BOM structures needed to be mapped precisely into the ERP with zero tolerance for data loss during migration.</p>
+      <div class="case-challenge-label">Solution</div>
+      <p class="case-text">Conducted detailed shop-floor process studies including batch manufacturing workflows and quality control checkpoints. Mapped client processes into ERP configurations aligned with GMP, SOP, and compliance requirements. Managed master data setup and executed structured data migration. Handled an international ERP deployment in Nepal including localization and compliance adjustments.</p>
+      <div class="case-results">
+        <div class="result-item">
+          <div class="result-num">5+</div>
+          <div class="result-label">Clients Deployed</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">1</div>
+          <div class="result-label">Int'l Deployment</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">0</div>
+          <div class="result-label">Go-Live Failures</div>
+        </div>
+      </div>
+      <div class="case-modules">
+        <span class="module-tag">Production Planning</span>
+        <span class="module-tag">QA/QC</span>
+        <span class="module-tag">Batch Processing</span>
+        <span class="module-tag">BOM Management</span>
+        <span class="module-tag">Procurement</span>
+        <span class="module-tag">Distribution</span>
+        <span class="module-tag">Nepal Localization</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 3 -->
+  <div class="case-card fade-up">
+    <div class="case-sidebar">
+      <div>
+        <div class="case-industry">EdTech · Mumbai</div>
+        <div class="case-company">TeamLease EdTech Ltd.</div>
+      </div>
+      <div class="case-meta">
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Associate Support Engineer</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Duration</div>
+          <div class="meta-value">Apr 2022 – Apr 2024</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Systems</div>
+          <div class="meta-value">8 ERP/CRM Applications</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="case-title">Multi-Application ERP/CRM Management & Organizational Digital Transformation</div>
+      <div class="case-challenge-label">Challenge</div>
+      <p class="case-text">Managing 8 critical business applications simultaneously — including ERP, CRM (Extraedge, Salesforce, Exotel), and a University Management System (UMS) — while maintaining maximum uptime, driving user adoption, and supporting pre-sales RFP documentation.</p>
+      <div class="case-challenge-label">Solution</div>
+      <p class="case-text">Built a structured support framework for all 8 applications with root cause analysis (RCA) protocols for recurring issues. Designed and delivered end-user training programs, coordinated third-party training sessions, and led user onboarding initiatives. Supported BRD/FRD documentation during pre-sales phases. Received direct appreciation from clients for system stability and training quality.</p>
+      <div class="case-results">
+        <div class="result-item">
+          <div class="result-num">8</div>
+          <div class="result-label">Apps Managed</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">✉️</div>
+          <div class="result-label">Client Recognition</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">99%+</div>
+          <div class="result-label">System Uptime</div>
+        </div>
+      </div>
+      <div class="case-modules">
+        <span class="module-tag">CRM (Salesforce)</span>
+        <span class="module-tag">Extraedge</span>
+        <span class="module-tag">Exotel</span>
+        <span class="module-tag">UMS</span>
+        <span class="module-tag">RCA</span>
+        <span class="module-tag">BRD/FRD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSIGNMENT SHOWCASE -->
+<section class="assignment-section fade-up">
+  <div class="section-tag">Latest Work Sample</div>
+  <h2>Digital ERP Workflow Design — Interview Assignment</h2>
+  <p class="assignment-sub">Recently designed a complete SaaS ERP workflow specification covering master data, purchase-to-pay, order-to-cash, approval matrices, WhatsApp/email integration, multi-tenancy, and security architecture.</p>
+  <div class="assignment-grid">
+    <div class="assign-item">
+      <div class="assign-icon">📋</div>
+      <div class="assign-title">Master Data Framework</div>
+      <p class="assign-desc">Vendor, Customer, Item, GL, Control Accounts, Opening Balances — complete setup protocol with dependency mapping.</p>
+    </div>
+    <div class="assign-item">
+      <div class="assign-icon">🔄</div>
+      <div class="assign-title">Purchase-to-Pay Flow</div>
+      <p class="assign-desc">PR → RFQ → Quotation → PO → GRN → PI → Payment — with automated approval matrix and accounting entries at each stage.</p>
+    </div>
+    <div class="assign-item">
+      <div class="assign-icon">📱</div>
+      <div class="assign-title">WhatsApp + Email Approvals</div>
+      <p class="assign-desc">Token-based, time-bound mobile approval links using WhatsApp Business API. Approvers act from their phone without opening the ERP.</p>
+    </div>
+    <div class="assign-item">
+      <div class="assign-icon">☁️</div>
+      <div class="assign-title">Multi-Tenant SaaS Architecture</div>
+      <p class="assign-desc">Shared database with Tenant ID isolation, separate approval workflows per tenant, centralized maintenance and easy scalability.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section fade-up">
+  <h2>Want This Level of Thinking on Your Project?</h2>
+  <p>Let's talk about your ERP challenges. Free 30-minute discovery call to assess your situation and explore what's possible.</p>
+  <a href="./contact.html" class="btn-white">Book a Free Call →</a>
+</div>
+
+<footer>
+  <span style="font-size:0.85rem;">© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai</span>
+  <div class="footer-links">
+    <a href="./services.html">Services</a>
+    <a href="./case-studies.html">Case Studies</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
