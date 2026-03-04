@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ERP ROI Calculator – Pratik Mahadik ERP Consultant</title>
+<meta name="description" content="Calculate the ROI of ERP implementation for your business. See your potential savings, payback period and 3-year ROI in minutes. Free tool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0f;--paper:#f5f3ee;--accent:#c8410a;--accent2:#e8a87c;--muted:#6b6b7b;--border:#dddad3;--card:#fff;--green:#16a34a;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,243,238,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-back{font-size:0.82rem;color:var(--muted);text-decoration:none;font-weight:500;}
+.nav-back:hover{color:var(--accent);}
+
+.hero{padding:7rem 2rem 3rem;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(200,65,10,0.2),transparent 70%);}
+.hero-inner{position:relative;z-index:2;max-width:600px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,65,10,0.15);border:1px solid rgba(200,65,10,0.3);color:var(--accent2);padding:0.4rem 1rem;border-radius:999px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem;}
+.hero h1 em{color:var(--accent2);font-style:normal;}
+.hero p{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
+.wrap{max-width:900px;margin:0 auto;padding:3rem 2rem 5rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+
+.card{background:white;border:1px solid var(--border);border-radius:8px;padding:2rem;box-shadow:0 2px 20px rgba(0,0,0,0.04);}
+.card-tag{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.4rem;}
+.card-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+
+.fg{margin-bottom:1.1rem;}
+.fg label{display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--muted);margin-bottom:0.4rem;}
+.fg label span{font-size:0.78rem;color:var(--ink);font-weight:700;text-transform:none;letter-spacing:0;}
+.fg input[type=range]{width:100%;accent-color:var(--accent);height:4px;cursor:pointer;}
+.fg .val-display{background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:0.4rem 0.8rem;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--ink);text-align:center;margin-top:0.4rem;}
+.fg select{width:100%;padding:0.7rem 0.9rem;border:1.5px solid var(--border);border-radius:4px;font-family:'DM Sans',sans-serif;font-size:0.9rem;background:white;color:var(--ink);outline:none;}
+.fg select:focus{border-color:var(--accent);}
+
+.section-div{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);padding:0.4rem 0;border-bottom:1px solid var(--border);margin:1.2rem 0 1rem;}
+
+/* RESULTS */
+.result-card{background:var(--ink);border-radius:8px;padding:2rem;position:sticky;top:80px;}
+.result-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:white;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+.result-title::before{content:'✦';color:var(--accent2);}
+
+.roi-highlight{background:linear-gradient(135deg,rgba(200,65,10,0.2),rgba(232,168,124,0.1));border:1px solid rgba(200,65,10,0.3);border-radius:6px;padding:1.2rem;text-align:center;margin-bottom:1rem;}
+.roi-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent2);font-weight:700;margin-bottom:0.3rem;}
+.roi-value{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:white;line-height:1;}
+.roi-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;}
+
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;}
+.metric{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:0.9rem;text-align:center;}
+.metric-val{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:white;}
+.metric-val.green{color:#4ade80;}
+.metric-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.4);margin-top:0.2rem;}
+
+.savings-breakdown{margin-bottom:1.2rem;}
+.sb-title{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);font-weight:700;margin-bottom:0.6rem;}
+.sb-row{display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.82rem;}
+.sb-row:last-child{border-bottom:none;}
+.sb-name{color:rgba(255,255,255,0.6);}
+.sb-val{color:#4ade80;font-weight:600;font-family:'Syne',sans-serif;}
+
+.payback-bar-wrap{background:rgba(255,255,255,0.08);border-radius:2px;height:6px;margin:0.5rem 0;}
+.payback-bar{height:100%;background:var(--accent);border-radius:2px;transition:width 0.6s ease;}
+
+.btn-wa{width:100%;padding:0.85rem;background:#25d366;color:white;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:0.5rem;text-decoration:none;margin-bottom:0.6rem;}
+.btn-wa:hover{background:#1da851;}
+.btn-hire{width:100%;padding:0.85rem;background:var(--accent);color:white;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;text-decoration:none;display:block;text-align:center;}
+.btn-hire:hover{background:#a83308;}
+
+.disclaimer{font-size:0.72rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:0.8rem;line-height:1.5;}
+
+.fade-in{animation:fadeIn 0.5s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:2rem;text-align:center;font-size:0.8rem;border-top:1px solid rgba(255,255,255,0.06);}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+footer a:hover{color:white;}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .wrap{padding:2rem 1rem 4rem;}
+  .two-col{grid-template-columns:1fr;}
+  .result-card{position:static;}
+  .metrics-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <a href="./index.html" class="nav-back">← Back to site</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Free Calculator</div>
+    <h1>What's the <em>ROI of ERP</em> for Your Business?</h1>
+    <p>Move the sliders to match your business — see your estimated annual savings, payback period and 3-year ROI instantly. Based on real implementation data.</p>
+  </div>
+</div>
+
+<div class="wrap fade-in">
+  <div class="two-col">
+
+    <!-- LEFT: INPUTS -->
+    <div class="card">
+      <div class="card-tag">Your Business</div>
+      <div class="card-title">Enter Your Numbers</div>
+
+      <div class="section-div">Business Size</div>
+
+      <div class="fg">
+        <label>Number of Employees <span id="v-emp">25</span></label>
+        <input type="range" id="employees" min="5" max="500" value="25" step="5" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Annual Turnover <span id="v-turn">₹5 Cr</span></label>
+        <input type="range" id="turnover" min="1" max="100" value="5" step="1" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Industry</label>
+        <select id="industry" onchange="update()">
+          <option value="manufacturing">Manufacturing</option>
+          <option value="pharma">Pharma</option>
+          <option value="realestate">Real Estate</option>
+          <option value="edtech">EdTech / Services</option>
+          <option value="trading">Trading / Distribution</option>
+        </select>
+      </div>
+
+      <div class="section-div">Current Manual Operations</div>
+
+      <div class="fg">
+        <label>Staff hours/week on manual data entry <span id="v-entry">20 hrs</span></label>
+        <input type="range" id="dataEntry" min="2" max="100" value="20" step="2" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Staff hours/week on manual reporting <span id="v-report">10 hrs</span></label>
+        <input type="range" id="reporting" min="2" max="60" value="10" step="2" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Estimated inventory errors/month (₹000s) <span id="v-inv">₹50K</span></label>
+        <input type="range" id="invError" min="10" max="500" value="50" step="10" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Procurement delays cost/month (₹000s) <span id="v-proc">₹30K</span></label>
+        <input type="range" id="procDelay" min="5" max="300" value="30" step="5" oninput="update()">
+      </div>
+
+      <div class="section-div">ERP Investment</div>
+
+      <div class="fg">
+        <label>Expected ERP implementation cost <span id="v-cost">₹75K</span></label>
+        <input type="range" id="erpCost" min="20" max="300" value="75" step="5" oninput="update()">
+      </div>
+
+      <div class="fg">
+        <label>Average employee hourly cost (₹) <span id="v-wage">₹150</span></label>
+        <input type="range" id="wage" min="50" max="500" value="150" step="25" oninput="update()">
+      </div>
+
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div class="result-card">
+      <div class="result-title">Your ERP ROI Estimate</div>
+
+      <div class="roi-highlight">
+        <div class="roi-label">3-Year ROI</div>
+        <div class="roi-value" id="roi3yr">—</div>
+        <div class="roi-sub">Return on your ERP investment</div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-val green" id="annualSaving">—</div>
+          <div class="metric-label">Annual Savings</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val" id="paybackMonths">—</div>
+          <div class="metric-label">Payback Period</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val green" id="yr1net">—</div>
+          <div class="metric-label">Year 1 Net Gain</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val green" id="yr3net">—</div>
+          <div class="metric-label">3-Year Net Gain</div>
+        </div>
+      </div>
+
+      <div class="savings-breakdown">
+        <div class="sb-title">Savings Breakdown (Annual)</div>
+        <div class="sb-row"><span class="sb-name">Labour (data entry)</span><span class="sb-val" id="sb1">—</span></div>
+        <div class="sb-row"><span class="sb-name">Labour (reporting)</span><span class="sb-val" id="sb2">—</span></div>
+        <div class="sb-row"><span class="sb-name">Inventory error reduction</span><span class="sb-val" id="sb3">—</span></div>
+        <div class="sb-row"><span class="sb-name">Procurement efficiency</span><span class="sb-val" id="sb4">—</span></div>
+        <div class="sb-row"><span class="sb-name">Industry-specific gains</span><span class="sb-val" id="sb5">—</span></div>
+      </div>
+
+      <div style="margin-bottom:1rem;">
+        <div class="sb-title">Payback Timeline</div>
+        <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:0.3rem;">
+          <span>0 months</span><span id="paybackLabel">—</span><span>24 months</span>
+        </div>
+        <div class="payback-bar-wrap"><div class="payback-bar" id="paybackBar" style="width:50%"></div></div>
+      </div>
+
+      <a class="btn-wa" id="btnWA" onclick="sendWA()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Share My ROI on WhatsApp
+      </a>
+      <a href="./contact.html" class="btn-hire">Book Free Discovery Call →</a>
+      <p class="disclaimer">Estimates based on industry averages from real ERP implementations. Actual results vary by business size, industry and implementation quality.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai · <a href="./index.html">work.pratikmahadik.com</a></p>
+</footer>
+
+<script>
+// Industry multipliers for specific gains
+const industryData = {
+  manufacturing: { name: 'Manufacturing', bonus: 1.2, bonusLabel: 'Production planning & BOM savings' },
+  pharma:        { name: 'Pharma',         bonus: 1.35, bonusLabel: 'Compliance & batch tracking savings' },
+  realestate:    { name: 'Real Estate',    bonus: 1.1,  bonusLabel: 'Project cost tracking savings' },
+  edtech:        { name: 'EdTech',         bonus: 1.0,  bonusLabel: 'CRM & admissions efficiency' },
+  trading:       { name: 'Trading',        bonus: 1.15, bonusLabel: 'Inventory & dispatch savings' }
+};
+
+function fmt(n) {
+  if (n >= 10000000) return '₹' + (n/10000000).toFixed(1) + ' Cr';
+  if (n >= 100000)   return '₹' + (n/100000).toFixed(1) + ' L';
+  if (n >= 1000)     return '₹' + (n/1000).toFixed(0) + 'K';
+  return '₹' + Math.round(n);
+}
+
+function update() {
+  const emp     = +document.getElementById('employees').value;
+  const turn    = +document.getElementById('turnover').value;
+  const entry   = +document.getElementById('dataEntry').value;
+  const rep     = +document.getElementById('reporting').value;
+  const inv     = +document.getElementById('invError').value * 1000;
+  const proc    = +document.getElementById('procDelay').value * 1000;
+  const cost    = +document.getElementById('erpCost').value * 1000;
+  const wage    = +document.getElementById('wage').value;
+  const ind     = document.getElementById('industry').value;
+
+  // Update display labels
+  document.getElementById('v-emp').textContent   = emp;
+  document.getElementById('v-turn').textContent  = '₹' + turn + ' Cr';
+  document.getElementById('v-entry').textContent = entry + ' hrs';
+  document.getElementById('v-report').textContent= rep + ' hrs';
+  document.getElementById('v-inv').textContent   = '₹' + (inv/1000) + 'K';
+  document.getElementById('v-proc').textContent  = '₹' + (proc/1000) + 'K';
+  document.getElementById('v-cost').textContent  = '₹' + (cost/1000) + 'K';
+  document.getElementById('v-wage').textContent  = '₹' + wage;
+
+  // Calculate savings
+  // ERP reduces data entry by ~70%, reporting by ~80%
+  const labourEntry   = entry * wage * 52 * 0.70;
+  const labourReport  = rep   * wage * 52 * 0.80;
+  const invSaving     = inv   * 12  * 0.60;  // 60% reduction in inventory errors
+  const procSaving    = proc  * 12  * 0.50;  // 50% procurement efficiency gain
+  const indData       = industryData[ind];
+  const indBonus      = (labourEntry + labourReport + invSaving + procSaving) * (indData.bonus - 1);
+
+  const totalAnnual   = labourEntry + labourReport + invSaving + procSaving + indBonus;
+  const yr1net        = totalAnnual - cost;
+  const yr3net        = (totalAnnual * 3) - cost;
+  const roi3          = ((yr3net / cost) * 100).toFixed(0);
+  const paybackM      = Math.max(1, Math.round((cost / totalAnnual) * 12));
+
+  // Update UI
+  document.getElementById('roi3yr').textContent       = roi3 + '%';
+  document.getElementById('annualSaving').textContent = fmt(totalAnnual);
+  document.getElementById('paybackMonths').textContent= paybackM + ' months';
+  document.getElementById('yr1net').textContent       = fmt(yr1net);
+  document.getElementById('yr3net').textContent       = fmt(yr3net);
+  document.getElementById('sb1').textContent          = fmt(labourEntry);
+  document.getElementById('sb2').textContent          = fmt(labourReport);
+  document.getElementById('sb3').textContent          = fmt(invSaving);
+  document.getElementById('sb4').textContent          = fmt(procSaving);
+  document.getElementById('sb5').textContent          = fmt(indBonus);
+  document.getElementById('paybackLabel').textContent = paybackM + ' mo';
+
+  const barPct = Math.min(100, (paybackM / 24) * 100);
+  document.getElementById('paybackBar').style.width   = barPct + '%';
+
+  // Color ROI
+  const roiEl = document.getElementById('roi3yr');
+  roiEl.style.color = roi3 > 200 ? '#4ade80' : roi3 > 100 ? var_accent2() : 'white';
+}
+
+function var_accent2(){ return '#e8a87c'; }
+
+function sendWA() {
+  const roi  = document.getElementById('roi3yr').textContent;
+  const sav  = document.getElementById('annualSaving').textContent;
+  const pay  = document.getElementById('paybackMonths').textContent;
+  const yr3  = document.getElementById('yr3net').textContent;
+  const ind  = document.getElementById('industry').options[document.getElementById('industry').selectedIndex].text;
+
+  const msg = `Hi Pratik! I just used your ERP ROI Calculator.\n\n*My Results:*\n• Industry: ${ind}\n• Annual Savings Estimate: ${sav}\n• Payback Period: ${pay}\n• 3-Year ROI: ${roi}\n• 3-Year Net Gain: ${yr3}\n\nI'd like to discuss a real ERP implementation for my business. Can we schedule a free discovery call?`;
+  window.open(`https://wa.me/919607509691?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// Init
+update();
+</script>
+</body>
+</html>
