@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Pratik Mahadik ERP Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0a0a0f;--ink2:#1a1a2e;--paper:#f5f3ee;--accent:#c8410a;--accent2:#e8a87c;--muted:#6b6b7b;--border:#dddad3; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(245,243,238,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{font-size:0.88rem;font-weight:500;text-transform:uppercase;letter-spacing:0.02em;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--accent);}
+  .nav-cta{background:var(--accent);color:white;padding:0.6rem 1.4rem;border-radius:2px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:72px;}
+  .c-left{background:var(--ink2);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
+  .c-tag{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);font-weight:600;margin-bottom:1rem;}
+  .c-left h1{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:white;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.2rem;}
+  .c-left h1 em{color:var(--accent2);font-style:normal;}
+  .c-left p{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:2.5rem;font-weight:300;}
+  .channel{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.07);text-decoration:none;}
+  .ch-icon{width:42px;height:42px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .ch-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+  .ch-val{font-size:0.92rem;color:white;font-weight:500;margin-top:0.1rem;}
+  .avail{margin-top:2.5rem;padding:1.2rem;background:rgba(200,65,10,0.12);border:1px solid rgba(200,65,10,0.25);border-radius:2px;}
+  .avail-title{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent2);font-weight:600;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem;}
+  .avail-title::before{content:'●';color:#25d366;font-size:0.5rem;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  .avail p{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;}
+
+  .c-right{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
+  .c-right h2{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:0.4rem;}
+  .c-right .sub{font-size:0.9rem;color:var(--muted);margin-bottom:2.5rem;}
+  .fg{margin-bottom:1.3rem;}
+  label{display:block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;color:var(--muted);margin-bottom:0.45rem;}
+  input,select,textarea{width:100%;padding:0.8rem 1rem;border:1.5px solid var(--border);border-radius:2px;font-family:'DM Sans',sans-serif;font-size:0.93rem;background:white;color:var(--ink);outline:none;transition:border-color 0.2s;}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent);}
+  textarea{height:120px;resize:vertical;}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .btn-send{width:100%;padding:1rem;background:var(--accent);color:white;border:none;border-radius:2px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;}
+  .btn-send:hover{background:#a83308;transform:translateY(-1px);}
+  .form-note{font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.8rem;}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
+  footer a:hover{color:white;}
+  .fl{display:flex;gap:2rem;font-size:0.85rem;}
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .c-left,.c-right{padding:3rem 1.5rem;}
+    .frow{grid-template-columns:1fr;}
+    footer{flex-direction:column;text-align:center;padding:1.5rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="./erp.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
+  <ul class="nav-links">
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./case-studies.html">Case Studies</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+  <a href="./contact.html" class="nav-cta">Hire Me →</a>
+</nav>
+
+<div class="contact-wrap">
+  <div class="c-left">
+    <div class="c-tag">— Get In Touch</div>
+    <h1>Let's Solve Your <em>ERP Challenge</em></h1>
+    <p>Whether you need a full ERP implementation, an AI workflow audit, or a 30-minute sanity check — I'm here. Response within 24 hours guaranteed.</p>
+
+    <a href="https://wa.me/919607509691?text=Hi%20Pratik%2C%20I%20need%20ERP%20consulting%20help" target="_blank" class="channel">
+      <div class="ch-icon" style="background:rgba(37,211,102,0.15);">💬</div>
+      <div><div class="ch-label">WhatsApp (Fastest)</div><div class="ch-val">+91 96075 09691</div></div>
+    </a>
+    <a href="/cdn-cgi/l/email-protection#f9898b988d9092c0c9cb949891989d9092b99e94989095d79a9694" class="channel">
+      <div class="ch-icon" style="background:rgba(200,65,10,0.15);">✉️</div>
+      <div><div class="ch-label">Email</div><div class="ch-val"><span class="__cf_email__" data-cfemail="abdbd9cadfc2c0929b99c6cac3cacfc2c0ebccc6cac2c785c8c4c6">[email&#160;protected]</span></div></div>
+    </a>
+    <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank" class="channel">
+      <div class="ch-icon" style="background:rgba(10,102,194,0.15);">💼</div>
+      <div><div class="ch-label">LinkedIn</div><div class="ch-val">pratik-mahadik-85173a1a6</div></div>
+    </a>
+
+    <div class="avail">
+      <div class="avail-title">Currently Available</div>
+      <p>Open to ERP consulting projects, AI analysis engagements, and full-time roles in Mumbai or remote. Typical response time: under 12 hours.</p>
+    </div>
+  </div>
+
+  <div class="c-right">
+    <h2>Send a Project Brief</h2>
+    <div class="sub">Tell me about your project — I'll respond with a scoping estimate within 24 hours.</div>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="frow">
+        <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
+        <div class="fg"><label>Company</label><input type="text" name="company" placeholder="ABC Manufacturing Ltd."></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="rahul@company.com" required></div>
+      <div class="fg">
+        <label>Service Needed</label>
+        <select name="service">
+          <option value="">Select a service...</option>
+          <option>ERP Implementation (Full)</option>
+          <option>ERP Audit & Optimization</option>
+          <option>AI Business Analysis</option>
+          <option>ERP Integration / APIs</option>
+          <option>ERP Training & Documentation</option>
+          <option>Digital ERP Product Design</option>
+          <option>Monthly Retainer</option>
+          <option>Not sure — need advice</option>
+        </select>
+      </div>
+      <div class="fg"><label>Tell me about your project</label><textarea name="message" placeholder="Brief description of your business, current system, challenges and what you're hoping to achieve..." required></textarea></div>
+      <button type="submit" class="btn-send">Send Message →</button>
+      <p class="form-note">Or WhatsApp me directly for a faster response — I typically reply within a few hours.</p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <span style="font-size:0.85rem;">© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai</span>
+  <div class="fl">
+    <a href="./services.html">Services</a>
+    <a href="./case-studies.html">Case Studies</a>
+    <a href="about.htm
