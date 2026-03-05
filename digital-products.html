@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI + ERP Guides | Pratik Mahadik</title>
+  <meta name="description" content="Practical AI + ERP automation guides for Indian SMEs. Built from real implementations across Manufacturing, Pharma, Real Estate and EdTech.">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0f1a; --surface: #111827; --card: #161d2e; --border: #1e2d45;
+      --gold: #f0b429; --gold-dim: rgba(240,180,41,0.15);
+      --teal: #00c9a7; --teal-dim: rgba(0,201,167,0.12);
+      --text: #e8edf5; --muted: #7a8599; --soft: #c4cdd8;
+    }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    nav { padding: 1.2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(11,15,26,0.95); backdrop-filter: blur(12px); z-index: 50; }
+    .nav-brand { font-family: 'Syne', sans-serif; font-size: 1.1rem; color: var(--gold); text-decoration: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 2rem; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--gold) !important; color: #0b0f1a !important; padding: 0.4rem 1rem; border-radius: 6px; font-weight: 600 !important; }
+
+    .hero { padding: 6rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(240,180,41,0.08) 0%, transparent 70%); pointer-events: none; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold-dim); border: 1px solid rgba(240,180,41,0.3); color: var(--gold); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 780px; margin: 0 auto 1.4rem; }
+    .hero h1 .gold { color: var(--gold); } .hero h1 .teal { color: var(--teal); }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+    .section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    .section-sub { font-size: 0.85rem; color: var(--muted); }
+
+    .featured { background: linear-gradient(135deg, #0d1f35 0%, #0b1a2e 100%); border: 1px solid rgba(240,180,41,0.25); border-radius: 20px; padding: 3rem; display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: center; margin-bottom: 4rem; position: relative; overflow: hidden; }
+    .featured::before { content: 'BESTSELLER'; position: absolute; top: 1.2rem; right: -2.5rem; background: var(--gold); color: #0b0f1a; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; padding: 0.35rem 3rem; transform: rotate(35deg); }
+    .feat-tag { display: inline-block; background: var(--gold-dim); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 4px; margin-bottom: 1rem; }
+    .featured h2 { font-family: 'Syne', sans-serif; font-size: 1.9rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 1rem; line-height: 1.2; }
+    .featured .desc { color: var(--soft); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    .wi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.8rem; }
+    .wi { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--soft); }
+    .wi::before { content: '→'; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+    .feat-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold { background: var(--gold); color: #0b0f1a; padding: 0.75rem 1.8rem; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; font-family: 'Instrument Sans', sans-serif; transition: opacity 0.2s; display: inline-block; }
+    .btn-gold:hover { opacity: 0.88; }
+    .btn-ghost { color: var(--muted); font-size: 0.88rem; text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+    .btn-ghost:hover { color: var(--text); }
+
+    .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; }
+    .pc-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+    .pc-price { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 0.3rem; }
+    .pc-price sup { font-size: 1.2rem; vertical-align: super; }
+    .pc-orig { font-size: 0.88rem; color: var(--muted); text-decoration: line-through; margin-bottom: 0.5rem; }
+    .pc-save { display: inline-block; background: rgba(0,201,167,0.15); color: var(--teal); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; margin-bottom: 1.5rem; }
+    .pc-features { text-align: left; margin-bottom: 1.5rem; }
+    .pf { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--soft); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .pf:last-child { border-bottom: none; }
+    .pf-check { color: var(--teal); }
+    .btn-gold-full { display: block; background: var(--gold); color: #0b0f1a; padding: 0.8rem; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; text-align: center; transition: opacity 0.2s; font-family: 'Instrument Sans', sans-serif; }
+    .btn-gold-full:hover { opacity: 0.88; }
+    .pc-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.8rem; }
+
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .gcard { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.25s, transform 0.25s; display: flex; flex-direction: column; position: relative; }
+    .gcard:hover { border-color: rgba(240,180,41,0.3); transform: translateY(-3px); }
+    .gcard-top { height: 100px; display: flex; align-items: center; padding: 0 1.8rem; gap: 1rem; position: relative; }
+    .ct-teal { background: linear-gradient(135deg, #003d35, #005c50); }
+    .ct-gold { background: linear-gradient(135deg, #2d1f00, #4a3300); }
+    .ct-blue { background: linear-gradient(135deg, #001a3d, #002966); }
+    .ct-purple { background: linear-gradient(135deg, #1a0033, #2d0052); }
+    .ct-rust { background: linear-gradient(135deg, #2d0f00, #4a1a00); }
+    .ct-green { background: linear-gradient(135deg, #001a10, #002d1c); }
+    .card-ico { font-size: 2.2rem; }
+    .card-ind { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-bottom: 0.2rem; }
+    .card-ttl { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.2; }
+    .card-new { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--teal); color: #0b0f1a; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 100px; }
+    .gbody { padding: 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .gdesc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 1.2rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+    .chip { background: rgba(255,255,255,0.05); color: var(--muted); font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); }
+    .gfoot { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .gprice { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gold); }
+    .gprice-old { font-size: 0.78rem; color: var(--muted); text-decoration: line-through; margin-left: 0.3rem; }
+    .btn-card { background: transparent; border: 1px solid var(--border); color: var(--soft); padding: 0.5rem 1.1rem; border-radius: 7px; font-size: 0.82rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: 'Instrument Sans', sans-serif; display: inline-block; }
+    .btn-card:hover { background: var(--gold); border-color: var(--gold); color: #0b0f1a; }
+
+    .bundle { background: var(--surface); border: 1px solid rgba(0,201,167,0.2); border-radius: 20px; padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; margin-top: 3rem; }
+    .bundle-eye { display: inline-block; background: var(--teal-dim); color: var(--teal); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 4px; margin-bottom: 0.8rem; }
+    .bundle h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.7rem; }
+    .bundle p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
+    .b-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .b-item { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--soft); font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 4px; }
+    .bprice-box { text-align: center; min-width: 180px; }
+    .bprice-old { color: var(--muted); text-decoration: line-through; font-size: 0.95rem; }
+    .bprice { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--teal); line-height: 1.1; }
+    .bprice sup { font-size: 1.1rem; vertical-align: super; }
+    .bsave { font-size: 0.78rem; color: var(--teal); margin: 0.3rem 0 1.2rem; }
+    .btn-teal { display: block; background: var(--teal); color: #0b0f1a; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; text-align: center; transition: opacity 0.2s; font-family: 'Instrument Sans', sans-serif; }
+    .btn-teal:hover { opacity: 0.88; }
+
+    .why-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .why-grid { max-width: 1100px; margin: 0 auto; padding: 3.5rem 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+    .why-item { text-align: center; }
+    .why-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .why-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .why-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    .cta-strip { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; text-align: center; }
+    .cta-strip h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+    .cta-strip p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.8rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .featured, .bundle { grid-template-columns: 1fr; }
+      .wi-grid { grid-template-columns: 1fr; }
+      .bprice-box { text-align: left; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Pratik Mahadik</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Book Free Call</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">⚡ Digital Guides</div>
+  <h1><span class="gold">AI + ERP</span> Automation Guides<br/>for <span class="teal">Indian SMEs</span></h1>
+  <p>Practical, no-fluff guides built from real implementations across Manufacturing, Pharma, Real Estate & EdTech. Apply this week — not someday.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years on-site implementations</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Industries covered</div></div>
+    <div class="stat"><div class="stat-num">🇮🇳</div><div class="stat-label">Built for Indian businesses</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+
+  <!-- FEATURED -->
+  <div class="featured">
+    <div>
+      <span class="feat-tag">⭐ Featured Guide</span>
+      <h2>The Complete AI + ERP<br/>Automation Playbook</h2>
+      <p class="desc">The only guide that bridges AI tools (ChatGPT, Copilot, Zapier) with your existing ERP system. Step-by-step automation recipes for finance, inventory, procurement and HR — no coding required.</p>
+      <div class="wi-grid">
+        <div class="wi">Connect AI tools to your ERP data</div>
+        <div class="wi">10 automation workflows — build this week</div>
+        <div class="wi">Prompt templates for ERP report generation</div>
+        <div class="wi">AI-powered inventory forecasting setup</div>
+        <div class="wi">Automate vendor communication with AI</div>
+        <div class="wi">GST & compliance automation guide</div>
+        <div class="wi">Case study: 40% time saving in accounts</div>
+        <div class="wi">Marathi language prompts for shop floor</div>
+      </div>
+      <div class="feat-actions">
+        <a href="contact.html" class="btn-gold">Get This Guide →</a>
+        <a href="process.html" class="btn-ghost">See how it works</a>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="pc-label">One-time purchase</div>
+      <div class="pc-price"><sup>₹</sup>1,499</div>
+      <div class="pc-orig">₹2,999</div>
+      <div class="pc-save">Save 50% — Launch Price</div>
+      <div class="pc-features">
+        <div class="pf"><span class="pf-check">✓</span> 60-page PDF guide</div>
+        <div class="pf"><span class="pf-check">✓</span> 10 automation templates</div>
+        <div class="pf"><span class="pf-check">✓</span> Prompt library (50+ prompts)</div>
+        <div class="pf"><span class="pf-check">✓</span> Works with SAP, Odoo, Tally, Zoho</div>
+        <div class="pf"><span class="pf-check">✓</span> Lifetime access + updates</div>
+        <div class="pf"><span class="pf-check">✓</span> Marathi + English</div>
+      </div>
+      <a href="contact.html" class="btn-gold-full">Buy Now — ₹1,499</a>
+      <div class="pc-note">💬 Payment via UPI / Bank Transfer · Instant delivery</div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="section-header">
+    <div class="section-title">More Guides</div>
+    <div class="section-sub">Industry-specific automation playbooks</div>
+  </div>
+  <div class="guides-grid">
+
+    <div class="gcard">
+      <div class="gcard-top ct-teal">
+        <div class="card-ico">🏭</div>
+        <div><div class="card-ind">Manufacturing</div><div class="card-ttl">AI Automation for<br/>Manufacturing ERP</div></div>
+        <span class="card-new">New</span>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Automate production planning, inventory alerts, quality checks and purchase orders using AI. Built for Pune/Maharashtra manufacturing units.</div>
+        <div class="chips"><span class="chip">Production Planning</span><span class="chip">Inventory AI</span><span class="chip">Purchase Orders</span><span class="chip">35 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹799</span><span class="gprice-old">₹1,499</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-top ct-gold">
+        <div class="card-ico">💊</div>
+        <div><div class="card-ind">Pharma</div><div class="card-ttl">AI + ERP for<br/>Pharma Compliance</div></div>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Automate batch tracking, regulatory reporting, expiry alerts and audit trails. Reduce compliance effort by 60% using AI-assisted ERP workflows.</div>
+        <div class="chips"><span class="chip">Batch Tracking</span><span class="chip">Compliance AI</span><span class="chip">Audit Automation</span><span class="chip">40 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹899</span><span class="gprice-old">₹1,699</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-top ct-blue">
+        <div class="card-ico">🏢</div>
+        <div><div class="card-ind">Real Estate</div><div class="card-ttl">AI Automation for<br/>Real Estate ERP</div></div>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Automate lead follow-ups, payment reminders, project milestone alerts and cost overrun detection. Works with Tally, Zoho and custom ERP systems.</div>
+        <div class="chips"><span class="chip">Lead Automation</span><span class="chip">Payment Alerts</span><span class="chip">Cost Tracking</span><span class="chip">30 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹699</span><span class="gprice-old">₹1,299</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-top ct-purple">
+        <div class="card-ico">🎓</div>
+        <div><div class="card-ind">EdTech</div><div class="card-ttl">AI + ERP for<br/>Education Institutions</div></div>
+        <span class="card-new">New</span>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Automate fee collection reminders, attendance reporting, staff payroll triggers and admission pipeline tracking using AI-enhanced ERP workflows.</div>
+        <div class="chips"><span class="chip">Fee Automation</span><span class="chip">Attendance AI</span><span class="chip">Admissions</span><span class="chip">28 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹599</span><span class="gprice-old">₹999</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-top ct-rust">
+        <div class="card-ico">🗣️</div>
+        <div><div class="card-ind">मराठी · All Industries</div><div class="card-ttl">AI Automation Guide<br/>in Marathi</div></div>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Complete AI + ERP automation guide written entirely in Marathi. For business owners and team leads who are more comfortable in Marathi than English.</div>
+        <div class="chips"><span class="chip">मराठी</span><span class="chip">All Industries</span><span class="chip">Shop Floor Ready</span><span class="chip">45 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹699</span><span class="gprice-old">₹1,299</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+    <div class="gcard">
+      <div class="gcard-top ct-green">
+        <div class="card-ico">💰</div>
+        <div><div class="card-ind">Finance & Accounts</div><div class="card-ttl">AI-Powered Finance<br/>Automation in ERP</div></div>
+      </div>
+      <div class="gbody">
+        <div class="gdesc">Automate GST filing prep, accounts reconciliation, expense approvals and MIS report generation using AI. Cuts month-end closing time by 50%.</div>
+        <div class="chips"><span class="chip">GST Automation</span><span class="chip">Reconciliation AI</span><span class="chip">MIS Reports</span><span class="chip">38 pages</span></div>
+        <div class="gfoot"><div><span class="gprice">₹799</span><span class="gprice-old">₹1,499</span></div><a href="contact.html" class="btn-card">Buy Now</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BUNDLE -->
+  <div class="bundle">
+    <div>
+      <span class="bundle-eye">🎯 Complete Bundle</span>
+      <h3>All AI + ERP Guides — Full Library</h3>
+      <p>Every guide in one shot. Manufacturing, Pharma, Real Estate, EdTech, Finance + the Marathi edition + the flagship Playbook. Everything to automate any Indian SME.</p>
+      <div class="b-items">
+        <span class="b-item">✓ Flagship Playbook</span>
+        <span class="b-item">✓ Manufacturing</span>
+        <span class="b-item">✓ Pharma</span>
+        <span class="b-item">✓ Real Estate</span>
+        <span class="b-item">✓ EdTech</span>
+        <span class="b-item">✓ Finance</span>
+        <span class="b-item">✓ मराठी Edition</span>
+        <span class="b-item">✓ Free future updates</span>
+      </div>
+    </div>
+    <div class="bprice-box">
+      <div class="bprice-old">₹6,893</div>
+      <div class="bprice"><sup>₹</sup>2,999</div>
+      <div class="bsave">Save ₹3,894 — 56% off</div>
+      <a href="contact.html" class="btn-teal">Get Full Bundle →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- WHY -->
+<div class="why-section">
+  <div class="why-grid">
+    <div class="why-item"><div class="why-icon">🇮🇳</div><div class="why-title">Built for India</div><div class="why-desc">GST, Tally, Indian compliance and regional languages — not generic Western content.</div></div>
+    <div class="why-item"><div class="why-icon">⚡</div><div class="why-title">Apply This Week</div><div class="why-desc">Every guide has step-by-step workflows you can implement immediately — no theory.</div></div>
+    <div class="why-item"><div class="why-icon">🏭</div><div class="why-title">From Real Implementations</div><div class="why-desc">Built from 4+ years of on-site work across West Bengal, HP, Nepal, Yemen and Maharashtra.</div></div>
+    <div class="why-item"><div class="why-icon">💬</div><div class="why-title">मराठी + English</div><div class="why-desc">Key guides in Marathi so your entire team — including shop floor — can benefit.</div></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Not sure which guide is right for you?</h2>
+  <p>Book a free 20-minute call — I'll tell you exactly which automation gives your business the fastest ROI.</p>
+  <a href="contact.html" class="btn-gold">Book Free Call →</a>
+</div>
+
+<footer>
+  <p>© 2026 Pratik Mahadik · ERP & AI Consultant · Mumbai</p>
+  <p><a href="index.html">work.pratikmahadik.com</a> · <a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>
