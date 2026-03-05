@@ -22,6 +22,7 @@
     .nav-links a{font-size:0.875rem;color:var(--dmuted);transition:color 0.15s;}
     .nav-links a:hover{color:#fff;}
     .nav-cta{background:var(--accent);color:#fff!important;padding:0.4rem 1.1rem;border-radius:6px;font-weight:600!important;}
+    .nav-guides{background:linear-gradient(135deg,#c8410a,#e8764a);color:#fff!important;padding:0.4rem 1.1rem;border-radius:6px;font-weight:600!important;}
     .hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
     .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(108,99,255,0.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(0,212,170,0.1) 0%,transparent 60%);pointer-events:none;}
     .hero-inner{max-width:720px;position:relative;z-index:1;}
@@ -36,21 +37,29 @@
     .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
     .btn-erp{background:linear-gradient(135deg,#c8410a,#e8764a);color:#fff;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;transition:opacity 0.15s,transform 0.15s;display:inline-block;}
     .btn-erp:hover{opacity:0.85;transform:translateY(-1px);}
+    .btn-gold{background:linear-gradient(135deg,#c8a84b,#f0d070);color:#0a0a0f;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:700;transition:opacity 0.15s,transform 0.15s;display:inline-block;}
+    .btn-gold:hover{opacity:0.85;transform:translateY(-1px);}
     .stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2.5rem 2rem;border-top:1px solid var(--dborder);border-bottom:1px solid var(--dborder);}
     .stat{text-align:center;}
     .stat-num{font-size:1.8rem;font-weight:800;color:#fff;}
     .stat-num span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
     .stat-label{font-size:0.78rem;color:var(--dmuted);margin-top:0.2rem;text-transform:uppercase;letter-spacing:0.5px;}
-
+    /* DIGITAL PRODUCTS BANNER */
+    .dp-banner{max-width:900px;margin:3rem auto 0;padding:0 2rem;}
+    .dp-banner-inner{background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(240,208,112,0.06));border:1px solid rgba(200,168,75,0.35);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+    .dp-banner-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#f0d070;margin-bottom:0.5rem;}
+    .dp-banner h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.5rem;}
+    .dp-banner p{font-size:0.88rem;color:var(--dmuted);max-width:480px;line-height:1.6;}
+    .dp-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+    .dp-badge{background:rgba(200,168,75,0.12);border:1px solid rgba(200,168,75,0.25);color:#f0d070;padding:0.25rem 0.7rem;border-radius:999px;font-size:0.72rem;font-weight:600;}
     /* ERP BANNER */
-    .erp-banner{max-width:900px;margin:3rem auto;padding:0 2rem;}
+    .erp-banner{max-width:900px;margin:2rem auto;padding:0 2rem;}
     .erp-banner-inner{background:linear-gradient(135deg,rgba(200,65,10,0.15),rgba(232,120,74,0.08));border:1px solid rgba(200,65,10,0.3);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
     .erp-banner-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#e8a87c;margin-bottom:0.5rem;}
     .erp-banner h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.5rem;}
     .erp-banner p{font-size:0.88rem;color:var(--dmuted);max-width:480px;line-height:1.6;}
     .erp-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
     .erp-badge{background:rgba(200,65,10,0.15);border:1px solid rgba(200,65,10,0.25);color:#e8a87c;padding:0.25rem 0.7rem;border-radius:999px;font-size:0.72rem;font-weight:600;}
-
     .about-section{max-width:900px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
     .about-avatar{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:2px solid var(--dborder);}
     .about-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -95,22 +104,21 @@
     footer a{color:var(--dmuted);margin:0 0.5rem;}
     footer a:hover{color:#fff;}
     .footer-links{margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.25rem;}
-
     @media(max-width:640px){
       .about-section{grid-template-columns:1fr;gap:2rem;}
       .nav-links{display:none;}
-      .erp-banner-inner{flex-direction:column;}
+      .erp-banner-inner,.dp-banner-inner{flex-direction:column;}
     }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo">Pratik<span>.</span>Mahadik</div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#youtube">YouTube</a>
     <a href="./services.html">ERP Consulting</a>
+    <a href="./digital-products.html" class="nav-guides">⚡ AI Guides</a>
     <a href="./contact.html" class="nav-cta">Hire Me</a>
   </div>
 </nav>
@@ -124,8 +132,8 @@
     <div class="hero-cta">
       <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank" class="btn-primary">Watch on YouTube →</a>
       <a href="./services.html" class="btn-erp">ERP Consulting →</a>
+      <a href="./digital-products.html" class="btn-gold">⚡ AI + ERP Guides →</a>
       <a href="./contact.html" class="btn-outline">Hire Me</a>
-      <a href="./erp-checklist.html" class="btn-outline" style="border-color:rgba(200,65,10,0.5);color:#e8a87c;">✦ Free ERP Check</a>
     </div>
   </div>
 </div>
@@ -135,6 +143,27 @@
   <div class="stat"><div class="stat-num"><span>∞</span></div><div class="stat-label">Ideas in the Pipeline</div></div>
   <div class="stat"><div class="stat-num"><span>2</span></div><div class="stat-label">Platforms</div></div>
   <div class="stat"><div class="stat-num"><span>EN + MR</span></div><div class="stat-label">Languages</div></div>
+</div>
+
+<!-- DIGITAL PRODUCTS BANNER -->
+<div class="dp-banner">
+  <div class="dp-banner-inner">
+    <div>
+      <div class="dp-banner-tag">⚡ New — Digital Guides</div>
+      <h2>AI + ERP Automation Guides</h2>
+      <p>Practical guides built from 4+ years of real ERP implementations. Automate your business this week — no coding required. Industry-specific guides for Manufacturing, Pharma, Real Estate, EdTech & more.</p>
+      <div class="dp-badges">
+        <span class="dp-badge">Manufacturing</span>
+        <span class="dp-badge">Pharma</span>
+        <span class="dp-badge">Real Estate</span>
+        <span class="dp-badge">मराठी Edition</span>
+        <span class="dp-badge">50+ AI Prompts</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.6rem;flex-shrink:0;">
+      <a href="./digital-products.html" class="btn-gold" style="white-space:nowrap;text-align:center;">View All Guides →</a>
+    </div>
+  </div>
 </div>
 
 <!-- ERP CONSULTING BANNER -->
@@ -241,6 +270,7 @@
   <p>Whether you need science content, video scripts, ERP consulting or just a great blog — I'm available for projects.</p>
   <div class="cta-btns">
     <a href="./services.html" class="btn-primary">ERP & AI Consulting →</a>
+    <a href="./digital-products.html" class="btn-gold">⚡ AI + ERP Guides →</a>
     <a href="./contact.html" class="btn-outline">Content & Writing →</a>
   </div>
 </div>
@@ -249,12 +279,12 @@
   <div class="footer-links">
     <a href="https://pratikmahadik.com">Blog</a>
     <a href="./services.html">ERP Consulting</a>
+    <a href="./digital-products.html">AI Guides</a>
     <a href="./contact.html">Hire Me</a>
     <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank">YouTube</a>
     <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn</a>
   </div>
   <p>© 2026 Pratik Mahadik · Made with curiosity in Maharashtra 🇮🇳</p>
 </footer>
-
 </body>
 </html>
