@@ -4,143 +4,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ERP शब्दकोश (Marathi) – Pratik Mahadik ERP Consultant</title>
-<meta name="description" content="ERP आणि व्यवसाय तंत्रज्ञानाचे मराठी शब्दकोश. Manufacturing, Pharma आणि Real Estate साठी ERP terms मराठीत समजून घ्या.">
+<meta name="description" content="ERP आणि व्यवसाय तंत्रज्ञानाचे मराठी शब्दकोश. Manufacturing, Pharma, Finance, HR, Supply Chain साठी ERP terms मराठीत समजून घ्या.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0a0a0f;--paper:#f5f3ee;--accent:#c8410a;--accent2:#e8a87c;--muted:#6b6b7b;--border:#dddad3;--card:#fff;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#faf9f6;--white:#fff;--ink:#0f0f0d;--ink2:#3a3a35;
+  --muted:#9b9b93;--border:#e8e7e1;--border2:#d4d3cc;
+  --green:#1d6b45;--green-bg:#edf7f1;--green-bd:#b8e8ce;
+  --serif:'Instrument Serif',serif;--sans:'Geist',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,243,238,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--accent);}
-.nav-back{font-size:0.82rem;color:var(--muted);text-decoration:none;font-weight:500;}
-.nav-back:hover{color:var(--accent);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;background:rgba(250,249,246,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--muted);font-weight:400}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.nav-back{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--cream);padding:7px 16px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
 
-.hero{padding:7rem 2rem 3rem;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(200,65,10,0.2),transparent 70%);}
-.hero-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;}
-.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,65,10,0.15);border:1px solid rgba(200,65,10,0.3);color:var(--accent2);padding:0.4rem 1rem;border-radius:999px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:white;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.8rem;}
-.hero h1 em{color:var(--accent2);font-style:normal;}
-.hero-mr{font-size:1.3rem;color:rgba(255,255,255,0.7);margin-bottom:0.8rem;font-weight:400;}
-.hero p{font-size:0.95rem;color:rgba(255,255,255,0.5);line-height:1.7;}
+.hero{margin-top:60px;background:var(--ink);padding:6rem 2.5rem 5rem;text-align:center;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(29,107,69,.2) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(29,107,69,.15);border:1px solid rgba(29,107,69,.3);color:#6fe09e;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.75rem}
+.hero-badge::before{content:'';width:5px;height:5px;background:#6fe09e;border-radius:50%}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,6vw,64px);font-weight:400;color:#faf9f6;letter-spacing:-.5px;line-height:1.1;margin-bottom:.75rem}
+.hero h1 em{font-style:italic;color:rgba(250,249,246,.6)}
+.hero-mr{font-size:18px;color:rgba(250,249,246,.5);margin-bottom:1rem;font-weight:300;font-family:var(--serif);font-style:italic}
+.hero p{font-size:15px;color:rgba(250,249,246,.4);line-height:1.7;font-weight:300;max-width:520px;margin:0 auto}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.hs-item{text-align:center}
+.hs-num{font-family:var(--serif);font-size:30px;color:#faf9f6;letter-spacing:-.5px}
+.hs-lbl{font-size:11px;color:rgba(250,249,246,.35);text-transform:uppercase;letter-spacing:1px;margin-top:3px}
 
-.wrap{max-width:900px;margin:0 auto;padding:3rem 2rem 5rem;}
+.search-area{position:sticky;top:60px;z-index:50;background:rgba(250,249,246,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:1rem 2.5rem}
+.search-inner{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+.search-row{display:flex;gap:.75rem;align-items:center}
+.search-input{flex:1;padding:.75rem 1.1rem;border:1px solid var(--border2);border-radius:8px;font-family:var(--sans);font-size:14px;background:var(--white);color:var(--ink);outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--ink)}
+.search-input::placeholder{color:var(--muted)}
+.search-clear{background:transparent;border:1px solid var(--border2);border-radius:6px;padding:.75rem 1rem;font-size:13px;color:var(--muted);cursor:pointer;white-space:nowrap;font-family:var(--sans);transition:all .2s}
+.search-clear:hover{border-color:var(--ink);color:var(--ink)}
+.filter-row{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.filter-lbl{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.8px;margin-right:.25rem;white-space:nowrap}
+.filter-btn{padding:5px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;background:var(--white);color:var(--muted);transition:all .2s;font-family:var(--sans);white-space:nowrap}
+.filter-btn:hover{border-color:var(--border2);color:var(--ink)}
+.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}
 
-/* SEARCH */
-.search-wrap{position:sticky;top:72px;z-index:50;background:var(--paper);padding:1rem 0;margin-bottom:1.5rem;}
-.search-box{display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;}
-.search-input{flex:1;min-width:200px;padding:0.8rem 1.2rem;border:1.5px solid var(--border);border-radius:4px;font-family:'DM Sans',sans-serif;font-size:0.95rem;background:white;color:var(--ink);outline:none;transition:border-color 0.2s;}
-.search-input:focus{border-color:var(--accent);}
-.filter-btns{display:flex;gap:0.5rem;flex-wrap:wrap;}
-.filter-btn{padding:0.5rem 1rem;border:1.5px solid var(--border);border-radius:999px;font-size:0.78rem;font-weight:600;cursor:pointer;background:white;color:var(--muted);transition:all 0.2s;white-space:nowrap;}
-.filter-btn:hover{border-color:var(--accent2);}
-.filter-btn.active{background:var(--accent);border-color:var(--accent);color:white;}
+.main{max-width:1060px;margin:0 auto;padding:2.5rem 2.5rem 6rem}
+.results-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:.5rem}
+.results-count{font-size:13px;color:var(--muted)}
+.sort-note{font-size:12px;color:var(--muted);font-style:italic}
 
-.results-count{font-size:0.8rem;color:var(--muted);margin-bottom:1rem;}
+.cat-section{margin-bottom:3.5rem}
+.cat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.cat-icon{width:36px;height:36px;border-radius:8px;background:var(--cream);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cat-title{font-family:var(--serif);font-size:22px;font-weight:400}
+.cat-count{margin-left:auto;font-size:12px;color:var(--muted);background:var(--cream);border:1px solid var(--border);padding:3px 10px;border-radius:999px}
 
-/* ALPHABET INDEX */
-.alpha-index{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:2rem;}
-.alpha-btn{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:3px;font-size:0.78rem;font-weight:700;cursor:pointer;background:white;color:var(--muted);transition:all 0.2s;font-family:'Syne',sans-serif;}
-.alpha-btn:hover{border-color:var(--accent);color:var(--accent);}
-.alpha-btn.has-terms{color:var(--ink);}
+.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.term-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all .2s;cursor:pointer}
+.term-card:hover{border-color:var(--border2);box-shadow:0 4px 20px rgba(0,0,0,.06);transform:translateY(-1px)}
+.term-card.open{border-color:var(--ink)}
+.tc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.tc-chevron{color:var(--muted);font-size:14px;flex-shrink:0;transition:transform .2s;margin-top:2px}
+.term-card.open .tc-chevron{transform:rotate(180deg);color:var(--ink)}
+.term-en{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:-.1px;line-height:1.3}
+.term-mr{font-size:15px;color:var(--green);font-weight:500;margin-bottom:3px;line-height:1.4}
+.term-hi{font-size:12px;color:var(--muted);margin-bottom:.6rem}
+.term-short{font-size:13px;color:var(--ink2);line-height:1.6;font-weight:300}
+.tc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:.75rem}
+.tc-tag{background:var(--cream);border:1px solid var(--border);padding:2px 8px;border-radius:999px;font-size:10px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
 
-/* TERM CARDS */
-.category-section{margin-bottom:3rem;}
-.cat-header{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding:0.5rem 0;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;}
-.cat-count{background:var(--accent);color:white;border-radius:999px;padding:0.1rem 0.5rem;font-size:0.65rem;}
+.term-detail{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.term-card.open .term-detail{display:block}
+.td-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:.3rem}
+.td-text{font-size:13px;color:var(--ink2);line-height:1.7;font-weight:300;margin-bottom:.75rem}
+.td-example{background:var(--cream);border-left:3px solid var(--green);padding:.75rem 1rem;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink2);line-height:1.6;font-style:italic}
+.td-example::before{content:'📌 ';font-style:normal}
 
-.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
-.term-card{background:white;border:1px solid var(--border);border-radius:6px;padding:1.2rem;transition:all 0.2s;cursor:pointer;}
-.term-card:hover{border-color:var(--accent);box-shadow:0 2px 12px rgba(200,65,10,0.08);transform:translateY(-1px);}
-.term-card.expanded{border-color:var(--accent);background:rgba(200,65,10,0.02);}
-.term-en{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;color:var(--ink);margin-bottom:0.2rem;}
-.term-mr{font-size:1rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;}
-.term-hi{font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem;}
-.term-short{font-size:0.85rem;color:#3a3a4a;line-height:1.6;}
-.term-detail{display:none;margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--border);}
-.term-card.expanded .term-detail{display:block;}
-.term-detail p{font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.5rem;}
-.term-detail .example{background:var(--paper);border-left:3px solid var(--accent2);padding:0.6rem 0.8rem;font-size:0.8rem;color:#3a3a4a;border-radius:0 3px 3px 0;font-style:italic;}
-.term-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.6rem;}
-.term-tag{background:var(--paper);border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:999px;font-size:0.68rem;color:var(--muted);font-weight:600;}
+.no-results{text-align:center;padding:5rem 2rem;color:var(--muted)}
+.no-results-serif{font-family:var(--serif);font-size:48px;font-style:italic;color:var(--border2);margin-bottom:1rem}
 
-.no-results{text-align:center;padding:3rem;color:var(--muted);}
-.no-results-icon{font-size:2.5rem;margin-bottom:0.8rem;}
+.cta-section{background:var(--ink);border-radius:20px;padding:4rem;text-align:center;margin-top:1rem}
+.cta-section h2{font-family:var(--serif);font-size:clamp(26px,4vw,42px);font-weight:400;color:var(--cream);margin-bottom:.75rem}
+.cta-section h2 em{font-style:italic;color:rgba(250,249,246,.6)}
+.cta-section p{font-size:15px;color:rgba(250,249,246,.45);max-width:460px;margin:.5rem auto 2.5rem;font-weight:300;line-height:1.7}
+.cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn-lt{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:500;padding:11px 24px;border-radius:7px;text-decoration:none;transition:opacity .2s}
+.btn-lt:hover{opacity:.9}
+.btn-gl{background:transparent;color:var(--cream);font-family:var(--sans);font-size:14px;padding:10px 20px;border-radius:7px;text-decoration:none;border:1px solid rgba(250,249,246,.2);transition:border-color .2s}
+.btn-gl:hover{border-color:rgba(250,249,246,.5)}
 
-/* CTA */
-.cta-card{background:var(--accent);border-radius:8px;padding:2.5rem;text-align:center;margin-top:3rem;}
-.cta-card h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:white;margin-bottom:0.5rem;}
-.cta-card p{color:rgba(255,255,255,0.8);font-size:0.92rem;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto;}
-.cta-btns{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;}
-.btn-white{background:white;color:var(--accent);padding:0.8rem 1.8rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none;transition:all 0.2s;}
-.btn-white:hover{transform:translateY(-2px);}
-.btn-outline-w{border:2px solid rgba(255,255,255,0.5);color:white;padding:0.8rem 1.8rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none;transition:all 0.2s;}
-.btn-outline-w:hover{border-color:white;}
+footer{padding:2.5rem;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--muted);max-width:1060px;margin:0 auto}
+footer a{color:var(--muted);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--ink)}
 
-.fade-in{animation:fadeIn 0.4s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{animation:fi .35s ease}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:2rem;text-align:center;font-size:0.8rem;}
-footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
-footer a:hover{color:white;}
-
-@media(max-width:600px){
-  nav{padding:1rem 1.5rem;}
-  .wrap{padding:2rem 1rem 4rem;}
-  .search-wrap{top:60px;}
-  .terms-grid{grid-template-columns:1fr;}
-  .cta-btns{flex-direction:column;align-items:center;}
+@media(max-width:768px){
+  nav{padding:0 1.25rem}
+  .hero{padding:5rem 1.5rem 3.5rem}
+  .hero-stats{gap:1.5rem}
+  .search-area{padding:.75rem 1.25rem}
+  .main{padding:2rem 1.25rem 5rem}
+  .terms-grid{grid-template-columns:1fr}
+  .cta-section{padding:2.5rem 1.5rem}
+  .cta-btns{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="./index.html" class="nav-logo">Pratik<span>.</span>Mahadik</a>
-  <a href="./index.html" class="nav-back">← Back to site</a>
+  <a href="./index.html" class="nav-logo">Pratik Mahadik <span>/ ERP & AI</span></a>
+  <div class="nav-right">
+    <a href="./index.html" class="nav-back">← Back to site</a>
+    <a href="./contact.html" class="nav-cta">Hire Me</a>
+  </div>
 </nav>
 
 <div class="hero">
+  <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-badge">✦ Free Resource · मराठी</div>
+    <div class="hero-badge">Free Resource · मराठी · हिंदी · English</div>
     <h1>ERP <em>शब्दकोश</em></h1>
-    <div class="hero-mr">ERP & Business Technology Glossary in Marathi</div>
-    <p>Manufacturing, Pharma आणि Real Estate साठी ERP terms मराठी आणि हिंदीमध्ये — तुमच्या टीमला सहज समजण्यासाठी. India's first ERP glossary in Marathi.</p>
+    <div class="hero-mr">ERP & Business Technology Glossary</div>
+    <p>Manufacturing, Pharma, Finance, HR, Supply Chain आणि IT साठी ERP terms तीन भाषांमध्ये — तुमच्या टीमला सहज समजण्यासाठी. India's most comprehensive ERP glossary in Marathi.</p>
+    <div class="hero-stats">
+      <div class="hs-item"><div class="hs-num" id="totalCount">100+</div><div class="hs-lbl">Terms</div></div>
+      <div class="hs-item"><div class="hs-num">3</div><div class="hs-lbl">Languages</div></div>
+      <div class="hs-item"><div class="hs-num">9</div><div class="hs-lbl">Categories</div></div>
+      <div class="hs-item"><div class="hs-num">Free</div><div class="hs-lbl">Forever</div></div>
+    </div>
   </div>
 </div>
 
-<div class="wrap fade-in">
-
-  <!-- SEARCH + FILTERS -->
-  <div class="search-wrap">
-    <div class="search-box">
+<div class="search-area">
+  <div class="search-inner">
+    <div class="search-row">
       <input class="search-input" id="searchInput" type="text" placeholder="Search in English, मराठी or हिंदी..." oninput="filterTerms()">
-      <div class="filter-btns">
-        <button class="filter-btn active" onclick="setFilter('all', this)">सर्व / All</button>
-        <button class="filter-btn" onclick="setFilter('general', this)">General</button>
-        <button class="filter-btn" onclick="setFilter('manufacturing', this)">Manufacturing</button>
-        <button class="filter-btn" onclick="setFilter('pharma', this)">Pharma</button>
-        <button class="filter-btn" onclick="setFilter('finance', this)">Finance</button>
-        <button class="filter-btn" onclick="setFilter('realestate', this)">Real Estate</button>
-      </div>
+      <button class="search-clear" onclick="clearSearch()">Clear</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-lbl">Filter:</span>
+      <button class="filter-btn active" onclick="setFilter('all',this)">सर्व / All</button>
+      <button class="filter-btn" onclick="setFilter('general',this)">⚙️ General ERP</button>
+      <button class="filter-btn" onclick="setFilter('manufacturing',this)">🏭 Manufacturing</button>
+      <button class="filter-btn" onclick="setFilter('pharma',this)">💊 Pharma</button>
+      <button class="filter-btn" onclick="setFilter('finance',this)">💰 Finance</button>
+      <button class="filter-btn" onclick="setFilter('realestate',this)">🏗️ Real Estate</button>
+      <button class="filter-btn" onclick="setFilter('hr',this)">👥 HR & Payroll</button>
+      <button class="filter-btn" onclick="setFilter('supplychain',this)">🚚 Supply Chain</button>
+      <button class="filter-btn" onclick="setFilter('edtech',this)">🎓 EdTech</button>
+      <button class="filter-btn" onclick="setFilter('it',this)">💻 IT & Software</button>
     </div>
   </div>
+</div>
 
-  <div class="results-count" id="resultsCount"></div>
-  <div id="glossaryOutput"></div>
+<div class="main">
+  <div class="results-meta">
+    <span class="results-count" id="resultsCount"></span>
+    <span class="sort-note">Click any card to expand full explanation + example</span>
+  </div>
+  <div id="glossaryOutput" class="fade-in"></div>
 
-  <div class="cta-card">
-    <h2>ERP Implementation साठी मदत हवी आहे?</h2>
-    <p>Pratik Mahadik — ERP consultant जो मराठी, हिंदी आणि English मध्ये काम करतो. Maharashtra, North India आणि International clients साठी.</p>
+  <div class="cta-section">
+    <h2>ERP Implementation साठी<br><em>मदत हवी आहे?</em></h2>
+    <p>Pratik Mahadik — ERP consultant जो मराठी, हिंदी आणि English मध्ये काम करतो. Maharashtra आणि pan-India clients साठी.</p>
     <div class="cta-btns">
-      <a href="./contact.html" class="btn-white">📞 Free Discovery Call बुक करा</a>
-      <a href="./erp-checklist.html" class="btn-outline-w">✦ ERP Readiness Check करा</a>
+      <a href="./contact.html" class="btn-lt">📞 Free Discovery Call बुक करा</a>
+      <a href="./erp-checklist.html" class="btn-gl">✦ ERP Readiness Check करा</a>
     </div>
   </div>
-
 </div>
 
 <footer>
@@ -149,124 +191,211 @@ footer a:hover{color:white;}
 
 <script>
 const terms = [
-  // GENERAL ERP
-  { en: "ERP (Enterprise Resource Planning)", mr: "एकात्मिक व्यवसाय व्यवस्थापन प्रणाली", hi: "एकीकृत व्यापार प्रबंधन प्रणाली", short: "सर्व विभागांचे काम एकाच software मध्ये करणारी प्रणाली.", detail: "ERP म्हणजे एक असे software जे तुमच्या व्यवसायातील purchase, inventory, accounts, HR, sales — सगळे एकाच ठिकाणी manage करते. त्यामुळे सगळ्या विभागांना एकच data दिसतो.", example: "उदाहरण: Purchase department ने order दिला, तर Accounts ला लगेच दिसतो — वेगळे सांगायला नको.", tags: ["general"] },
-  { en: "Master Data", mr: "मुख्य माहिती / मास्टर डेटा", hi: "मुख्य जानकारी", short: "ERP मधील मूळ माहिती — Item, Vendor, Customer, Employee यांची.", detail: "Master Data म्हणजे ERP मधील base information. जसे Item Master (प्रत्येक product ची माहिती), Vendor Master (suppliers ची माहिती), Customer Master. हे एकदा setup केले की बाकी सगळ्या transactions यांच्याशी जोडल्या जातात.", example: "उदाहरण: Item Master मध्ये 'Steel Rod 10mm' एकदा add केला की Purchase, Inventory, Production — सगळीकडे तोच नाव वापरतात.", tags: ["general"] },
-  { en: "Module", mr: "विभाग / मॉड्यूल", hi: "मॉड्यूल / विभाग", short: "ERP च्या एका विशिष्ट कामासाठी असलेला भाग.", detail: "ERP मध्ये प्रत्येक business function साठी वेगळा module असतो. जसे Purchase Module, Inventory Module, Finance Module. तुम्ही तुमच्या गरजेनुसार modules निवडू शकता.", example: "उदाहरण: Manufacturing company ला Production Module लागतो, Pharma ला QA Module लागतो.", tags: ["general"] },
-  { en: "Go-Live", mr: "प्रणाली सुरू करणे / गो-लाइव्ह", hi: "सिस्टम शुरू करना", short: "ERP implementation पूर्ण झाल्यावर production मध्ये वापरायला सुरुवात करणे.", detail: "Go-Live म्हणजे ERP system तयार झाल्यावर खऱ्या business operations साठी वापरणे सुरू करणे. यापूर्वी testing (UAT) होते आणि team training होते.", example: "उदाहरण: 1 एप्रिलपासून आपण नवीन ERP वर Go-Live करणार आहोत.", tags: ["general"] },
-  { en: "UAT (User Acceptance Testing)", mr: "वापरकर्ता स्वीकृती चाचणी", hi: "उपयोगकर्ता परीक्षण", short: "ERP Go-Live आधी actual users कडून system test करून घेणे.", detail: "UAT मध्ये तुमचे actual employees (store team, accounts team) ERP मध्ये real scenarios वर test करतात. जर काही चुकले तर Go-Live आधी fix होते.", example: "उदाहरण: Store team ने UAT मध्ये GRN entry केली आणि Accounts ला automatically दिसली — सगळं बरोबर आहे.", tags: ["general"] },
-  { en: "BRD (Business Requirement Document)", mr: "व्यवसाय आवश्यकता दस्तऐवज", hi: "व्यापार आवश्यकता दस्तावेज़", short: "तुमच्या business च्या सर्व ERP requirements एका document मध्ये.", detail: "BRD म्हणजे एक document जिथे consultant तुमच्या business च्या सर्व requirements लिहितो — कोणते modules लागतात, कोणते workflows असतील, कोणते reports लागतील. हे ERP implementation चा foundation असते.", example: "उदाहरण: BRD मध्ये लिहिले — Purchase Order approve करण्यासाठी Manager चे digital signature लागेल.", tags: ["general"] },
-  { en: "FRD (Functional Requirement Document)", mr: "कार्यात्मक आवश्यकता दस्तऐवज", hi: "कार्यात्मक आवश्यकता दस्तावेज़", short: "BRD च्या requirements कशा implement होतील याचे technical detail.", detail: "FRD हे BRD नंतर येते. त्यात exact screens, workflows, validations, calculations कसे काम करतील ते सांगितले जाते.", example: "उदाहरण: FRD मध्ये — Purchase Order amount ₹50,000 पेक्षा जास्त असेल तर Director ला WhatsApp notification जाईल.", tags: ["general"] },
-  { en: "MIS Report", mr: "व्यवस्थापन माहिती अहवाल", hi: "प्रबंधन सूचना रिपोर्ट", short: "Management ला business decisions साठी लागणारे reports.", detail: "MIS म्हणजे Management Information System. हे reports management ला business कसे चालले आहे ते दाखवतात — sales, expenses, stock, production. ERP मुळे हे real-time मिळतात.", example: "उदाहरण: MIS Report मध्ये दिसते — आज warehouse मध्ये किती stock आहे, किती pending orders आहेत.", tags: ["general"] },
-  { en: "Dashboard", mr: "माहिती दर्शक फलक", hi: "डैशबोर्ड", short: "सर्व महत्त्वाची business information एका screen वर.", detail: "Dashboard म्हणजे ERP मधील एक screen जिथे business च्या सर्व key numbers एकत्र दिसतात. Management ला रोज सकाळी एक नजर टाकली की सगळं समजते.", example: "उदाहरण: Dashboard वर दिसते — आजचे sales ₹2.3L, pending purchases 12, overdue payments 3.", tags: ["general"] },
-  { en: "API Integration", mr: "प्रणाली जोडणी / एपीआय इंटिग्रेशन", hi: "सिस्टम कनेक्शन", short: "दोन वेगळ्या software systems एकमेकांशी automatically बोलणे.", detail: "API Integration म्हणजे तुमचे ERP आणि दुसरे software (जसे Zoho CRM, Tally, WhatsApp) एकमेकांशी automatically data share करतात. वेगळे export-import नको.", example: "उदाहरण: CRM मध्ये नवीन customer आला की automatically ERP मध्ये Customer Master तयार होतो.", tags: ["general"] },
-  { en: "Workflow Automation", mr: "कामाचा प्रवाह स्वयंचलन", hi: "कार्यप्रवाह स्वचालन", short: "Routine approvals आणि notifications automatically होणे.", detail: "Workflow Automation म्हणजे ERP मध्ये set rules नुसार automatic actions होतात. जसे Purchase Order submit केली की Manager ला approval साठी automatically notification जाते.", example: "उदाहरण: Inventory कमी झाली की automatically Purchase requisition तयार होते आणि manager ला WhatsApp येतो.", tags: ["general"] },
-  { en: "Data Migration", mr: "माहिती स्थानांतरण", hi: "डेटा माइग्रेशन", short: "जुन्या system मधील data नवीन ERP मध्ये transfer करणे.", detail: "Data Migration म्हणजे तुमचे existing data (Excel, Tally, जुने software) नवीन ERP मध्ये import करणे. Item masters, vendor masters, opening balances — सगळे carefully transfer होतात.", example: "उदाहरण: 5 वर्षांचा Tally data नवीन ERP मध्ये migrate केला — सगळे accounts opening balance match झाले.", tags: ["general"] },
-  { en: "Cloud ERP", mr: "क्लाउड आधारित ERP", hi: "क्लाउड ERP", short: "Internet वर चालणारे ERP — कुठूनही access करता येते.", detail: "Cloud ERP म्हणजे तुमचे ERP internet वर hosted असते. Computer, mobile, tablet — कुठूनही login करता येते. Server खरेदी करायला नको, automatic updates मिळतात.", example: "उदाहरण: Manager घरून mobile वर inventory check करू शकतो, site वरून GRN entry होऊ शकते.", tags: ["general"] },
 
-  // MANUFACTURING
-  { en: "BOM (Bill of Materials)", mr: "उत्पादन घटक यादी", hi: "सामग्री सूची", short: "एक product बनवायला कोणते raw materials किती लागतात याची यादी.", detail: "BOM म्हणजे recipe सारखे — एक finished product बनवायला किती raw materials लागतात. ERP मध्ये BOM set केला की production order दिल्यावर automatically material requirement calculate होते.", example: "उदाहरण: 100 kg Steel Pipe बनवायला BOM — HR Coil 95 kg, Alloy 5 kg, Electricity 50 units.", tags: ["manufacturing"] },
-  { en: "Production Order", mr: "उत्पादन आदेश", hi: "उत्पादन आदेश", short: "किती माल तयार करायचा याचा ERP मधील अधिकृत आदेश.", detail: "Production Order म्हणजे ERP मध्ये दिलेला एक instruction — हे product, इतक्या quantity मध्ये, या तारखेपर्यंत तयार करा. यामुळे materials automatically reserve होतात.", example: "उदाहरण: Production Order #PO-2024-156 — Steel Angle 40x40, 500 pieces, 15 March deadline.", tags: ["manufacturing"] },
-  { en: "WIP (Work In Progress)", mr: "प्रगतीपथावरील काम / WIP", hi: "कार्य प्रगति में", short: "अर्धवट तयार झालेले माल — production floor वर असलेले.", detail: "WIP म्हणजे production मध्ये असलेले material — raw material पण नाही, finished goods पण नाही. ERP मध्ये WIP track केला जातो म्हणजे production floor वर नक्की काय चालले आहे ते दिसते.", example: "उदाहरण: आज WIP मध्ये 200 kg material आहे — welding stage वर आहे, painting बाकी आहे.", tags: ["manufacturing"] },
-  { en: "GRN (Goods Receipt Note)", mr: "माल प्राप्ती नोंद", hi: "माल प्राप्ति रसीद", short: "Vendor कडून माल आल्यावर ERP मध्ये केलेली entry.", detail: "GRN म्हणजे vendor कडून माल आला की store team ERP मध्ये करते ती entry. GRN झाल्यावर stock automatically वाढते आणि accounts ला payable दिसते.", example: "उदाहरण: GRN-2024-089 — Vendor Sharma Traders कडून 500 kg Steel received, quality check pending.", tags: ["manufacturing"] },
-  { en: "Dispatch / Delivery Note", mr: "माल पाठवणी नोंद", hi: "डिलीवरी नोट", short: "Customer ला माल पाठवताना ERP मधून निघणारा document.", detail: "Dispatch Note म्हणजे customer ला माल पाठवताना ERP मधून तयार होणारा document. यात काय माल गेला, किती गेला, कुठे गेला ते असते. Stock automatically कमी होतो.", example: "उदाहरण: DN-2024-445 — Customer ABC Ltd. ला 200 pieces dispatched, truck number MH-04-AB-1234.", tags: ["manufacturing"] },
-  { en: "Shop Floor", mr: "उत्पादन विभाग / शॉप फ्लोअर", hi: "उत्पादन क्षेत्र", short: "Factory मधील actual manufacturing होणारा भाग.", detail: "Shop Floor म्हणजे factory मधील वह area जिथे actual manufacturing होते. ERP मध्ये Shop Floor Management म्हणजे machines, workers, production — सगळे track करणे.", example: "उदाहरण: Shop floor वरून ERP मध्ये live production entry होते — manager ला office मधून दिसते.", tags: ["manufacturing"] },
-  { en: "Inventory Valuation", mr: "साठा मूल्यांकन", hi: "स्टॉक मूल्यांकन", short: "Warehouse मधील stock ची एकूण किंमत किती आहे ते.", detail: "Inventory Valuation म्हणजे तुमच्या warehouse मध्ये असलेल्या सर्व stock ची total value. ERP मध्ये FIFO, Weighted Average अशा methods वापरून हे automatically calculate होते.", example: "उदाहरण: आजच्या date ला total inventory value ₹45.6 Lakhs — Finance team ला balance sheet साठी लागते.", tags: ["manufacturing"] },
-  { en: "Purchase Requisition", mr: "खरेदी विनंती", hi: "खरीद अनुरोध", short: "एखाद्या department ने Purchase साठी ERP मध्ये केलेली अधिकृत विनंती.", detail: "Purchase Requisition म्हणजे store team किंवा production team ने ERP मध्ये केलेली purchase request. Manager approve केल्यावर Purchase Department Purchase Order तयार करते.", example: "उदाहरण: PR-2024-23 — Store team request: Steel Rod 10mm, 200 kg, urgent — material संपत आला.", tags: ["manufacturing"] },
+  // ── GENERAL ERP ──────────────────────────────────────────────
+  {en:"ERP (Enterprise Resource Planning)",mr:"एकात्मिक व्यवसाय व्यवस्थापन प्रणाली",hi:"एकीकृत व्यापार प्रबंधन प्रणाली",short:"सर्व विभागांचे काम एकाच software मध्ये करणारी प्रणाली.",detail:"ERP म्हणजे एक असे software जे तुमच्या व्यवसायातील purchase, inventory, accounts, HR, sales — सगळे एकाच ठिकाणी manage करते. सगळ्या विभागांना एकच data दिसतो.",example:"Purchase department ने order दिला, तर Accounts ला लगेच दिसतो — वेगळे सांगायला नको.",tags:["general"]},
+  {en:"Master Data",mr:"मुख्य माहिती / मास्टर डेटा",hi:"मुख्य जानकारी",short:"ERP मधील मूळ माहिती — Item, Vendor, Customer, Employee यांची.",detail:"Master Data म्हणजे ERP मधील base information. Item Master, Vendor Master, Customer Master — हे एकदा setup केले की बाकी सगळ्या transactions यांच्याशी जोडल्या जातात.",example:"Item Master मध्ये 'Steel Rod 10mm' एकदा add केला की Purchase, Inventory, Production सगळीकडे तोच नाव वापरतात.",tags:["general"]},
+  {en:"Module",mr:"विभाग / मॉड्यूल",hi:"मॉड्यूल / विभाग",short:"ERP च्या एका विशिष्ट कामासाठी असलेला भाग.",detail:"ERP मध्ये प्रत्येक business function साठी वेगळा module असतो. Purchase, Inventory, Finance, HR — प्रत्येकाचा module वेगळा असतो. गरजेनुसार निवडता येतो.",example:"Manufacturing company ला Production Module लागतो, Pharma ला QA Module लागतो.",tags:["general"]},
+  {en:"Go-Live",mr:"प्रणाली सुरू करणे / गो-लाइव्ह",hi:"सिस्टम शुरू करना",short:"ERP implementation पूर्ण झाल्यावर production मध्ये वापरायला सुरुवात करणे.",detail:"Go-Live म्हणजे ERP system तयार झाल्यावर खऱ्या business operations साठी वापरणे सुरू करणे. यापूर्वी testing (UAT) होते आणि team training होते.",example:"1 एप्रिलपासून आपण नवीन ERP वर Go-Live करणार आहोत.",tags:["general"]},
+  {en:"UAT (User Acceptance Testing)",mr:"वापरकर्ता स्वीकृती चाचणी",hi:"उपयोगकर्ता परीक्षण",short:"ERP Go-Live आधी actual users कडून system test करून घेणे.",detail:"UAT मध्ये तुमचे actual employees ERP मध्ये real scenarios वर test करतात. जर काही चुकले तर Go-Live आधी fix होते.",example:"Store team ने UAT मध्ये GRN entry केली आणि Accounts ला automatically दिसली — सगळं बरोबर आहे.",tags:["general"]},
+  {en:"BRD (Business Requirement Document)",mr:"व्यवसाय आवश्यकता दस्तऐवज",hi:"व्यापार आवश्यकता दस्तावेज़",short:"तुमच्या business च्या सर्व ERP requirements एका document मध्ये.",detail:"BRD मध्ये consultant तुमच्या business च्या सर्व requirements लिहितो — कोणते modules लागतात, कोणते workflows असतील, कोणते reports लागतील. हे ERP implementation चा foundation असते.",example:"BRD मध्ये लिहिले — Purchase Order approve करण्यासाठी Manager चे digital signature लागेल.",tags:["general"]},
+  {en:"FRD (Functional Requirement Document)",mr:"कार्यात्मक आवश्यकता दस्तऐवज",hi:"कार्यात्मक आवश्यकता दस्तावेज़",short:"BRD च्या requirements कशा implement होतील याचे technical detail.",detail:"FRD हे BRD नंतर येते. त्यात exact screens, workflows, validations, calculations कसे काम करतील ते सांगितले जाते.",example:"FRD मध्ये — Purchase Order amount ₹50,000 पेक्षा जास्त असेल तर Director ला WhatsApp notification जाईल.",tags:["general"]},
+  {en:"MIS Report",mr:"व्यवस्थापन माहिती अहवाल",hi:"प्रबंधन सूचना रिपोर्ट",short:"Management ला business decisions साठी लागणारे reports.",detail:"MIS म्हणजे Management Information System. हे reports management ला business कसे चालले आहे ते दाखवतात — sales, expenses, stock, production. ERP मुळे हे real-time मिळतात.",example:"MIS Report मध्ये दिसते — आज warehouse मध्ये किती stock आहे, किती pending orders आहेत.",tags:["general"]},
+  {en:"Dashboard",mr:"माहिती दर्शक फलक",hi:"डैशबोर्ड",short:"सर्व महत्त्वाची business information एका screen वर.",detail:"Dashboard म्हणजे ERP मधील एक screen जिथे business च्या सर्व key numbers एकत्र दिसतात. Management ला रोज सकाळी एक नजर टाकली की सगळं समजते.",example:"Dashboard वर दिसते — आजचे sales ₹2.3L, pending purchases 12, overdue payments 3.",tags:["general"]},
+  {en:"API Integration",mr:"प्रणाली जोडणी / एपीआय इंटिग्रेशन",hi:"सिस्टम कनेक्शन",short:"दोन वेगळ्या software systems एकमेकांशी automatically बोलणे.",detail:"API Integration म्हणजे तुमचे ERP आणि दुसरे software (जसे Zoho CRM, Tally, WhatsApp) एकमेकांशी automatically data share करतात. वेगळे export-import नको.",example:"CRM मध्ये नवीन customer आला की automatically ERP मध्ये Customer Master तयार होतो.",tags:["general"]},
+  {en:"Workflow Automation",mr:"कामाचा प्रवाह स्वयंचलन",hi:"कार्यप्रवाह स्वचालन",short:"Routine approvals आणि notifications automatically होणे.",detail:"Workflow Automation म्हणजे ERP मध्ये set rules नुसार automatic actions होतात. Approval notifications, reminders, alerts — सगळे automatic.",example:"Inventory कमी झाली की automatically Purchase requisition तयार होते आणि manager ला WhatsApp येतो.",tags:["general"]},
+  {en:"Data Migration",mr:"माहिती स्थानांतरण",hi:"डेटा माइग्रेशन",short:"जुन्या system मधील data नवीन ERP मध्ये transfer करणे.",detail:"Data Migration म्हणजे तुमचे existing data (Excel, Tally, जुने software) नवीन ERP मध्ये import करणे. Item masters, vendor masters, opening balances — सगळे carefully transfer होतात.",example:"5 वर्षांचा Tally data नवीन ERP मध्ये migrate केला — सगळे accounts opening balance match झाले.",tags:["general"]},
+  {en:"Cloud ERP",mr:"क्लाउड आधारित ERP",hi:"क्लाउड ERP",short:"Internet वर चालणारे ERP — कुठूनही access करता येते.",detail:"Cloud ERP म्हणजे तुमचे ERP internet वर hosted असते. Computer, mobile, tablet — कुठूनही login करता येते. Server खरेदी करायला नको.",example:"Manager घरून mobile वर inventory check करू शकतो, site वरून GRN entry होऊ शकते.",tags:["general"]},
+  {en:"On-Premise ERP",mr:"स्थानिक सर्व्हर ERP",hi:"ऑन-प्रिमाइस ERP",short:"तुमच्या स्वतःच्या server वर install केलेले ERP.",detail:"On-Premise ERP म्हणजे तुमच्या office च्या server वर install केलेले ERP. Internet नसला तरी चालते. Data तुमच्याच server वर राहतो. पण server maintenance तुम्हालाच करावी लागते.",example:"Factory मध्ये internet नाही पण local network वर ERP चालते — production entries होतात.",tags:["general"]},
+  {en:"ERP Customization",mr:"ERP सुधारणा / कस्टमायझेशन",hi:"ERP अनुकूलन",short:"तुमच्या business च्या specific गरजेनुसार ERP मध्ये बदल करणे.",detail:"Standard ERP मध्ये सगळ्या businesses च्या गरजा पूर्ण होत नाहीत. Customization म्हणजे तुमच्या specific process साठी ERP मध्ये extra features add करणे. पण जास्त customization avoid करावे.",example:"Pharma company साठी Batch Release Workflow customize केले — standard ERP मध्ये नव्हते.",tags:["general"]},
+  {en:"Role-Based Access Control",mr:"भूमिकेनुसार प्रवेश नियंत्रण",hi:"भूमिका-आधारित पहुँच नियंत्रण",short:"कोणता user ERP मध्ये काय पाहू आणि करू शकतो ते ठरवणे.",detail:"RBAC मुळे ERP मध्ये security मिळते. Store person ला फक्त inventory दिसते, Accounts person ला फक्त finance. कोणाला काय access द्यायचे ते role नुसार ठरते.",example:"Sales executive ला purchase orders दिसत नाहीत — फक्त sales orders आणि customer data दिसतो.",tags:["general"]},
+  {en:"Audit Trail",mr:"लेखापरीक्षण नोंद",hi:"ऑडिट ट्रेल",short:"ERP मध्ये कोणी काय केले याची complete history.",detail:"Audit Trail म्हणजे ERP मधील प्रत्येक action ची record — कोणी केले, कधी केले, काय बदलले. Auditor ला हे दाखवता येते. Fraud detection साठी उपयुक्त.",example:"Invoice मध्ये amount बदलली — Audit Trail मध्ये दिसते: Mr. Ramesh ने 3:45 PM ला ₹50,000 वरून ₹75,000 केले.",tags:["general"]},
+  {en:"Reconciliation",mr:"जुळवाजुळव / ताळेबंद",hi:"सुलह / मिलान",short:"दोन वेगळ्या ठिकाणचे records एकमेकांशी match करणे.",detail:"Reconciliation म्हणजे तुमचे ERP records आणि बाहेरचे records (bank statement, vendor bills) match करणे. Differences असतील तर शोधून fix करणे.",example:"Bank Reconciliation — ERP मधील bank balance आणि actual bank statement match केले — ₹2,340 difference सापडला.",tags:["general"]},
+  {en:"Implementation Partner",mr:"अंमलबजावणी भागीदार",hi:"कार्यान्वयन भागीदार",short:"ERP implement करण्यास मदत करणारी company किंवा consultant.",detail:"Implementation Partner म्हणजे ERP vendor (SAP, Odoo) चा certified partner जो तुमच्या business साठी ERP setup करतो, configure करतो आणि training देतो.",example:"SAP Business One साठी Implementation Partner निवडला — त्यांनी 8 आठवड्यांत Go-Live केले.",tags:["general"]},
+  {en:"Change Management",mr:"बदल व्यवस्थापन",hi:"परिवर्तन प्रबंधन",short:"नवीन ERP स्वीकारण्यासाठी team ला तयार करण्याची प्रक्रिया.",detail:"Change Management म्हणजे employees ना नवीन system साठी mentally आणि practically तयार करणे. Training, communication, resistance handle करणे — हे सगळे change management मध्ये येते.",example:"ERP Go-Live आधी 2 आठवडे change management sessions घेतले — team ने system सहज स्वीकारला.",tags:["general"]},
+  {en:"ERP ROI (Return on Investment)",mr:"ERP गुंतवणुकीवर परतावा",hi:"निवेश पर रिटर्न",short:"ERP वर केलेल्या खर्चातून किती फायदा झाला ते मोजणे.",detail:"ERP ROI म्हणजे ERP implementation वर खर्च केलेले पैसे किती पटीने परत मिळाले ते. Manual work कमी झाले, errors कमी झाले, time saved — यांचे monetary value calculate करतात.",example:"ERP वर ₹8L खर्च केला — manual labor ₹3L/वर्ष वाचले, errors मुळे होणारे नुकसान ₹2L वाचले. ROI 2 वर्षांत.",tags:["general"]},
+  {en:"Hypercare",mr:"अतिरिक्त देखभाल / हायपरकेअर",hi:"हाइपरकेयर",short:"ERP Go-Live नंतरच्या पहिल्या काही आठवड्यांमध्ये intensive support.",detail:"Hypercare म्हणजे Go-Live नंतर consultant किंवा vendor च्या team ने जवळून support देणे. Problems quickly solve होतात, users ला help मिळते. साधारण 4-8 आठवडे.",example:"Go-Live नंतर 6 आठवडे Hypercare — रोज morning call, सगळे issues same day resolve.",tags:["general"]},
 
-  // PHARMA
-  { en: "Batch Number", mr: "बॅच क्रमांक", hi: "बैच नंबर", short: "एका वेळी तयार झालेल्या औषधाचा unique identification number.", detail: "Pharma मध्ये प्रत्येक production batch ला unique number असतो. ERP मध्ये batch number track केला जातो म्हणजे कोणत्या raw material पासून कोणते medicine तयार झाले ते trace करता येते.", example: "उदाहरण: Batch B-2024-156 — Paracetamol 500mg, 10,000 tablets, manufacturing date 10 March.", tags: ["pharma"] },
-  { en: "GMP (Good Manufacturing Practice)", mr: "उत्तम उत्पादन पद्धती", hi: "अच्छी निर्माण प्रथा", short: "Pharma उत्पादनासाठी सरकारी नियमांनुसार पाळाव्या लागणाऱ्या पद्धती.", detail: "GMP म्हणजे pharma manufacturing साठी WHO आणि government ने ठरवलेले quality standards. ERP मध्ये GMP compliance track होते — SOPs follow होतात, deviations record होतात.", example: "उदाहरण: GMP audit मध्ये ERP चे batch records दाखवले — inspector ने pass केले.", tags: ["pharma"] },
-  { en: "QA / QC (Quality Assurance / Control)", mr: "गुणवत्ता नियंत्रण", hi: "गुणवत्ता नियंत्रण", short: "Product quality check आणि ensure करण्याची प्रक्रिया.", detail: "QA म्हणजे quality system design करणे. QC म्हणजे actual testing. ERP मध्ये QC module असतो जिथे raw material आणि finished goods testing results record होतात. Pass झाल्याशिवाय dispatch नाही.", example: "उदाहरण: QC team ने batch B-156 test केला — all parameters pass. ERP मध्ये 'Released' status दिला.", tags: ["pharma"] },
-  { en: "Batch Traceability", mr: "बॅच मागोवा", hi: "बैच ट्रेसेबिलिटी", short: "कोणते raw material वापरून कोणते medicine तयार झाले ते track करणे.", detail: "Batch Traceability म्हणजे forward आणि backward tracking. Forward — या raw material पासून कोणते batches तयार झाले. Backward — या medicine मध्ये कोणते raw materials आहेत.", example: "उदाहरण: एखाद्या batch मध्ये problem आला तर ERP मधून trace करतात — कोणता vendor, कोणती raw material.", tags: ["pharma"] },
-  { en: "SOP (Standard Operating Procedure)", mr: "प्रमाणित कार्यपद्धती", hi: "मानक संचालन प्रक्रिया", short: "प्रत्येक काम कसे करायचे याची लिखित पद्धत.", detail: "SOP म्हणजे step-by-step instructions — हे काम असे करायचे. Pharma मध्ये प्रत्येक process साठी SOP असतो. ERP मध्ये SOPs digital स्वरूपात असतात आणि deviation record होतात.", example: "उदाहरण: SOP-QC-014 — Dissolution Test कसा करायचा, कोणते parameters record करायचे.", tags: ["pharma"] },
-  { en: "Expiry Date Management", mr: "मुदत समाप्ती व्यवस्थापन", hi: "एक्सपायरी तारीख प्रबंधन", short: "Stock expiry होण्यापूर्वी ERP alerts आणि FIFO management.", detail: "ERP मध्ये प्रत्येक batch ची manufacturing आणि expiry date असते. FEFO (First Expiry First Out) method वापरतात — जे आधी expire होईल ते आधी dispatch होते. Expiry जवळ आली की alert येतो.", example: "उदाहरण: Batch B-89 expiry 30 दिवसांत — ERP ने alert दिला, sales team ला priority dispatch सांगितले.", tags: ["pharma"] },
+  // ── MANUFACTURING ────────────────────────────────────────────
+  {en:"BOM (Bill of Materials)",mr:"उत्पादन घटक यादी",hi:"सामग्री सूची",short:"एक product बनवायला कोणते raw materials किती लागतात याची यादी.",detail:"BOM म्हणजे recipe सारखे — एक finished product बनवायला किती raw materials लागतात. ERP मध्ये BOM set केला की production order दिल्यावर automatically material requirement calculate होते.",example:"100 kg Steel Pipe बनवायला BOM — HR Coil 95 kg, Alloy 5 kg, Electricity 50 units.",tags:["manufacturing"]},
+  {en:"Production Order",mr:"उत्पादन आदेश",hi:"उत्पादन आदेश",short:"किती माल तयार करायचा याचा ERP मधील अधिकृत आदेश.",detail:"Production Order म्हणजे ERP मध्ये दिलेला instruction — हे product, इतक्या quantity मध्ये, या तारखेपर्यंत तयार करा. यामुळे materials automatically reserve होतात.",example:"Production Order #PO-2024-156 — Steel Angle 40x40, 500 pieces, 15 March deadline.",tags:["manufacturing"]},
+  {en:"WIP (Work In Progress)",mr:"प्रगतीपथावरील काम",hi:"कार्य प्रगति में",short:"अर्धवट तयार झालेले माल — production floor वर असलेले.",detail:"WIP म्हणजे production मध्ये असलेले material — raw material पण नाही, finished goods पण नाही. ERP मध्ये WIP track केला जातो.",example:"आज WIP मध्ये 200 kg material आहे — welding stage वर आहे, painting बाकी आहे.",tags:["manufacturing"]},
+  {en:"GRN (Goods Receipt Note)",mr:"माल प्राप्ती नोंद",hi:"माल प्राप्ति रसीद",short:"Vendor कडून माल आल्यावर ERP मध्ये केलेली entry.",detail:"GRN म्हणजे vendor कडून माल आला की store team ERP मध्ये करते ती entry. GRN झाल्यावर stock automatically वाढते आणि accounts ला payable दिसते.",example:"GRN-2024-089 — Vendor Sharma Traders कडून 500 kg Steel received, quality check pending.",tags:["manufacturing"]},
+  {en:"Dispatch / Delivery Note",mr:"माल पाठवणी नोंद",hi:"डिलीवरी नोट",short:"Customer ला माल पाठवताना ERP मधून निघणारा document.",detail:"Dispatch Note मध्ये काय माल गेला, किती गेला, कुठे गेला ते असते. Stock automatically कमी होतो.",example:"DN-2024-445 — Customer ABC Ltd. ला 200 pieces dispatched, truck MH-04-AB-1234.",tags:["manufacturing"]},
+  {en:"Shop Floor",mr:"उत्पादन विभाग / शॉप फ्लोअर",hi:"उत्पादन क्षेत्र",short:"Factory मधील actual manufacturing होणारा भाग.",detail:"Shop Floor म्हणजे factory मधील तो area जिथे actual manufacturing होते. ERP मध्ये Shop Floor Management म्हणजे machines, workers, production सगळे track करणे.",example:"Shop floor वरून ERP मध्ये live production entry होते — manager ला office मधून दिसते.",tags:["manufacturing"]},
+  {en:"Inventory Valuation",mr:"साठा मूल्यांकन",hi:"स्टॉक मूल्यांकन",short:"Warehouse मधील stock ची एकूण किंमत किती आहे ते.",detail:"ERP मध्ये FIFO, Weighted Average अशा methods वापरून inventory value automatically calculate होते.",example:"आजच्या date ला total inventory value ₹45.6 Lakhs — Finance team ला balance sheet साठी लागते.",tags:["manufacturing"]},
+  {en:"Purchase Requisition",mr:"खरेदी विनंती",hi:"खरीद अनुरोध",short:"एखाद्या department ने Purchase साठी ERP मध्ये केलेली अधिकृत विनंती.",detail:"Purchase Requisition म्हणजे store किंवा production team ने ERP मध्ये केलेली purchase request. Manager approve केल्यावर Purchase Order तयार होते.",example:"PR-2024-23 — Store team request: Steel Rod 10mm, 200 kg, urgent.",tags:["manufacturing"]},
+  {en:"MRP (Material Requirements Planning)",mr:"साहित्य आवश्यकता नियोजन",hi:"सामग्री आवश्यकता योजना",short:"Sales orders नुसार किती raw material खरेदी करायला हवे ते ERP automatically calculate करणे.",detail:"MRP म्हणजे ERP ची एक feature जी sales orders, current stock आणि BOM बघून सांगते — पुढील महिन्यात किती raw material लागेल. Over-ordering आणि stock-out दोन्ही टाळता येते.",example:"MRP run केला — ERP ने सांगितले: HR Coil 2 tonnes खरेदी करा, Vendor lead time 7 days आहे.",tags:["manufacturing"]},
+  {en:"Scrap Management",mr:"कचरा / टाकाऊ माल व्यवस्थापन",hi:"स्क्रैप प्रबंधन",short:"Production मध्ये निघणाऱ्या waste चे ERP मध्ये tracking.",detail:"Scrap Management म्हणजे manufacturing process मध्ये निघणारा waste किंवा rejected material ERP मध्ये record करणे. Scrap किती निघाला, त्याची value किती, विकला की फेकला — सगळे track होते.",example:"आजच्या production मध्ये 3.2 kg scrap निघाला — ERP मध्ये record झाला, scrap dealer ला विकला ₹640 मिळाले.",tags:["manufacturing"]},
+  {en:"Quality Control (QC)",mr:"गुणवत्ता तपासणी",hi:"गुणवत्ता जाँच",short:"Production मध्ये product quality तपासण्याची प्रक्रिया.",detail:"Manufacturing QC मध्ये incoming raw materials, WIP आणि finished goods तपासले जातात. ERP मध्ये QC parameters define केले जातात — pass झाल्याशिवाय next stage ला जात नाही.",example:"Finished goods QC — tensile strength test pass झाला. ERP मध्ये 'Released for Dispatch' status.",tags:["manufacturing"]},
+  {en:"Capacity Planning",mr:"उत्पादन क्षमता नियोजन",hi:"क्षमता योजना",short:"Machines आणि workers किती काम करू शकतात ते plan करणे.",detail:"Capacity Planning मध्ये ERP मध्ये machine hours, labor hours आणि production load यांचे नियोजन होते. Over-loading किंवा idle time टाळता येतो.",example:"ERP Capacity Report — Machine M-3 येत्या आठवड्यात 110% loaded आहे, overtime plan करावा लागेल.",tags:["manufacturing"]},
+  {en:"Job Work",mr:"बाहेरील कामगार काम",hi:"जॉब वर्क",short:"External vendor कडून specific manufacturing process करवून घेणे.",detail:"Job Work म्हणजे तुमच्या material बाहेरील specialist vendor कडे processing साठी पाठवणे. ERP मध्ये Job Work challan तयार होतो, material send केले जाते, processed material receive होते.",example:"Electroplating साठी Job Work — 500 pieces vendor Ganesh Platers ला पाठवले. 3 दिवसांत processed येतील.",tags:["manufacturing"]},
+  {en:"Reorder Level",mr:"पुन्हा ऑर्डर पातळी",hi:"पुनः ऑर्डर स्तर",short:"Stock किती कमी झाला की purchase trigger व्हायला हवे ते minimum level.",detail:"Reorder Level म्हणजे ERP मध्ये प्रत्येक item साठी set केलेली minimum quantity. Stock या level पेक्षा कमी झाला की ERP automatically alert किंवा Purchase Requisition तयार करतो.",example:"Steel Rod 10mm Reorder Level = 100 kg. Stock 95 kg झाला — ERP ने automatically PR तयार केली.",tags:["manufacturing"]},
+  {en:"Standard Cost vs Actual Cost",mr:"प्रमाणित खर्च विरुद्ध प्रत्यक्ष खर्च",hi:"मानक लागत बनाम वास्तविक लागत",short:"ठरवलेला खर्च आणि प्रत्यक्षात झालेला खर्च यांची तुलना.",detail:"Standard Cost म्हणजे आधीच ठरवलेला expected cost. Actual Cost म्हणजे खरोखर झालेला cost. ERP मध्ये दोन्हींची तुलना होते — variance report तयार होतो.",example:"Steel Pipe production Standard Cost ₹480/kg, Actual Cost ₹510/kg. Variance ₹30/kg — कारण raw material महाग झाला.",tags:["manufacturing"]},
 
-  // FINANCE
-  { en: "Accounts Payable", mr: "देय खाते / Payable", hi: "देय खाता", short: "आपण vendors ना किती पैसे द्यायचे आहेत ते.", detail: "Accounts Payable म्हणजे आपण suppliers ना किती पैसे द्यायचे आहेत. ERP मध्ये GRN झाल्यावर automatically payable तयार होते. Due dates track होतात, overdue alerts येतात.", example: "उदाहरण: Vendor Mehta Steels — Outstanding ₹3.4L, due date 25 March. ERP ने reminder पाठवला.", tags: ["finance"] },
-  { en: "Accounts Receivable", mr: "प्राप्य खाते / Receivable", hi: "प्राप्य खाता", short: "Customers आपल्याला किती पैसे द्यायचे आहेत ते.", detail: "Accounts Receivable म्हणजे customers कडून आपल्याला येणारे पैसे. ERP मध्ये Invoice raise केल्यावर automatically receivable तयार होते. Overdue payments साठी automatic reminders जातात.", example: "उदाहरण: Customer ABC Ltd. — Outstanding ₹8.2L, 45 days overdue. ERP ने automatic reminder email पाठवला.", tags: ["finance"] },
-  { en: "Cost Centre", mr: "खर्च केंद्र", hi: "लागत केंद्र", short: "Business च्या एका specific department / project चा खर्च track करणे.", detail: "Cost Centre मुळे तुम्ही business च्या कोणत्याही विभागाचा किंवा project चा खर्च वेगळा track करू शकता. Real Estate मध्ये प्रत्येक project एक cost centre असतो.", example: "उदाहरण: Project 'Sunrise Towers' चा total खर्च किती झाला — ERP मधून एका click वर दिसतो.", tags: ["finance"] },
-  { en: "Schedule III Compliance", mr: "शेड्यूल III अनुपालन", hi: "शेड्यूल III अनुपालन", short: "Companies Act नुसार Balance Sheet आणि P&L format.", detail: "Schedule III म्हणजे Indian Companies Act नुसार financial statements कसे prepare करायचे ते. ERP मधून Schedule III compliant reports automatically तयार होतात — CA ला manually करायला नको.", example: "उदाहरण: Year end ला ERP मधून directly Schedule III Balance Sheet export केली — Auditor ला सरळ दिली.", tags: ["finance"] },
-  { en: "GST / Tax Compliance", mr: "जीएसटी अनुपालन", hi: "जीएसटी अनुपालन", short: "ERP मधून GST returns साठी data automatically prepare होणे.", detail: "ERP मध्ये GST setup केला की सर्व transactions वर automatically correct GST apply होतो. GSTR-1, GSTR-3B साठी data ERP मधून export करता येतो.", example: "उदाहरण: Month end ला ERP मधून GSTR-1 data export केला — Accountant ने directly portal वर upload केला.", tags: ["finance"] },
+  // ── PHARMA ───────────────────────────────────────────────────
+  {en:"Batch Number",mr:"बॅच क्रमांक",hi:"बैच नंबर",short:"एका वेळी तयार झालेल्या औषधाचा unique identification number.",detail:"Pharma मध्ये प्रत्येक production batch ला unique number असतो. ERP मध्ये batch number track केला जातो — raw material पासून medicine पर्यंत पूर्ण history.",example:"Batch B-2024-156 — Paracetamol 500mg, 10,000 tablets, manufacturing date 10 March.",tags:["pharma"]},
+  {en:"GMP (Good Manufacturing Practice)",mr:"उत्तम उत्पादन पद्धती",hi:"अच्छी निर्माण प्रथा",short:"Pharma उत्पादनासाठी सरकारी नियमांनुसार पाळाव्या लागणाऱ्या पद्धती.",detail:"GMP म्हणजे pharma manufacturing साठी WHO आणि government ने ठरवलेले quality standards. ERP मध्ये GMP compliance track होते.",example:"GMP audit मध्ये ERP चे batch records दाखवले — inspector ने pass केले.",tags:["pharma"]},
+  {en:"QA / QC",mr:"गुणवत्ता खात्री / नियंत्रण",hi:"गुणवत्ता नियंत्रण",short:"Product quality check आणि ensure करण्याची प्रक्रिया.",detail:"QA म्हणजे quality system design करणे. QC म्हणजे actual testing. ERP मध्ये QC module असतो — Pass झाल्याशिवाय dispatch नाही.",example:"QC team ने batch B-156 test केला — all parameters pass. ERP मध्ये 'Released' status.",tags:["pharma"]},
+  {en:"Batch Traceability",mr:"बॅच मागोवा",hi:"बैच ट्रेसेबिलिटी",short:"कोणते raw material वापरून कोणते medicine तयार झाले ते track करणे.",detail:"Forward — या raw material पासून कोणते batches तयार झाले. Backward — या medicine मध्ये कोणते raw materials आहेत. ERP मुळे दोन्ही directions ला trace होते.",example:"Batch मध्ये problem आला — ERP मधून trace: कोणता vendor, कोणती raw material, कोणत्या patients ना गेले.",tags:["pharma"]},
+  {en:"SOP (Standard Operating Procedure)",mr:"प्रमाणित कार्यपद्धती",hi:"मानक संचालन प्रक्रिया",short:"प्रत्येक काम कसे करायचे याची लिखित पद्धत.",detail:"SOP म्हणजे step-by-step instructions. Pharma मध्ये प्रत्येक process साठी SOP असतो. ERP मध्ये SOPs digital स्वरूपात असतात आणि deviation record होतात.",example:"SOP-QC-014 — Dissolution Test कसा करायचा, कोणते parameters record करायचे.",tags:["pharma"]},
+  {en:"Expiry Date Management",mr:"मुदत समाप्ती व्यवस्थापन",hi:"एक्सपायरी प्रबंधन",short:"Stock expiry होण्यापूर्वी ERP alerts आणि FEFO management.",detail:"ERP मध्ये FEFO (First Expiry First Out) method — जे आधी expire होईल ते आधी dispatch. Expiry जवळ आली की automatic alert.",example:"Batch B-89 expiry 30 दिवसांत — ERP ने alert दिला, priority dispatch सांगितले.",tags:["pharma"]},
 
-  // REAL ESTATE
-  { en: "Project Costing", mr: "प्रकल्प खर्च व्यवस्थापन", hi: "परियोजना लागत प्रबंधन", short: "एका construction project वर किती खर्च झाला ते track करणे.", detail: "Project Costing म्हणजे Real Estate मध्ये प्रत्येक project चा — materials, labour, contractor payments, overheads — सगळा खर्च ERP मध्ये project-wise track करणे.", example: "उदाहरण: 'Green Valley Phase 2' project — Budget ₹2.5 Cr, actual till date ₹1.8 Cr, variance report ERP मधून.", tags: ["realestate"] },
-  { en: "Contractor Management", mr: "कंत्राटदार व्यवस्थापन", hi: "ठेकेदार प्रबंधन", short: "Construction contractors चे work orders, bills आणि payments ERP मध्ये track करणे.", detail: "ERP मध्ये contractors साठी work orders दिले जातात, त्यांचे progress bills verify होतात, retention amounts track होतात आणि final payments release होतात — सगळे documented.", example: "उदाहरण: Contractor Patil Construction — Work Order ₹45L, certified ₹32L, retention 10% = ₹3.2L held.", tags: ["realestate"] },
-  { en: "Flat Booking / CRM", mr: "फ्लॅट बुकिंग व्यवस्थापन", hi: "फ्लैट बुकिंग प्रबंधन", short: "Buyers चे flat bookings, payments आणि possession ERP/CRM मध्ये track करणे.", detail: "Real Estate ERP मध्ये CRM integration असते — कोणता flat कोणाला booked, payment schedule, received payments, balance due — सगळे eka ठिकाणी दिसते.", example: "उदाहरण: Flat A-502 — Mr. Sharma ने book केला, total ₹65L, received ₹45L, balance ₹20L — possession pending.", tags: ["realestate"] },
+  // ── FINANCE ──────────────────────────────────────────────────
+  {en:"Accounts Payable",mr:"देय खाते / Payable",hi:"देय खाता",short:"आपण vendors ना किती पैसे द्यायचे आहेत ते.",detail:"ERP मध्ये GRN झाल्यावर automatically payable तयार होते. Due dates track होतात, overdue alerts येतात.",example:"Vendor Mehta Steels — Outstanding ₹3.4L, due date 25 March. ERP ने reminder पाठवला.",tags:["finance"]},
+  {en:"Accounts Receivable",mr:"प्राप्य खाते / Receivable",hi:"प्राप्य खाता",short:"Customers आपल्याला किती पैसे द्यायचे आहेत ते.",detail:"ERP मध्ये Invoice raise केल्यावर automatically receivable तयार होते. Overdue payments साठी automatic reminders जातात.",example:"Customer ABC Ltd. — Outstanding ₹8.2L, 45 days overdue. ERP ने automatic reminder email पाठवला.",tags:["finance"]},
+  {en:"Cost Centre",mr:"खर्च केंद्र",hi:"लागत केंद्र",short:"Business च्या एका specific department / project चा खर्च track करणे.",detail:"Cost Centre मुळे कोणत्याही विभागाचा किंवा project चा खर्च वेगळा track करता येतो. Real Estate मध्ये प्रत्येक project एक cost centre.",example:"'Sunrise Towers' project — total खर्च किती झाला — ERP मधून एका click वर.",tags:["finance"]},
+  {en:"GST / Tax Compliance",mr:"जीएसटी अनुपालन",hi:"जीएसटी अनुपालन",short:"ERP मधून GST returns साठी data automatically prepare होणे.",detail:"ERP मध्ये GST setup केला की सर्व transactions वर automatically correct GST apply होतो. GSTR-1, GSTR-3B data export होतो.",example:"Month end ला ERP मधून GSTR-1 data export केला — portal वर upload केला.",tags:["finance"]},
+  {en:"Schedule III Compliance",mr:"शेड्यूल III अनुपालन",hi:"शेड्यूल III अनुपालन",short:"Companies Act नुसार Balance Sheet आणि P&L format.",detail:"Schedule III म्हणजे Indian Companies Act नुसार financial statements format. ERP मधून directly compliant reports तयार होतात.",example:"Year end ला ERP मधून Schedule III Balance Sheet export — Auditor ला सरळ दिली.",tags:["finance"]},
+  {en:"Chart of Accounts",mr:"खाते यादी / चार्ट ऑफ अकाउंट्स",hi:"खाता चार्ट",short:"ERP मधील सर्व accounting heads ची organized यादी.",detail:"Chart of Accounts म्हणजे तुमच्या ERP मधील सर्व ledger accounts ची hierarchical list. Assets, Liabilities, Income, Expenses — सगळे organized असतात.",example:"COA मध्ये 'Raw Material Purchase' account आहे — सर्व material purchases त्याच account ला जातात.",tags:["finance"]},
+  {en:"Journal Entry",mr:"जर्नल नोंद",hi:"जर्नल प्रविष्टि",short:"ERP मध्ये manual accounting entry करणे.",detail:"Journal Entry म्हणजे ERP मध्ये manual debit-credit entry. जेव्हा automatic transaction नसते तेव्हा manual JE केली जाते. Audit साठी justification लिहावी लागते.",example:"Prepaid Insurance adjust करायला Journal Entry: Insurance Expense Dr, Prepaid Insurance Cr — ₹25,000.",tags:["finance"]},
+  {en:"Bank Reconciliation",mr:"बँक ताळेबंद",hi:"बैंक समाधान",short:"ERP चे bank balance आणि actual bank statement match करणे.",detail:"Bank Reconciliation मध्ये ERP मधील bank book आणि bank चे statement compare केले जाते. Differences असतील तर — outstanding cheques, deposits in transit — identify होतात.",example:"Month end Bank Reconciliation — ERP balance ₹4.82L, Bank statement ₹4.79L. Difference: one cheque not yet cleared.",tags:["finance"]},
+  {en:"Trial Balance",mr:"चाचणी शिल्लक",hi:"परीक्षण तुलन पत्र",short:"सर्व accounts चे debit आणि credit totals match आहेत का ते check करणे.",detail:"Trial Balance म्हणजे ERP मधील सर्व ledgers चे ending balances एकत्र दाखवणारा report. Debit = Credit असेल तर accounting बरोबर आहे.",example:"Month end Trial Balance run केला — Debit Total = Credit Total = ₹1,23,45,678. सगळे बरोबर.",tags:["finance"]},
+  {en:"Depreciation",mr:"घसारा",hi:"मूल्यह्रास",short:"Fixed Assets ची value वर्षाबरोबर कमी होणे — ERP मध्ये automatically calculate होणे.",detail:"ERP मध्ये Fixed Assets (machines, vehicles, computers) साठी depreciation method set केली की automatically monthly/yearly depreciation calculate होते आणि accounts मध्ये post होते.",example:"CNC Machine ₹15L — Straight Line Method, 10 years. ERP automatically ₹1.5L/year depreciation post करतो.",tags:["finance"]},
+  {en:"P&L Statement",mr:"नफा-तोटा पत्रक",hi:"लाभ-हानि विवरण",short:"Business ने किती नफा किंवा तोटा केला याचे statement.",detail:"Profit & Loss Statement मध्ये एका period मध्ये किती revenue आले, किती expenses झाले आणि net profit किती झाला ते दिसते. ERP मधून real-time P&L मिळतो.",example:"Q3 P&L — Revenue ₹1.2 Cr, Expenses ₹0.95 Cr, Net Profit ₹25L. पिछले वर्षापेक्षा 18% जास्त.",tags:["finance"]},
+  {en:"Cash Flow Statement",mr:"रोख प्रवाह विवरण",hi:"नकदी प्रवाह विवरण",short:"Business मध्ये किती पैसे आले आणि गेले याचा तपशील.",detail:"Cash Flow Statement मध्ये Operating, Investing आणि Financing activities मधील cash in/out दिसतो. ERP मधून automatically तयार होतो.",example:"Cash Flow Statement — Operating Activities: ₹18L inflow. Investing: ₹5L outflow (new machine). Net: ₹13L.",tags:["finance"]},
+  {en:"Budget vs Actual",mr:"अंदाजपत्रक विरुद्ध प्रत्यक्ष",hi:"बजट बनाम वास्तविक",short:"ठरवलेले budget आणि प्रत्यक्षात झालेला खर्च यांची तुलना.",detail:"Budget vs Actual Report मुळे कोणत्या department ने budget पेक्षा जास्त खर्च केला ते दिसते. Management ला financial discipline ठेवता येते.",example:"Marketing Budget ₹5L, Actual ₹6.2L — ₹1.2L over budget. Manager ला explanation द्यावे लागेल.",tags:["finance"]},
+  {en:"TDS (Tax Deducted at Source)",mr:"स्रोतावर कर कपात",hi:"स्रोत पर कर कटौती",short:"Payment करताना government च्या नियमानुसार tax कापून ठेवणे.",detail:"TDS म्हणजे vendor ला payment करताना government rules नुसार ठराविक % tax कापून government ला जमा करणे. ERP मध्ये TDS automatically calculate आणि deduct होतो.",example:"Consultant ला ₹1L payment — TDS 10% = ₹10,000 deduct. Consultant ला ₹90,000 मिळाले. ERP ने automatically केले.",tags:["finance"]},
+  {en:"Ageing Report",mr:"थकीत देणे/घेणे अहवाल",hi:"बकाया रिपोर्ट",short:"किती जुनी receivables आणि payables pending आहेत याचा report.",detail:"Ageing Report मध्ये outstanding amounts किती दिवसांपासून pending आहेत ते दिसते — 0-30 days, 31-60 days, 60+ days. Collection priority ठरवायला उपयुक्त.",example:"Ageing Report — Customer Raj Traders: ₹2.3L outstanding 65 days. Immediate follow-up required.",tags:["finance"]},
+
+  // ── REAL ESTATE ──────────────────────────────────────────────
+  {en:"Project Costing",mr:"प्रकल्प खर्च व्यवस्थापन",hi:"परियोजना लागत प्रबंधन",short:"एका construction project वर किती खर्च झाला ते track करणे.",detail:"प्रत्येक project चा — materials, labour, contractor payments, overheads — सगळा खर्च project-wise track होतो.",example:"'Green Valley Phase 2' — Budget ₹2.5 Cr, actual ₹1.8 Cr, variance report ERP मधून.",tags:["realestate"]},
+  {en:"Contractor Management",mr:"कंत्राटदार व्यवस्थापन",hi:"ठेकेदार प्रबंधन",short:"Contractors चे work orders, bills आणि payments ERP मध्ये track करणे.",detail:"Work orders दिले जातात, progress bills verify होतात, retention amounts track होतात आणि final payments release होतात.",example:"Patil Construction — Work Order ₹45L, certified ₹32L, retention 10% = ₹3.2L held.",tags:["realestate"]},
+  {en:"Flat Booking / CRM",mr:"फ्लॅट बुकिंग व्यवस्थापन",hi:"फ्लैट बुकिंग प्रबंधन",short:"Buyers चे flat bookings, payments आणि possession ERP/CRM मध्ये track करणे.",detail:"कोणता flat कोणाला booked, payment schedule, received payments, balance due — सगळे एका ठिकाणी दिसते.",example:"Flat A-502 — Mr. Sharma, total ₹65L, received ₹45L, balance ₹20L — possession pending.",tags:["realestate"]},
+
+  // ── HR & PAYROLL ─────────────────────────────────────────────
+  {en:"HRMS (Human Resource Management System)",mr:"मानव संसाधन व्यवस्थापन प्रणाली",hi:"मानव संसाधन प्रबंधन प्रणाली",short:"Employees चे सर्व records, attendance, payroll एकाच system मध्ये.",detail:"HRMS म्हणजे employees ची सर्व माहिती — joining, personal details, attendance, leaves, performance, payroll — एकाच software मध्ये manage करणे. ERP मध्ये HRMS module असतो किंवा integrate होतो.",example:"HRMS मध्ये दिसते — Employee Rajesh Patil: 23 days present, 2 sick leaves, salary ₹42,000 payable.",tags:["hr"]},
+  {en:"Payroll Processing",mr:"वेतन प्रक्रिया",hi:"वेतन प्रसंस्करण",short:"Employees च्या पगाराची calculation आणि payment ERP मध्ये automatically करणे.",detail:"Payroll Processing मध्ये attendance, leaves, deductions, allowances, PF, ESI, TDS — सगळे automatically calculate होते आणि salary slip तयार होतो.",example:"Month end Payroll run — 45 employees चे salary automatically calculate झाले. Bank transfer list तयार आहे.",tags:["hr"]},
+  {en:"Leave Management",mr:"रजा व्यवस्थापन",hi:"अवकाश प्रबंधन",short:"Employees च्या leaves चे application, approval आणि balance ERP मध्ये track करणे.",detail:"Leave Management मध्ये employee online leave apply करतो, manager ERP मधून approve/reject करतो. Leave balance automatically update होते. Payroll शी linked असते.",example:"Employee Priya ने 3 days Casual Leave apply केली — Manager ने ERP मधून approve केली. Balance: 7 days remaining.",tags:["hr"]},
+  {en:"Attendance Tracking",mr:"उपस्थिती नोंद",hi:"उपस्थिति ट्रैकिंग",short:"Employees रोज कधी आले, कधी गेले याची ERP मध्ये automatic नोंद.",detail:"Attendance Tracking म्हणजे biometric machine, RFID card किंवा mobile app मधून attendance ERP मध्ये automatically येणे. Manual register नको.",example:"Biometric machine ERP ला connected — Suresh आज 9:02 AM ला IN, 6:15 PM ला OUT. Automatically payroll साठी ready.",tags:["hr"]},
+  {en:"PF / ESI Compliance",mr:"भविष्य निर्वाह निधी / कर्मचारी राज्य विमा",hi:"पीएफ / ईएसआई अनुपालन",short:"Government च्या नियमानुसार PF आणि ESI automatically calculate आणि file करणे.",detail:"ERP मध्ये PF (12% of Basic) आणि ESI (Employee + Employer contribution) automatically calculate होते. Monthly returns साठी data export होतो.",example:"Month end — ERP ने 45 employees चे PF ₹1.8L automatically calculate केले. ECR file ready for upload.",tags:["hr"]},
+  {en:"Employee Onboarding",mr:"नवीन कर्मचारी सामावून घेणे",hi:"कर्मचारी ऑनबोर्डिंग",short:"नवीन employee join झाल्यावर ERP मध्ये सर्व setup करणे.",detail:"Onboarding मध्ये ERP मध्ये employee record create होतो, salary structure assign होते, department set होते, login credentials दिले जातात. Manual paperwork कमी होते.",example:"New joinee Amit ने Day 1 ला online documents upload केले — HR ने ERP मध्ये verify केले. Salary structure live.",tags:["hr"]},
+  {en:"Performance Management",mr:"कामगिरी व्यवस्थापन",hi:"प्रदर्शन प्रबंधन",short:"Employees च्या कामाचे मूल्यमापन ERP मध्ये track करणे.",detail:"Performance Management मध्ये goals set होतात, quarterly reviews होतात, appraisal ratings ERP मध्ये record होतात. Increment आणि promotion decisions साठी data मिळतो.",example:"Annual appraisal — Sales team 3 members ने target 110% achieve केला. ERP मध्ये 'Exceeds Expectations' rating.",tags:["hr"]},
+  {en:"Salary Structure",mr:"वेतन रचना",hi:"वेतन संरचना",short:"Employee च्या पगाराचे components — Basic, HRA, Allowances, Deductions.",detail:"Salary Structure मध्ये Basic Salary, HRA, Travel Allowance, Medical Allowance, PF Deduction, TDS — सगळे define केले जातात. ERP मध्ये प्रत्येक employee ला structure assign होते.",example:"Salary Structure 'Grade B': Basic ₹25,000, HRA ₹10,000, TA ₹3,000, PF ₹3,000. Gross: ₹38,000.",tags:["hr"]},
+  {en:"Increment / Appraisal",mr:"वेतनवाढ / कामगिरी मूल्यांकन",hi:"वेतन वृद्धि / मूल्यांकन",short:"Employees ची annual salary review आणि ERP मध्ये update.",detail:"Appraisal cycle पूर्ण झाल्यावर ERP मध्ये new salary structure update होते. Effective date set होते — automatically नवीन salary calculate होते.",example:"April increment — Rajesh ची salary ₹42,000 वरून ₹46,200 झाली. ERP मध्ये update — May payroll automatically नवीन salary.",tags:["hr"]},
+
+  // ── SUPPLY CHAIN / LOGISTICS ─────────────────────────────────
+  {en:"Supply Chain Management (SCM)",mr:"पुरवठा साखळी व्यवस्थापन",hi:"आपूर्ति श्रृंखला प्रबंधन",short:"Raw material ते customer पर्यंतच्या पूर्ण प्रवाहाचे व्यवस्थापन.",detail:"SCM म्हणजे suppliers → manufacturing → warehouse → distribution → customer हा पूर्ण flow manage करणे. ERP मुळे या प्रत्येक stage चे visibility मिळते.",example:"SCM Dashboard — Supplier delay detected: HR Coil delivery 3 days late. Production plan adjust करावा लागेल.",tags:["supplychain"]},
+  {en:"Vendor Management",mr:"पुरवठादार व्यवस्थापन",hi:"विक्रेता प्रबंधन",short:"Suppliers ची माहिती, performance आणि payments ERP मध्ये track करणे.",detail:"Vendor Management मध्ये supplier registration, price lists, delivery performance, payment terms — सगळे ERP मध्ये असते. Best vendor निवडायला historical data मिळतो.",example:"Vendor Scorecard — Sharma Traders: On-time delivery 92%, Quality rejection 0.5%. Best vendor for Steel.",tags:["supplychain"]},
+  {en:"Purchase Order (PO)",mr:"खरेदी आदेश",hi:"खरीद आदेश",short:"Vendor ला माल पाठवण्यास सांगण्याचा ERP मधून तयार होणारा अधिकृत document.",detail:"Purchase Order मध्ये item, quantity, price, delivery date, payment terms — सगळे असते. PO raise केल्यावर vendor ला email automatically जाऊ शकतो. GRN शी linked असतो.",example:"PO-2024-234 — Vendor ABC Chemicals: Citric Acid 500 kg @ ₹85/kg. Delivery: 20 March. Payment: 30 days.",tags:["supplychain"]},
+  {en:"3PL (Third Party Logistics)",mr:"तृतीय पक्ष लॉजिस्टिक्स",hi:"तृतीय पक्ष रसद",short:"Warehouse आणि delivery साठी बाहेरच्या logistics company चा वापर.",detail:"3PL म्हणजे तुमचे goods store आणि deliver करण्यासाठी external logistics partner. ERP मध्ये 3PL integration असेल तर shipment tracking, inventory — सगळे एकाच ठिकाणी.",example:"3PL Partner XYZ Logistics — Mumbai warehouse मध्ये 500 units stored. Delivery status real-time ERP मध्ये दिसतो.",tags:["supplychain"]},
+  {en:"Warehouse Management",mr:"गोदाम व्यवस्थापन",hi:"गोदाम प्रबंधन",short:"Warehouse मधील stock location, movement आणि operations ERP मध्ये manage करणे.",detail:"Warehouse Management मध्ये bin location tracking, picking, packing, put-away — सगळे ERP मध्ये होते. कोणता item कुठे आहे ते exactly दिसते.",example:"Item 'Steel Rod 10mm' — Warehouse A, Rack 3, Bin B-12. 245 kg available. ERP मध्ये exact location.",tags:["supplychain"]},
+  {en:"Freight / Logistics Cost",mr:"माल वाहतूक खर्च",hi:"माल ढुलाई / रसद लागत",short:"Material transport करण्याचा खर्च ERP मध्ये track करणे.",detail:"Freight Cost म्हणजे goods एका ठिकाणाहून दुसऱ्या ठिकाणी नेण्याचा खर्च. ERP मध्ये freight cost purchase किंवा sales value मध्ये add होते — product costing accurate होते.",example:"Import consignment — Freight + Insurance ₹18,500. ERP मध्ये item cost मध्ये add झाले — landed cost accurate.",tags:["supplychain"]},
+  {en:"Lead Time",mr:"प्रतीक्षा वेळ",hi:"लीड टाइम",short:"Order दिल्यापासून माल येण्यापर्यंतचा वेळ.",detail:"Lead Time म्हणजे Purchase Order दिल्यापासून GRN होईपर्यंतचा average time. ERP मध्ये vendor-wise lead time track होते. MRP मध्ये lead time consider होतो.",example:"Vendor Mehta Chemicals — Average Lead Time 7 days. MRP मध्ये automatically 7 days आधी PO trigger होतो.",tags:["supplychain"]},
+  {en:"Stock Transfer",mr:"साठा हस्तांतरण",hi:"स्टॉक ट्रांसफर",short:"एका warehouse / location मधून दुसऱ्या ठिकाणी stock move करणे.",detail:"Stock Transfer म्हणजे internal movement — Plant A कडून Plant B ला, किंवा एका warehouse कडून दुसऱ्याला. ERP मध्ये Transfer Order तयार होतो, both locations update होतात.",example:"Factory मधून 200 pieces Finished Goods Delhi warehouse ला transfer — Stock Transfer Order ERP मधून.",tags:["supplychain"]},
+  {en:"FIFO (First In First Out)",mr:"प्रथम आलेले प्रथम जाणे",hi:"पहले आओ पहले जाओ",short:"जे stock आधी आले ते आधी वापरणे किंवा पाठवणे.",detail:"FIFO method मध्ये जे material आधी purchased होते ते आधी use होते. ERP automatically FIFO follow करतो — old batch आधी consume होतो.",example:"Steel Rod batch January मध्ये आला — FIFO मुळे February च्या production मध्ये तो आधी वापरला गेला.",tags:["supplychain"]},
+
+  // ── EDTECH ───────────────────────────────────────────────────
+  {en:"LMS (Learning Management System)",mr:"शिक्षण व्यवस्थापन प्रणाली",hi:"शिक्षण प्रबंधन प्रणाली",short:"Online courses, content आणि student progress track करणारी system.",detail:"LMS मध्ये courses upload होतात, students enroll होतात, assignments submit होतात, progress track होते. ERP शी integrate झाला की fees आणि course access linked होतो.",example:"Student Anita ने 3 courses enrolled केले — LMS मध्ये 68% progress. Fees ERP मध्ये paid — access active.",tags:["edtech"]},
+  {en:"Student Information System (SIS)",mr:"विद्यार्थी माहिती प्रणाली",hi:"छात्र सूचना प्रणाली",short:"Students ची admissions, grades, attendance सगळी माहिती एकाच system मध्ये.",detail:"SIS मध्ये student admission, personal details, grades, attendance, certificates — सगळे manage होते. ERP integration मुळे fees, payroll, inventory (lab equipment) सगळे connected.",example:"SIS मध्ये — Student Rohan: Attendance 87%, Grades: A, Fees: Pending ₹15,000. Parent notification sent.",tags:["edtech"]},
+  {en:"Fee Management",mr:"शुल्क व्यवस्थापन",hi:"शुल्क प्रबंधन",short:"Students च्या fees collection, reminders आणि receipts ERP मध्ये manage करणे.",detail:"Fee Management मध्ये fee structure set होते, due dates track होतात, online payment integration असते, automatic reminders जातात आणि receipts generate होतात.",example:"Semester fees due 30 June — ERP ने 500 students ना automatic reminder SMS पाठवला. Collection rate 94%.",tags:["edtech"]},
+  {en:"Batch Management (EdTech)",mr:"तुकडी व्यवस्थापन",hi:"बैच प्रबंधन",short:"Students च्या different batches चे timetable, faculty आणि resources manage करणे.",detail:"EdTech मध्ये Batch Management म्हणजे कोणत्या batch ला कोणता faculty, कोणती classroom, कोणता time — ERP मध्ये सगळे organized. Schedule conflicts automatically detect होतात.",example:"Batch B-Morning — 35 students, Faculty: Prof. Sharma, Room 204, Mon-Wed-Fri 10-12 AM. ERP मध्ये conflict-free schedule.",tags:["edtech"]},
+  {en:"Course Completion Certificate",mr:"अभ्यासक्रम पूर्णता प्रमाणपत्र",hi:"पाठ्यक्रम पूर्णता प्रमाणपत्र",short:"Student ने course पूर्ण केल्यावर ERP मधून automatically certificate generate करणे.",detail:"Course Completion Certificate ERP मध्ये automatically generate होतो जेव्हा student ने required attendance, assignments आणि exams pass केलेले असतात.",example:"Priya ने Digital Marketing Course पूर्ण केला — ERP ने automatically certificate generate केले. Email sent.",tags:["edtech"]},
+  {en:"Faculty Management",mr:"शिक्षक व्यवस्थापन",hi:"शिक्षक प्रबंधन",short:"Faculty ची availability, teaching hours, payroll आणि performance ERP मध्ये track करणे.",detail:"Faculty Management मध्ये teaching assignments, attendance, salary, performance reviews — सगळे ERP मध्ये असते. Part-time आणि visiting faculty साठी automatic payout calculations.",example:"Prof. Mehta ने या महिन्यात 48 hours शिकवले — ERP ने automatically ₹24,000 honorarium calculate केले.",tags:["edtech"]},
+
+  // ── IT & SOFTWARE ────────────────────────────────────────────
+  {en:"SaaS (Software as a Service)",mr:"सेवा म्हणून सॉफ्टवेअर",hi:"सेवा के रूप में सॉफ़्टवेयर",short:"Internet वर subscription basis वर मिळणारे software — install नको.",detail:"SaaS म्हणजे software तुमच्या computer वर install नसते — internet वर असते आणि monthly/yearly subscription देता येते. Cloud ERP हे SaaS मॉडेल मध्ये येते.",example:"Zoho ERP — SaaS model. ₹5,000/month subscription. No server needed. Login करा आणि use करा.",tags:["it"]},
+  {en:"ERP Licensing",mr:"ERP परवाना",hi:"ERP लाइसेंसिंग",short:"ERP software वापरण्यासाठी द्यावे लागणारे license fees.",detail:"ERP Licensing दोन प्रकारचे — Perpetual License (एकदा pay करा, कायम वापरा) आणि Subscription License (दर महिना/वर्ष pay करा). SaaS ERP मध्ये subscription model असते.",example:"SAP Business One Perpetual License — एकदा ₹4L, annual maintenance ₹60K. vs Odoo Cloud — ₹8,000/month.",tags:["it"]},
+  {en:"Database",mr:"माहितीकोश / डेटाबेस",hi:"डेटाबेस",short:"ERP मधील सर्व data जिथे store होते ती system.",detail:"Database म्हणजे ERP मधील सर्व transactions, master data, reports — सगळे कुठे save होते ते. SAP HANA, MySQL, PostgreSQL — different ERP different databases वापरतात.",example:"SAP Business One — HANA database वापरतो म्हणून reports खूप fast येतात — seconds मध्ये.",tags:["it"]},
+  {en:"ERP Upgrade",mr:"ERP आवृत्ती सुधारणा",hi:"ERP अपग्रेड",short:"ERP चे जुने version नवीन version ला upgrade करणे.",detail:"ERP Upgrade मध्ये नवीन features येतात, security patches मिळतात, bugs fix होतात. Cloud ERP मध्ये automatic upgrades होतात. On-Premise मध्ये manually upgrade करावे लागते.",example:"Odoo 16 वरून Odoo 17 upgrade — नवीन AI features मिळाले. 2 days downtime plan केला होता.",tags:["it"]},
+  {en:"Sandbox Environment",mr:"चाचणी वातावरण",hi:"परीक्षण वातावरण",short:"Production data नष्ट न करता ERP चाचणी करण्यासाठी वेगळे environment.",detail:"Sandbox म्हणजे ERP चे copy जिथे तुम्ही नवीन features test करू शकता, training देऊ शकता — production data ला धोका नाही. Customization आधी Sandbox मध्ये test होते.",example:"नवीन payroll customization Sandbox मध्ये test केले — सगळे बरोबर आल्यावर Production मध्ये deploy केले.",tags:["it"]},
+  {en:"ERP Security",mr:"ERP सुरक्षा",hi:"ERP सुरक्षा",short:"ERP मधील data आणि access safe ठेवण्याची व्यवस्था.",detail:"ERP Security मध्ये password policies, role-based access, data encryption, audit trails, session timeout — सगळे असते. Financial data sensitive असतो म्हणून security critical आहे.",example:"ERP Security setup — 2-factor authentication, session timeout 30 min, failed login 3 attempts = account lock.",tags:["it"]},
+  {en:"ERP Support & AMC",mr:"ERP तांत्रिक सहाय्य आणि वार्षिक करार",hi:"ERP सहायता और वार्षिक अनुबंध",short:"ERP implementation नंतर ongoing technical support आणि Annual Maintenance Contract.",detail:"AMC (Annual Maintenance Contract) मुळे ERP vendor किंवा Implementation Partner तुम्हाला year round support देतो — bugs fix, small enhancements, user support. सहसा 15-20% of license cost per year.",example:"SAP B1 AMC — ₹60,000/year. Includes: unlimited support tickets, quarterly health check, minor enhancements.",tags:["it"]},
+  {en:"Business Intelligence (BI)",mr:"व्यवसाय बुद्धिमत्ता",hi:"व्यवसाय बुद्धिमत्ता",short:"ERP data वापरून advanced reports आणि insights तयार करणे.",detail:"BI Tools (Power BI, Tableau, SAP Analytics) ERP मधील data घेऊन visual dashboards, trends, predictions तयार करतात. Management ला deep insights मिळतात.",example:"Power BI + ERP integration — Sales trend last 24 months दाखवतो. Seasonal patterns identify झाले — better planning.",tags:["it"]},
+  {en:"ERP Testing",mr:"ERP चाचणी",hi:"ERP परीक्षण",short:"ERP implementation मध्ये system बरोबर काम करतो का ते verify करणे.",detail:"ERP Testing मध्ये Unit Testing (individual features), Integration Testing (modules एकमेकांशी), Performance Testing (load handling), UAT (user acceptance) — सगळे phases असतात.",example:"Integration Testing — Purchase Order ते GRN ते Invoice ते Payment — पूर्ण flow test केला. सगळे pass.",tags:["it"]},
 ];
 
-let activeFilter = 'all';
+const cats = {
+  general:     {label:'General ERP Terms',icon:'⚙️'},
+  manufacturing:{label:'Manufacturing',icon:'🏭'},
+  pharma:      {label:'Pharma & Life Sciences',icon:'💊'},
+  finance:     {label:'Finance & Accounts',icon:'💰'},
+  realestate:  {label:'Real Estate',icon:'🏗️'},
+  hr:          {label:'HR & Payroll',icon:'👥'},
+  supplychain: {label:'Supply Chain & Logistics',icon:'🚚'},
+  edtech:      {label:'EdTech & Education',icon:'🎓'},
+  it:          {label:'IT & Software',icon:'💻'},
+};
 
-function setFilter(f, btn) {
-  activeFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+let activeFilter='all';
+
+function setFilter(f,btn){
+  activeFilter=f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   filterTerms();
 }
 
-function filterTerms() {
-  const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  const filtered = terms.filter(t => {
-    const matchFilter = activeFilter === 'all' || t.tags.includes(activeFilter);
-    const matchSearch = !q || t.en.toLowerCase().includes(q) || t.mr.includes(q) || t.hi.includes(q) || t.short.toLowerCase().includes(q);
-    return matchFilter && matchSearch;
+function clearSearch(){
+  document.getElementById('searchInput').value='';
+  filterTerms();
+}
+
+function filterTerms(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  const filtered=terms.filter(t=>{
+    const mf=activeFilter==='all'||t.tags.includes(activeFilter);
+    const ms=!q||t.en.toLowerCase().includes(q)||t.mr.includes(q)||t.hi.includes(q)||t.short.toLowerCase().includes(q)||t.detail.toLowerCase().includes(q);
+    return mf&&ms;
   });
 
-  document.getElementById('resultsCount').textContent = filtered.length + ' terms found';
+  document.getElementById('resultsCount').textContent=filtered.length+' term'+(filtered.length!==1?'s':'')+' found';
 
-  // Group by category
-  const cats = {
-    general:       { label: 'General ERP Terms', emoji: '⚙️' },
-    manufacturing: { label: 'Manufacturing', emoji: '🏭' },
-    pharma:        { label: 'Pharma & Life Sciences', emoji: '💊' },
-    finance:       { label: 'Finance & Accounts', emoji: '💰' },
-    realestate:    { label: 'Real Estate', emoji: '🏗️' }
-  };
+  if(filtered.length===0){
+    document.getElementById('glossaryOutput').innerHTML=`<div class="no-results"><div class="no-results-serif">शून्य</div><p>No terms found for "<strong>${q}</strong>"</p><p style="font-size:13px;margin-top:.5rem;color:var(--muted)">Try searching in English, मराठी or हिंदी</p></div>`;
+    return;
+  }
 
-  const grouped = {};
-  filtered.forEach(t => {
-    const cat = t.tags[0];
-    if (!grouped[cat]) grouped[cat] = [];
+  const grouped={};
+  filtered.forEach(t=>{
+    const cat=t.tags[0];
+    if(!grouped[cat])grouped[cat]=[];
     grouped[cat].push(t);
   });
 
-  let html = '';
-  if (filtered.length === 0) {
-    html = `<div class="no-results"><div class="no-results-icon">🔍</div><p>No terms found for "<strong>${q}</strong>"</p></div>`;
-  } else {
-    Object.keys(grouped).forEach(cat => {
-      const c = cats[cat];
-      if (!c) return;
-      html += `<div class="category-section">
-        <div class="cat-header">${c.emoji} ${c.label} <span class="cat-count">${grouped[cat].length}</span></div>
-        <div class="terms-grid">`;
-      grouped[cat].forEach((t, i) => {
-        const id = 'term-' + cat + '-' + i;
-        html += `<div class="term-card" id="${id}" onclick="toggleTerm('${id}')">
-          <div class="term-en">${t.en}</div>
-          <div class="term-mr">${t.mr}</div>
-          <div class="term-hi">हिंदी: ${t.hi}</div>
-          <div class="term-short">${t.short}</div>
-          <div class="term-detail">
-            <p>${t.detail}</p>
-            <div class="example">📌 ${t.example}</div>
-            <div class="term-tags">${t.tags.map(tag => `<span class="term-tag">${tag}</span>`).join('')}</div>
+  let html='';
+  Object.keys(grouped).forEach(cat=>{
+    const c=cats[cat];
+    if(!c)return;
+    html+=`<div class="cat-section">
+      <div class="cat-header">
+        <div class="cat-icon">${c.icon}</div>
+        <span class="cat-title">${c.label}</span>
+        <span class="cat-count">${grouped[cat].length} terms</span>
+      </div>
+      <div class="terms-grid">`;
+    grouped[cat].forEach((t,i)=>{
+      const id='t-'+cat+'-'+i;
+      html+=`<div class="term-card" id="${id}" onclick="toggle('${id}')">
+        <div class="tc-top">
+          <div style="flex:1">
+            <div class="term-en">${t.en}</div>
+            <div class="term-mr">${t.mr}</div>
+            <div class="term-hi">हिंदी: ${t.hi}</div>
           </div>
-        </div>`;
-      });
-      html += '</div></div>';
+          <span class="tc-chevron">▾</span>
+        </div>
+        <div class="term-short">${t.short}</div>
+        <div class="tc-tags">${t.tags.map(tg=>`<span class="tc-tag">${tg}</span>`).join('')}</div>
+        <div class="term-detail">
+          <div class="td-label">विस्तृत माहिती</div>
+          <div class="td-text">${t.detail}</div>
+          <div class="td-example">${t.example}</div>
+        </div>
+      </div>`;
     });
-  }
+    html+='</div></div>';
+  });
 
-  document.getElementById('glossaryOutput').innerHTML = html;
+  document.getElementById('glossaryOutput').innerHTML=html;
 }
 
-function toggleTerm(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle('expanded');
+function toggle(id){
+  document.getElementById(id).classList.toggle('open');
 }
 
-// Init
+// update hero count
+document.getElementById('totalCount').textContent=terms.length+'+';
 filterTerms();
 </script>
 </body>
