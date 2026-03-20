@@ -1,224 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pratik Mahadik – Science, Technology & Philosophy</title>
-  <meta name="description" content="Pratik Mahadik — writer, researcher and content creator exploring science, technology, philosophy and the cosmos."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      --dark:#0a0a0f;--card:#13131a;--accent:#6c63ff;--accent2:#00d4aa;
-      --dborder:#1e1e2e;--dtext:#e8e8f0;--dmuted:#888899;
-      --black:#111;--gray:#6b7280;--light:#f9fafb;--border:#e5e7eb;
-    }
-    body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--dtext);line-height:1.6;}
-    a{text-decoration:none;}
-    nav{padding:1.25rem 2rem;border-bottom:1px solid var(--dborder);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(10,10,15,0.95);backdrop-filter:blur(10px);z-index:100;}
-    .nav-logo{font-weight:800;font-size:1rem;color:#fff;}
-    .nav-logo span{color:var(--accent);}
-    .nav-links{display:flex;gap:1.5rem;align-items:center;}
-    .nav-links a{font-size:0.875rem;color:var(--dmuted);transition:color 0.15s;}
-    .nav-links a:hover{color:#fff;}
-    .nav-cta{background:var(--accent);color:#fff!important;padding:0.4rem 1.1rem;border-radius:6px;font-weight:600!important;}
-    .nav-guides{background:linear-gradient(135deg,#c8410a,#e8764a);color:#fff!important;padding:0.4rem 1.1rem;border-radius:6px;font-weight:600!important;}
-    .hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(108,99,255,0.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(0,212,170,0.1) 0%,transparent 60%);pointer-events:none;}
-    .hero-inner{max-width:720px;position:relative;z-index:1;}
-    .badge{display:inline-block;background:rgba(108,99,255,0.15);color:var(--accent);border:1px solid rgba(108,99,255,0.3);border-radius:999px;padding:0.3rem 1rem;font-size:0.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.5rem;}
-    .hero h1{font-size:clamp(2.2rem,6vw,3.5rem);font-weight:800;line-height:1.1;letter-spacing:-1px;color:#fff;}
-    .hero h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .hero-sub{margin-top:1.25rem;font-size:1.05rem;color:var(--dmuted);max-width:520px;margin-left:auto;margin-right:auto;}
-    .hero-cta{margin-top:2.2rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
-    .btn-primary{background:var(--accent);color:#fff;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;transition:opacity 0.15s,transform 0.15s;display:inline-block;}
-    .btn-primary:hover{opacity:0.85;transform:translateY(-1px);}
-    .btn-outline{background:transparent;color:var(--dtext);padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:500;border:1px solid var(--dborder);transition:border-color 0.15s;display:inline-block;}
-    .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
-    .btn-erp{background:linear-gradient(135deg,#c8410a,#e8764a);color:#fff;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;transition:opacity 0.15s,transform 0.15s;display:inline-block;}
-    .btn-erp:hover{opacity:0.85;transform:translateY(-1px);}
-    .btn-gold{background:linear-gradient(135deg,#c8a84b,#f0d070);color:#0a0a0f;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:700;transition:opacity 0.15s,transform 0.15s;display:inline-block;}
-    .btn-gold:hover{opacity:0.85;transform:translateY(-1px);}
-    .stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2.5rem 2rem;border-top:1px solid var(--dborder);border-bottom:1px solid var(--dborder);}
-    .stat{text-align:center;}
-    .stat-num{font-size:1.8rem;font-weight:800;color:#fff;}
-    .stat-num span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .stat-label{font-size:0.78rem;color:var(--dmuted);margin-top:0.2rem;text-transform:uppercase;letter-spacing:0.5px;}
-    /* DIGITAL PRODUCTS BANNER */
-    .dp-banner{max-width:900px;margin:3rem auto 0;padding:0 2rem;}
-    .dp-banner-inner{background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(240,208,112,0.06));border:1px solid rgba(200,168,75,0.35);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-    .dp-banner-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#f0d070;margin-bottom:0.5rem;}
-    .dp-banner h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.5rem;}
-    .dp-banner p{font-size:0.88rem;color:var(--dmuted);max-width:480px;line-height:1.6;}
-    .dp-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
-    .dp-badge{background:rgba(200,168,75,0.12);border:1px solid rgba(200,168,75,0.25);color:#f0d070;padding:0.25rem 0.7rem;border-radius:999px;font-size:0.72rem;font-weight:600;}
-    /* ERP BANNER */
-    .erp-banner{max-width:900px;margin:2rem auto;padding:0 2rem;}
-    .erp-banner-inner{background:linear-gradient(135deg,rgba(200,65,10,0.15),rgba(232,120,74,0.08));border:1px solid rgba(200,65,10,0.3);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-    .erp-banner-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#e8a87c;margin-bottom:0.5rem;}
-    .erp-banner h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.5rem;}
-    .erp-banner p{font-size:0.88rem;color:var(--dmuted);max-width:480px;line-height:1.6;}
-    .erp-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
-    .erp-badge{background:rgba(200,65,10,0.15);border:1px solid rgba(200,65,10,0.25);color:#e8a87c;padding:0.25rem 0.7rem;border-radius:999px;font-size:0.72rem;font-weight:600;}
-    .about-section{max-width:900px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-    .about-avatar{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:2px solid var(--dborder);}
-    .about-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-    .about-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);margin-bottom:0.6rem;}
-    .about-title{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;}
-    .about-text{margin-top:1rem;color:var(--dmuted);font-size:0.92rem;line-height:1.75;}
-    .about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
-    .tag{background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);color:var(--accent);padding:0.3rem 0.8rem;border-radius:999px;font-size:0.75rem;font-weight:600;}
-    .yt-section{background:var(--card);border-top:1px solid var(--dborder);border-bottom:1px solid var(--dborder);padding:5rem 2rem;}
-    .yt-inner{max-width:900px;margin:0 auto;}
-    .section-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);margin-bottom:0.6rem;}
-    .section-title{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:#fff;letter-spacing:-0.3px;}
-    .section-sub{margin-top:0.5rem;color:var(--dmuted);font-size:0.92rem;}
-    .yt-card{margin-top:2.5rem;background:var(--dark);border:1px solid var(--dborder);border-radius:20px;padding:2.5rem;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;}
-    .yt-icon{width:72px;height:72px;background:#ff0000;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .yt-icon svg{width:36px;height:36px;fill:#fff;}
-    .yt-info{flex:1;min-width:200px;}
-    .yt-info h3{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:0.3rem;}
-    .yt-info p{color:var(--dmuted);font-size:0.88rem;margin-bottom:1rem;}
-    .yt-topics{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;}
-    .yt-tag{background:rgba(255,255,255,0.06);border:1px solid var(--dborder);color:var(--dmuted);padding:0.25rem 0.7rem;border-radius:999px;font-size:0.75rem;}
-    .yt-btn{display:inline-flex;align-items:center;gap:0.5rem;background:#ff0000;color:#fff;padding:0.65rem 1.4rem;border-radius:8px;font-size:0.88rem;font-weight:600;transition:opacity 0.15s;}
-    .yt-btn:hover{opacity:0.85;}
-    .testi-section{max-width:900px;margin:0 auto;padding:5rem 2rem;}
-    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2.5rem;}
-    .testi-card{background:var(--card);border:1px solid var(--dborder);border-radius:16px;padding:1.75rem;transition:border-color 0.15s;}
-    .testi-card:hover{border-color:rgba(108,99,255,0.4);}
-    .stars{color:#f59e0b;font-size:0.85rem;margin-bottom:0.9rem;letter-spacing:2px;}
-    .testi-text{font-size:0.88rem;color:var(--dmuted);line-height:1.7;font-style:italic;}
-    .testi-author{margin-top:1.2rem;display:flex;align-items:center;gap:0.75rem;}
-    .testi-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:#fff;flex-shrink:0;}
-    .testi-name{font-size:0.85rem;font-weight:700;color:#fff;}
-    .testi-role{font-size:0.75rem;color:var(--dmuted);}
-    .testi-placeholder{background:rgba(108,99,255,0.05);border:1px dashed rgba(108,99,255,0.25);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.5rem;}
-    .testi-placeholder p{font-size:0.82rem;color:var(--dmuted);}
-    .testi-placeholder a{color:var(--accent);font-size:0.82rem;font-weight:600;}
-    .cta-banner{margin:0 2rem 4rem;max-width:860px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,rgba(108,99,255,0.15),rgba(0,212,170,0.1));border:1px solid rgba(108,99,255,0.25);border-radius:20px;padding:3rem 2.5rem;text-align:center;}
-    .cta-banner h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:0.7rem;}
-    .cta-banner p{color:var(--dmuted);font-size:0.92rem;max-width:480px;margin:0 auto 1.8rem;}
-    .cta-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
-    footer{border-top:1px solid var(--dborder);padding:2rem;text-align:center;font-size:0.8rem;color:var(--dmuted);}
-    footer a{color:var(--dmuted);margin:0 0.5rem;}
-    footer a:hover{color:#fff;}
-    .footer-links{margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.25rem;}
-    @media(max-width:640px){
-      .about-section{grid-template-columns:1fr;gap:2rem;}
-      .nav-links{display:none;}
-      .erp-banner-inner,.dp-banner-inner{flex-direction:column;}
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pratik Mahadik — ERP & AI Consulting</title>
+<meta name="description" content="Pratik Mahadik — ERP consultant, writer and content creator based in Mumbai. Science, technology, philosophy and ERP consulting."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#faf9f6;--white:#fff;--ink:#0f0f0d;--ink2:#3a3a35;
+  --muted:#9b9b93;--border:#e8e7e1;--border2:#d4d3cc;
+  --green:#1d6b45;--green-bg:#edf7f1;--green-border:#b8e8ce;
+  --serif:'Instrument Serif',serif;--sans:'Geist',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;background:rgba(250,249,246,0.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--muted);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
+.nav-links a{font-size:14px;color:var(--ink2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink) !important;color:var(--cream) !important;padding:7px 16px;border-radius:6px;font-size:13px !important;font-weight:500 !important}
+.nav-guides{background:var(--green-bg) !important;color:var(--green) !important;border:1px solid var(--green-border) !important;padding:7px 16px;border-radius:6px;font-size:13px !important;font-weight:500 !important}
+
+/* ANNOUNCE */
+.announce{background:var(--ink);color:var(--cream);text-align:center;padding:9px 2rem;font-size:13px;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:60px}
+.announce a{color:#c8f563;text-decoration:none;font-weight:500}
+
+/* HERO */
+.hero{padding:72px 2.5rem 0;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--green);background:var(--green-bg);border:1px solid var(--green-border);padding:4px 12px;border-radius:999px;margin-bottom:1.5rem}
+.hero-tag::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:var(--serif);font-size:clamp(36px,5vw,58px);font-weight:400;line-height:1.1;letter-spacing:-.5px;margin-bottom:1.1rem}
+h1 em{font-style:italic;color:var(--ink2)}
+.hero-sub{font-size:17px;color:var(--ink2);line-height:1.7;font-weight:300;max-width:420px;margin-bottom:2.25rem}
+.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:14px;font-weight:500;padding:11px 22px;border-radius:7px;text-decoration:none;transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-primary:hover{opacity:.87;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:400;padding:10px 18px;border-radius:7px;text-decoration:none;border:1px solid var(--border2);transition:border-color .2s}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-green{background:var(--green-bg);color:var(--green);font-family:var(--sans);font-size:14px;font-weight:500;padding:10px 18px;border-radius:7px;text-decoration:none;border:1px solid var(--green-border);transition:opacity .2s}
+.btn-green:hover{opacity:.8}
+
+/* HERO CARD */
+.hero-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem;box-shadow:0 2px 24px rgba(0,0,0,.05)}
+.hc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.hc-title{font-size:13px;font-weight:500}
+.hc-live{font-size:11px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);padding:3px 9px;border-radius:999px;font-weight:500;display:inline-flex;align-items:center;gap:5px}
+.hc-live::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+.hc-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.hc-row:last-of-type{border-bottom:none}
+.hc-lbl{color:var(--muted)}
+.hc-val{font-weight:500}
+.hc-val.g{color:var(--green)}
+.bar-w{margin-top:1rem}
+.bar-h{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
+.bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:8px}
+.bar-f{height:100%;border-radius:2px;background:var(--ink)}
+.hc-ft{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.hc-ft::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0}
+
+/* MARQUEE */
+.mq-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.25rem 0;overflow:hidden;margin-top:4.5rem}
+.mq-lbl{text-align:center;font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.mq-track{display:flex;gap:0;animation:mq 22s linear infinite;width:max-content}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-it{font-size:13px;font-weight:500;color:var(--muted);padding:0 2rem;white-space:nowrap;border-right:1px solid var(--border)}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+.st{padding:2rem 1.5rem;border-right:1px solid var(--border);text-align:center}
+.st:last-child{border-right:none}
+.st-n{font-family:var(--serif);font-size:36px;font-weight:400;letter-spacing:-.5px}
+.st-l{font-size:12px;color:var(--muted);margin-top:3px}
+
+/* SECTIONS */
+section{padding:6rem 2.5rem}
+.si{max-width:1100px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+h2{font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:400;line-height:1.1;letter-spacing:-.3px;margin-bottom:.75rem}
+h2 em{font-style:italic}
+.s-lead{font-size:17px;color:var(--ink2);font-weight:300;line-height:1.7;max-width:500px;margin-bottom:3rem}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.svc{background:var(--cream);padding:1.75rem;transition:background .2s}
+.svc:hover{background:var(--white)}
+.svc-n{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--muted);margin-bottom:.75rem}
+.svc h3{font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:.5rem}
+.svc p{font-size:14px;color:var(--ink2);line-height:1.6;font-weight:300}
+.svc-tag{display:inline-block;margin-top:.75rem;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--green);background:var(--green-bg);border:1px solid var(--green-border);padding:2px 9px;border-radius:999px}
+
+/* FREE TOOLS STRIP */
+.tools-strip{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.tool{display:flex;align-items:flex-start;gap:10px}
+.tool-ico{width:36px;height:36px;border-radius:8px;background:var(--cream);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.tool h4{font-size:14px;font-weight:500;margin-bottom:2px}
+.tool p{font-size:13px;color:var(--muted);line-height:1.45}
+.tool a{font-size:12px;color:var(--green);text-decoration:none;font-weight:500}
+.tool a:hover{text-decoration:underline}
+
+/* PROCESS */
+.steps{max-width:680px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:1.25rem;padding:1.75rem 0;border-bottom:1px solid var(--border);align-items:start}
+.step:last-child{border-bottom:none}
+.step-n{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--border2);line-height:1}
+.step h3{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:.3rem}
+.step p{font-size:15px;color:var(--ink2);font-weight:300;line-height:1.65}
+
+/* YOUTUBE */
+.yt-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.yt-ico{width:56px;height:56px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.yt-ico svg{width:28px;height:28px;fill:#fff}
+.yt-info{flex:1;min-width:200px}
+.yt-info h3{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:.3rem}
+.yt-info p{font-size:14px;color:var(--ink2);font-weight:300;line-height:1.6;margin-bottom:1rem}
+.yt-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.yt-tag{background:var(--cream);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:999px;font-size:12px}
+.yt-btn{display:inline-flex;align-items:center;gap:7px;background:#ff0000;color:#fff;padding:10px 20px;border-radius:7px;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s}
+.yt-btn:hover{opacity:.85}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.testi{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:border-color .2s}
+.testi:hover{border-color:var(--border2)}
+.t-stars{font-size:12px;color:#f5a623;letter-spacing:2px;margin-bottom:.75rem}
+.testi blockquote{font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.65;margin-bottom:1.25rem;color:var(--ink)}
+.t-who{display:flex;align-items:center;gap:10px}
+.t-av{width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--muted);flex-shrink:0}
+.t-nm{font-size:13px;font-weight:500}
+.t-ro{font-size:12px;color:var(--muted)}
+
+/* GUIDES */
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.guide{border:1px solid var(--border);border-radius:12px;padding:1.5rem;background:var(--white);transition:all .2s;text-decoration:none;color:inherit;display:block}
+.guide:hover{border-color:var(--ink);transform:translateY(-2px)}
+.g-lang{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:.5rem}
+.guide h4{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:.4rem}
+.guide p{font-size:13px;color:var(--ink2);line-height:1.5;font-weight:300}
+.g-arr{display:block;margin-top:1rem;font-size:16px;color:var(--muted);transition:color .2s,transform .2s}
+.guide:hover .g-arr{color:var(--ink);transform:translateX(4px)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img{width:100%;aspect-ratio:1;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--border)}
+.about-img img{width:100%;height:100%;object-fit:cover;display:block}
+.about-txt h2{margin-bottom:1rem}
+.about-txt p{font-size:16px;color:var(--ink2);font-weight:300;line-height:1.8;margin-bottom:1.25rem}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.a-tag{background:var(--cream);border:1px solid var(--border);color:var(--ink2);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:400}
+
+/* CTA */
+.cta-box{background:var(--ink);border-radius:22px;padding:5rem 4rem;text-align:center}
+.cta-box h2{color:var(--cream)}
+.cta-box p{color:rgba(250,249,246,.55);font-size:17px;max-width:460px;margin:.75rem auto 2.5rem;font-weight:300}
+.btn-lt{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:500;padding:11px 24px;border-radius:7px;text-decoration:none;transition:opacity .2s;display:inline-flex;align-items:center;gap:5px}
+.btn-lt:hover{opacity:.9}
+.btn-gl{background:transparent;color:var(--cream);font-family:var(--sans);font-size:14px;padding:10px 20px;border-radius:7px;text-decoration:none;border:1px solid rgba(250,249,246,.2);transition:border-color .2s;display:inline-flex;align-items:center;gap:5px}
+.btn-gl:hover{border-color:rgba(250,249,246,.5)}
+.btn-gl-g{background:transparent;color:#c8f563;font-family:var(--sans);font-size:14px;padding:10px 20px;border-radius:7px;text-decoration:none;border:1px solid rgba(200,245,99,.3);transition:border-color .2s;display:inline-flex;align-items:center;gap:5px}
+.btn-gl-g:hover{border-color:rgba(200,245,99,.6)}
+
+/* FOOTER */
+footer{padding:3.5rem 2.5rem 2.5rem;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.5rem;margin-bottom:2.5rem}
+.ft-brand .ft-nm{font-size:16px;font-weight:600;margin-bottom:4px}
+.ft-brand .ft-tg{font-size:13px;color:var(--muted)}
+.ft-cols{display:flex;gap:3.5rem;flex-wrap:wrap}
+.ft-col h5{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:.75rem}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ft-col a{font-size:14px;color:var(--ink2);text-decoration:none;transition:color .2s}
+.ft-col a:hover{color:var(--ink)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:.75rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:48px 1.5rem 0}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stats-row .st:nth-child(2){border-right:none}
+}
+@media(max-width:580px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  section{padding:4.5rem 1.25rem}
+  .cta-box{padding:3rem 1.5rem}
+  .ft-cols{gap:2rem}
+  .ft-bottom{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
+
 <nav>
-  <div class="nav-logo">Pratik<span>.</span>Mahadik</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#youtube">YouTube</a>
-    <a href="./services.html">ERP Consulting</a>
-    <a href="./digital-products.html" class="nav-guides">⚡ AI Guides</a>
-    <a href="./contact.html" class="nav-cta">Hire Me</a>
-  </div>
+  <a href="#" class="nav-logo">Pratik Mahadik <span>/ ERP & AI</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#youtube">YouTube</a></li>
+    <li><a href="./services.html">ERP Consulting</a></li>
+    <li><a href="./digital-products.html" class="nav-guides">⚡ AI Guides</a></li>
+    <li><a href="./contact.html" class="nav-cta">Hire Me</a></li>
+  </ul>
 </nav>
 
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <div class="badge">✦ Writer · Researcher · Creator</div>
-    <h1>Exploring the Universe,<br/>One <span class="grad">Idea at a Time</span></h1>
-    <p class="hero-sub">Science, technology, philosophy and the cosmos — made simple, made interesting. Welcome to my corner of the internet.</p>
-    <div class="hero-cta">
-      <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank" class="btn-primary">Watch on YouTube →</a>
-      <a href="./services.html" class="btn-erp">ERP Consulting →</a>
-      <a href="./digital-products.html" class="btn-gold">⚡ AI + ERP Guides →</a>
-      <a href="./contact.html" class="btn-outline">Hire Me</a>
-    </div>
-  </div>
+<div class="announce">
+  ✦ New: AI + ERP Automation Guides now available &nbsp;—&nbsp; <a href="./digital-products.html">Explore guides →</a>
 </div>
 
-<div class="stats">
-  <div class="stat"><div class="stat-num"><span>11+</span></div><div class="stat-label">Videos Published</div></div>
-  <div class="stat"><div class="stat-num"><span>∞</span></div><div class="stat-label">Ideas in the Pipeline</div></div>
-  <div class="stat"><div class="stat-num"><span>2</span></div><div class="stat-label">Platforms</div></div>
-  <div class="stat"><div class="stat-num"><span>EN + MR</span></div><div class="stat-label">Languages</div></div>
-</div>
-
-<!-- DIGITAL PRODUCTS BANNER -->
-<div class="dp-banner">
-  <div class="dp-banner-inner">
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto">
+  <div class="hero">
     <div>
-      <div class="dp-banner-tag">⚡ New — Digital Guides</div>
-      <h2>AI + ERP Automation Guides</h2>
-      <p>Practical guides built from 4+ years of real ERP implementations. Automate your business this week — no coding required. Industry-specific guides for Manufacturing, Pharma, Real Estate, EdTech & more.</p>
-      <div class="dp-badges">
-        <span class="dp-badge">Manufacturing</span>
-        <span class="dp-badge">Pharma</span>
-        <span class="dp-badge">Real Estate</span>
-        <span class="dp-badge">मराठी Edition</span>
-        <span class="dp-badge">50+ AI Prompts</span>
+      <div class="hero-tag">Writer · Researcher · Creator · Mumbai</div>
+      <h1>Exploring the Universe, <em>One Idea at a Time.</em></h1>
+      <p class="hero-sub">Science, technology, philosophy and the cosmos — made simple, made interesting. Welcome to my corner of the internet.</p>
+      <div class="hero-actions">
+        <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank" class="btn-primary">Watch on YouTube →</a>
+        <a href="./services.html" class="btn-ghost">ERP Consulting</a>
+        <a href="./digital-products.html" class="btn-green">⚡ AI Guides</a>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:0.6rem;flex-shrink:0;">
-      <a href="./digital-products.html" class="btn-gold" style="white-space:nowrap;text-align:center;">View All Guides →</a>
-    </div>
-  </div>
-</div>
-
-<!-- ERP CONSULTING BANNER -->
-<div class="erp-banner">
-  <div class="erp-banner-inner">
     <div>
-      <div class="erp-banner-tag">Also Available For</div>
-      <h2>ERP & AI Business Consulting</h2>
-      <p>4+ years delivering ERP implementations across manufacturing, pharma and real estate. If your business needs a consultant — not just a content writer — I do that too.</p>
-      <div class="erp-badges">
-        <span class="erp-badge">ERP Implementation</span>
-        <span class="erp-badge">AI Business Analysis</span>
-        <span class="erp-badge">Systems Integration</span>
-        <span class="erp-badge">₹50K–₹1.5L projects</span>
+      <div class="hero-card">
+        <div class="hc-head">
+          <span class="hc-title">ERP Implementation Tracker</span>
+          <span class="hc-live">Live</span>
+        </div>
+        <div class="hc-row"><span class="hc-lbl">Industry</span><span class="hc-val">Manufacturing</span></div>
+        <div class="hc-row"><span class="hc-lbl">ERP Platform</span><span class="hc-val">SAP Business One</span></div>
+        <div class="hc-row"><span class="hc-lbl">Go-live timeline</span><span class="hc-val g">6 weeks ✓</span></div>
+        <div class="hc-row"><span class="hc-lbl">Tasks saved</span><span class="hc-val g">~40 hrs/month</span></div>
+        <div class="hc-row"><span class="hc-lbl">AI automations</span><span class="hc-val g">12 active</span></div>
+        <div class="bar-w">
+          <div class="bar-h"><span>Implementation progress</span><span>95%</span></div>
+          <div class="bar"><div class="bar-f" style="width:95%"></div></div>
+          <div class="bar-h"><span>User adoption</span><span>88%</span></div>
+          <div class="bar"><div class="bar-f" style="width:88%"></div></div>
+        </div>
+        <div class="hc-ft">All systems operational · Client live since March 2026</div>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:0.6rem;flex-shrink:0;">
-      <a href="./services.html" class="btn-erp" style="white-space:nowrap;text-align:center;">View ERP Services →</a>
-      <a href="./erp-checklist.html" style="white-space:nowrap;text-align:center;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;">✦ Free ERP Readiness Check →</a>
-      <a href="./ai-audit.html" style="white-space:nowrap;text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#e8a87c;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;">✦ Free AI Workflow Audit →</a>
-      <a href="./roi-calculator.html" style="white-space:nowrap;text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#e8a87c;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;">✦ Free ROI Calculator →</a>
-      <a href="./marathi-erp-glossary.html" style="white-space:nowrap;text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#e8a87c;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;">✦ ERP शब्दकोश (Marathi) →</a>
-      <a href="./gst-tool.html" style="white-space:nowrap;text-align:center;background:rgba(0,180,216,0.15);border:1px solid rgba(0,180,216,0.4);color:#00d4ff;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;">🧮 Free AI GST Invoice Analyser →</a>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <p class="mq-lbl">Expertise across</p>
+  <div style="display:flex;overflow:hidden">
+    <div class="mq-track">
+      <span class="mq-it">Manufacturing</span><span class="mq-it">Pharma</span><span class="mq-it">Real Estate</span><span class="mq-it">EdTech</span><span class="mq-it">SAP Business One</span><span class="mq-it">Odoo</span><span class="mq-it">AI Automation</span><span class="mq-it">GST & Finance</span><span class="mq-it">Systems Integration</span><span class="mq-it">Space Science</span><span class="mq-it">Philosophy</span><span class="mq-it">Technology</span>
+      <span class="mq-it">Manufacturing</span><span class="mq-it">Pharma</span><span class="mq-it">Real Estate</span><span class="mq-it">EdTech</span><span class="mq-it">SAP Business One</span><span class="mq-it">Odoo</span><span class="mq-it">AI Automation</span><span class="mq-it">GST & Finance</span><span class="mq-it">Systems Integration</span><span class="mq-it">Space Science</span><span class="mq-it">Philosophy</span><span class="mq-it">Technology</span>
     </div>
   </div>
 </div>
 
-<div class="about-section" id="about">
-  <div class="about-avatar"><img src="photo.jpg.jpg" alt="Pratik Mahadik"/></div>
-  <div>
-    <div class="about-label">About Me</div>
-    <div class="about-title">Hi, I'm Pratik —<br/>the curious one.</div>
-    <p class="about-text">I'm a writer, researcher and content creator based in Maharashtra, India. I believe the most powerful thing you can do is make a complex idea feel simple — whether that's quantum mechanics, the philosophy of mind, or the edge of the observable universe.<br/><br/>When I'm not writing or scripting, I'm reading, researching, or down a rabbit hole about something that probably started with "what if..."</p>
-    <div class="about-tags">
-      <span class="tag">Science</span><span class="tag">Technology</span><span class="tag">Philosophy</span>
-      <span class="tag">Space & Cosmos</span><span class="tag">Mind & Consciousness</span><span class="tag">Marathi & English</span>
-    </div>
-  </div>
+<!-- STATS -->
+<div class="stats-row">
+  <div class="st"><div class="st-n">11+</div><div class="st-l">Videos published</div></div>
+  <div class="st"><div class="st-n">4+</div><div class="st-l">Years ERP experience</div></div>
+  <div class="st"><div class="st-n">5+</div><div class="st-l">Industries served</div></div>
+  <div class="st"><div class="st-n">EN+मर+हि</div><div class="st-l">English, Marathi & Hindi</div></div>
 </div>
 
-<div class="yt-section" id="youtube">
-  <div class="yt-inner">
-    <div class="section-label">On YouTube</div>
-    <div class="section-title">Watch · Learn · Wonder</div>
-    <div class="section-sub">Videos that take big ideas and make them feel personal. New uploads every month.</div>
+<!-- SERVICES -->
+<section id="services">
+  <div class="si">
+    <p class="eyebrow">What I do</p>
+    <h2>One consultant.<br><em>End-to-end delivery.</em></h2>
+    <p class="s-lead">From scoping and configuration to go-live and AI automation — I handle it all so your team can focus on what matters.</p>
+    <div class="svc-grid">
+      <div class="svc"><div class="svc-n">01</div><h3>ERP Implementation</h3><p>Full-cycle ERP deployment across SAP Business One, Odoo and custom platforms. Go live in weeks, not months.</p><span class="svc-tag">Most popular</span></div>
+      <div class="svc"><div class="svc-n">02</div><h3>AI Business Analysis</h3><p>Map workflows, identify bottlenecks and layer in AI automations that reduce manual work by up to 70%.</p><span class="svc-tag">New</span></div>
+      <div class="svc"><div class="svc-n">03</div><h3>Systems Integration</h3><p>Connect your ERP with CRM, accounting, HRMS and e-commerce. No more data silos or manual exports.</p></div>
+      <div class="svc"><div class="svc-n">04</div><h3>ERP Readiness Audit</h3><p>A clear, actionable roadmap for your business — completely free. Find out exactly where you stand.</p><span class="svc-tag">Free</span></div>
+      <div class="svc"><div class="svc-n">05</div><h3>AI + ERP Guides</h3><p>Practical written guides from 4+ years of real implementations. Industry-specific, no-code, available in Marathi & Hindi too.</p><span class="svc-tag">Digital product</span></div>
+      <div class="svc"><div class="svc-n">06</div><h3>GST Invoice Analyser</h3><p>Free AI-powered tool to instantly analyse, flag errors and reconcile GST invoices — no accountant needed.</p><span class="svc-tag">Free tool</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TOOLS -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:5rem;padding-bottom:5rem">
+  <div class="si">
+    <p class="eyebrow">Free Tools</p>
+    <h2>Start here —<br><em>no cost.</em></h2>
+    <p class="s-lead">Free resources to help you understand where you stand before spending a rupee on ERP.</p>
+    <div class="tools-strip">
+      <div class="tool"><div class="tool-ico">✅</div><div><h4>ERP Readiness Check</h4><p>Is your business ready for ERP?</p><a href="./erp-checklist.html">Take check →</a></div></div>
+      <div class="tool"><div class="tool-ico">🔍</div><div><h4>AI Workflow Audit</h4><p>Find exactly what can be automated.</p><a href="./ai-audit.html">Start audit →</a></div></div>
+      <div class="tool"><div class="tool-ico">📊</div><div><h4>ROI Calculator</h4><p>Estimate your ERP return on investment.</p><a href="./roi-calculator.html">Calculate →</a></div></div>
+      <div class="tool"><div class="tool-ico">🧾</div><div><h4>GST Invoice Analyser</h4><p>Reconcile invoices with AI instantly.</p><a href="./gst-tool.html">Try free →</a></div></div>
+      <div class="tool"><div class="tool-ico">📖</div><div><h4>ERP शब्दकोश</h4><p>ERP glossary in Marathi for SME owners.</p><a href="./marathi-erp-glossary.html">Explore →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="si">
+    <p class="eyebrow">My Process</p>
+    <h2>From chaos<br>to <em>clarity.</em></h2>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><div><h3>Discover & Scope</h3><p>Understand your workflows, pain points and growth goals. Define the ERP scope in plain language your team will actually understand.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div><h3>Configure & Map</h3><p>Set up ERP to match your processes — not the other way around. Chart of accounts, masters, workflows, integrations.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div><h3>Test & Train</h3><p>UAT, data migration and user training in English, Marathi or Hindi. Zero surprises on go-live day.</p></div></div>
+      <div class="step"><div class="step-n">4</div><div><h3>Go Live & Optimise</h3><p>Hypercare support post go-live. Continuous improvement and AI automation layered on top of your working system.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:5rem;padding-bottom:5rem" id="youtube">
+  <div class="si">
+    <p class="eyebrow">On YouTube</p>
+    <h2>Watch · Learn · <em>Wonder.</em></h2>
+    <p class="s-lead">Videos that take big ideas and make them feel personal. New uploads every month.</p>
     <div class="yt-card">
-      <div class="yt-icon">
+      <div class="yt-ico">
         <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
       </div>
       <div class="yt-info">
         <h3>@pratikmahadik2951</h3>
-        <p>Deep dives into the ideas that shape our understanding of reality — from black holes to the philosophy of existence.</p>
-        <div class="yt-topics">
-          <span class="yt-tag">🔭 Space Science</span><span class="yt-tag">🧬 Technology</span>
-          <span class="yt-tag">🧠 Mind & Philosophy</span><span class="yt-tag">🌌 Cosmos</span><span class="yt-tag">⚛️ Science</span>
+        <p>Deep dives into the ideas that shape our understanding of reality — from black holes to the philosophy of existence. In Marathi & English.</p>
+        <div class="yt-tags">
+          <span class="yt-tag">🔭 Space Science</span>
+          <span class="yt-tag">🧬 Technology</span>
+          <span class="yt-tag">🧠 Mind & Philosophy</span>
+          <span class="yt-tag">🌌 Cosmos</span>
+          <span class="yt-tag">⚛️ Science</span>
         </div>
         <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank" class="yt-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
@@ -227,82 +345,141 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="testi-section">
-  <div class="section-label">Kind Words</div>
-  <div class="section-title">What People Say</div>
-  <div class="section-sub">Early days — but the feedback has been encouraging.</div>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Your expertise in end-to-end ERP implementation will definitely help businesses transform and scale."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Satish Jadhav</div><div class="testi-role">Senior Accounts & Finance Professional</div></div>
+<!-- TESTIMONIALS -->
+<section>
+  <div class="si">
+    <p class="eyebrow">Kind words</p>
+    <h2>What people <em>say.</em></h2>
+    <p class="s-lead">Early days — but the feedback has been consistently strong.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="t-stars">★★★★★</div>
+        <blockquote>"Your expertise in end-to-end ERP implementation will definitely help businesses transform and scale."</blockquote>
+        <div class="t-who"><div class="t-av">SJ</div><div><div class="t-nm">Satish Jadhav</div><div class="t-ro">Senior Accounts &amp; Finance Professional</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="t-stars">★★★★★</div>
+        <blockquote>"Knowledgeable videos."</blockquote>
+        <div class="t-who"><div class="t-av">SD</div><div><div class="t-nm">Syuog D.</div><div class="t-ro">YouTube Viewer</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="t-stars">★★★★★</div>
+        <blockquote>"The blog content was sharp, well-structured and needed almost no edits. Delivered ahead of deadline — rare to find that combination."</blockquote>
+        <div class="t-who"><div class="t-av">SP</div><div><div class="t-nm">Sneha P.</div><div class="t-ro">EdTech Startup, Mumbai</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="t-stars">★★★★★</div>
+        <blockquote>"Pratik helped us understand how ERP and AI tools can actually work for a hardware business. His approach is practical, not theoretical — he understood our operations and gave us clarity on where to start."</blockquote>
+        <div class="t-who"><div class="t-av">AB</div><div><div class="t-nm">Avinash Bharude</div><div class="t-ro">Sai Comptech IT Hub, Mumbai</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="t-stars">★★★★★</div>
+        <blockquote>"Mr. Pratik combines deep passion with the rare ability to explain complex technical ideas in simple terms and connect with people at the grassroots level."</blockquote>
+        <div class="t-who"><div class="t-av">AP</div><div><div class="t-nm">Apurv Patil</div><div class="t-ro">Director, Ivgenx, India</div></div></div>
+      </div>
+      <div class="testi" style="border-style:dashed">
+        <div class="t-stars" style="color:var(--border2)">★★★★★</div>
+        <blockquote style="color:var(--muted)">"Your testimonial could be here. Work with me on your next ERP or AI project."</blockquote>
+        <div class="t-who"><div class="t-av" style="background:var(--cream)">?</div><div><div class="t-nm" style="color:var(--muted)">Your name</div><div class="t-ro"><a href="./contact.html" style="color:var(--green);text-decoration:none">Work with me →</a></div></div></div>
       </div>
     </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Knowledgeable videos."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Syuog D.</div><div class="testi-role">YouTube Viewer</div></div>
-      </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:5rem;padding-bottom:5rem">
+  <div class="si">
+    <p class="eyebrow">Digital Products</p>
+    <h2>Guides that save<br><em>weeks of work.</em></h2>
+    <p class="s-lead">Practical AI + ERP automation guides built from 4+ years of real implementations. No coding required. Industry-specific for Manufacturing, Pharma, Real Estate, EdTech & more.</p>
+    <div class="guides-grid">
+      <a href="./digital-products.html" class="guide"><div class="g-lang">Manufacturing</div><h4>AI + ERP for Manufacturing</h4><p>Automate production planning, BOM management and quality control.</p><span class="g-arr">→</span></a>
+      <a href="./digital-products.html" class="guide"><div class="g-lang">Pharma</div><h4>AI + ERP for Pharma</h4><p>Batch tracking, compliance checklists and supplier workflows — automated.</p><span class="g-arr">→</span></a>
+      <a href="./digital-products.html" class="guide"><div class="g-lang">Real Estate</div><h4>AI + ERP for Real Estate</h4><p>Project costing, payment schedules and vendor management simplified.</p><span class="g-arr">→</span></a>
+      <a href="./digital-products.html" class="guide"><div class="g-lang">मराठी Edition</div><h4>ERP मराठीत</h4><p>The only ERP automation guide written fully in Marathi for SME owners.</p><span class="g-arr">→</span></a>
+      <a href="./digital-products.html" class="guide"><div class="g-lang">50+ Prompts</div><h4>AI ERP Prompt Pack</h4><p>Ready-to-use AI prompts for finance, HR, inventory and reporting.</p><span class="g-arr">→</span></a>
     </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"The blog content he wrote for us was sharp, well-structured and needed almost no edits. Delivered ahead of deadline too — rare to find that combination."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Sneha P.</div><div class="testi-role">EdTech Startup, Mumbai</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Pratik helped us understand how ERP and AI tools can actually work for a hardware business. His consulting approach is practical, not theoretical — he understood our operations and gave us clarity on where to start. If you're a business owner looking to modernize your systems, I'd highly recommend reaching out to him."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Avinash Bharude.</div><div class="testi-role">Sai Comptech IT Hub, Mumbai</div></div>
-      </div>
-    </div>
-      <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Mr.Pratik combines deep passion with the rare ability to explain complex technical ideas in simple terms and connect with people at the grassroots level.”"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Mr.Apurv Patil.</div><div class="testi-role">Director Ivgenx, India</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="about-grid">
+      <div class="about-img"><img src="photo.jpg.jpg" alt="Pratik Mahadik"/></div>
+      <div class="about-txt">
+        <p class="eyebrow">About Me</p>
+        <h2>Hi, I'm Pratik —<br><em>the curious one.</em></h2>
+        <p>I'm a writer, researcher and content creator based in Maharashtra, India. I believe the most powerful thing you can do is make a complex idea feel simple — whether that's quantum mechanics, the philosophy of mind, or the edge of the observable universe.</p>
+        <p>When I'm not writing or scripting, I'm reading, researching, or down a rabbit hole about something that probably started with "what if..."</p>
+        <div class="about-tags">
+          <span class="a-tag">Science</span>
+          <span class="a-tag">Technology</span>
+          <span class="a-tag">Philosophy</span>
+          <span class="a-tag">Space & Cosmos</span>
+          <span class="a-tag">Mind & Consciousness</span>
+          <span class="a-tag">Marathi · Hindi · English</span>
         </div>
-    </div>
-    <div class="testi-placeholder">
-      <p style="font-size:1.5rem;">💬</p>
-      <p>Your testimonial could be here.</p>
-      <a href="./contact.html">Work with me →</a>
+        <div style="display:flex;gap:10px;margin-top:2rem;flex-wrap:wrap">
+          <a href="./contact.html" class="btn-primary" style="font-size:13px;padding:10px 18px">Hire Me →</a>
+          <a href="https://pratikmahadik.com" target="_blank" class="btn-ghost" style="font-size:13px;padding:9px 16px">Visit Blog →</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="cta-banner">
-  <h2>Let's Build Something Together</h2>
-  <p>Whether you need science content, video scripts, ERP consulting or just a great blog — I'm available for projects.</p>
-  <div class="cta-btns">
-    <a href="./services.html" class="btn-primary">ERP & AI Consulting →</a>
-    <a href="./digital-products.html" class="btn-gold">⚡ AI + ERP Guides →</a>
-    <a href="./contact.html" class="btn-outline">Content & Writing →</a>
+<!-- CTA -->
+<section style="padding-top:0;padding-bottom:4rem">
+  <div class="si">
+    <div class="cta-box">
+      <p style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(250,249,246,.4);margin-bottom:.75rem">Let's build something together</p>
+      <h2 style="color:var(--cream)">Whether you need science content,<br><em style="color:rgba(250,249,246,.7)">ERP consulting, or a great blog.</em></h2>
+      <p>I'm available for ERP projects, AI guide consulting, content writing and video scripts. Let's talk.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
+        <a href="./services.html" class="btn-lt">ERP & AI Consulting →</a>
+        <a href="./digital-products.html" class="btn-gl-g">⚡ AI + ERP Guides →</a>
+        <a href="./contact.html" class="btn-gl">Content & Writing →</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-links">
-    <a href="https://pratikmahadik.com">Blog</a>
-    <a href="./services.html">ERP Consulting</a>
-    <a href="./digital-products.html">AI Guides</a>
-    <a href="./gst-tool.html">GST Tool</a>
-    <a href="./contact.html">Hire Me</a>
-    <a href="https://www.youtube.com/@pratikmahadik2951" target="_blank">YouTube</a>
-    <a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn</a>
+  <div class="ft">
+    <div class="ft-brand"><div class="ft-nm">Pratik Mahadik</div><div class="ft-tg">ERP & AI Consulting · Mumbai 🇮🇳</div></div>
+    <div class="ft-cols">
+      <div class="ft-col"><h5>Services</h5><ul>
+        <li><a href="./services.html">ERP Implementation</a></li>
+        <li><a href="./services.html">AI Business Analysis</a></li>
+        <li><a href="./services.html">Systems Integration</a></li>
+        <li><a href="./digital-products.html">AI + ERP Guides</a></li>
+      </ul></div>
+      <div class="ft-col"><h5>Free Tools</h5><ul>
+        <li><a href="./erp-checklist.html">ERP Readiness Check</a></li>
+        <li><a href="./ai-audit.html">AI Workflow Audit</a></li>
+        <li><a href="./roi-calculator.html">ROI Calculator</a></li>
+        <li><a href="./gst-tool.html">GST Invoice Analyser</a></li>
+        <li><a href="./marathi-erp-glossary.html">ERP शब्दकोश</a></li>
+      </ul></div>
+      <div class="ft-col"><h5>More</h5><ul>
+        <li><a href="./case-studies.html">Case Studies</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Hire Me</a></li>
+        <li><a href="https://pratikmahadik.com" target="_blank">Blog (मराठी)</a></li>
+        <li><a href="https://www.youtube.com/@pratikmahadik2951" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/in/pratik-mahadik-85173a1a6/" target="_blank">LinkedIn</a></li>
+      </ul></div>
+    </div>
   </div>
-  <p>© 2026 Pratik Mahadik · Made with curiosity in Maharashtra 🇮🇳</p>
+  <div class="ft-bottom">
+    <span>© 2026 Pratik Mahadik · Made with curiosity in Maharashtra</span>
+    <span>ERP & AI Consulting · Mumbai, India</span>
+  </div>
 </footer>
+
 </body>
 </html>
